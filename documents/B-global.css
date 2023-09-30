@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 1150px;
+}
+
+.heading,
+.heading2,
+.heading3,
+.heading4,
+.heading5,
+.heading6,
+.para,
+.para2,
+.para3,
+.span,
+.span2,
+.span3,
+.span4,
+.span5,
+.span6 {
+    padding: 10px;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fl-no-wrap {
+    flex-wrap: nowrap !important;
+}
+
+.fl-0070 {
+    flex: 0 0 70%;
+}
+
+.fl-0060 {
+    flex: 0 0 60%;
+}
+
+.fl-0040 {
+    flex: 0 0 40%;
+}
+
+.fl-0030 {
+    flex: 0 0 30%;
+}
+
+.fl-0050 {
+    flex: 0 0 calc(50% - calc(2rem - 2px));
+}
+
+.fl-0033 {
+    flex: 0 0 calc(33.33% - calc(2rem - 2px));
+}
+
+.fl-0025 {
+    flex: 0 0 calc(25% - calc(2rem - 2px));
+}
+
+.fl-0020 {
+    flex: 0 0 calc(22% - calc(2rem - 2px));
+}
+
+.fl-col {
+    flex-direction: column;
+}
+
+.fl-ali {
+    align-items: center;
+}
+
+.fl-jus-c {
+    justify-content: center;
+}
+
+.fl-jus-e {
+    justify-content: end;
+}
+
+.fl-jus-sb {
+    justify-content: space-between;
+}
+
+.fl-jus-se {
+    justify-content: space-evenly;
+}
+
+.fl-jus-sa {
+    justify-content: space-around;
+}
+
+.fl-flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.fl-wrap {
+    flex-wrap: wrap;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.logo img.auto {
+    width: auto;
+}
+
+.p-10 {
+    padding: 10px;
+}
