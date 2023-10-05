@@ -5,9 +5,9 @@
     --main-color: #000000;
     --main-helper-color:#000000;
     --para-color: #000000;
+    --para-color-2: #000000;
     --heading-main-color: #000000;
     --heading-color: #000000;
-    --para-color: #000000;
     --footer-color: #000000;
 
     /* size controler */
@@ -16,8 +16,16 @@
     --heading-main-size: 2rem;
     --heading-size: calc(2rem - 8px);
     --heading-min-size: 1rem;
-
-    /* margin controler */
-    --container-t-margin: 4rem;
-    --content-t-margin: 2rem;
-}			
+}
+/* set extra root */
+:root{
+    --fl-0020: 0 0 calc(20% - 20px);
+    --fl-0025: 0 0 calc(25% - 20px);
+    --fl-0030: 0 0 calc(30% - 20);
+    --fl-0033: 0 0 calc(33.333333% - 20);
+    --fl-0040: 0 0 calc(40% - 20);
+    --fl-0050: 0 0 calc(50% - 20);
+    --fl-0060: 0 0 calc(60% - 20);
+    --fl-0070: 0 0 calc(70% - 20);
+    --fl-0080: 0 0 calc(80% - 20);
+}
