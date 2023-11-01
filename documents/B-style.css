@@ -1,24 +1,21 @@
 @import url(B-reponsive.css);
 @import url(B-global.css);
 :root{
-    /* colors controler */
-    --main-color: #000000;
+    --main-color: #00f7ff;
     --main-helper-color:#000000;
     --para-color: #000000;
     --para-color-2: #000000;
     --heading-main-color: #000000;
     --heading-color: #000000;
     --footer-color: #000000;
-
-    /* size controler */
+    
     --para-size: 1rem;
     --para-min-size: calc(1rem - 3px);
     --heading-main-size: 2rem;
     --heading-size: calc(2rem - 8px);
     --heading-min-size: 1rem;
-}
-/* set extra root */
-:root{
+    --container-size: 1100px;
+    
     --fl-0020: 0 0 calc(20% - 20px);
     --fl-0025: 0 0 calc(25% - 20px);
     --fl-0030: 0 0 calc(30% - 20);
