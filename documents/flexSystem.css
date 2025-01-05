@@ -1,0 +1,80 @@
+.f {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nowrap {
+    flex-wrap: nowrap !important;
+}
+
+.f10 {
+    flex: var(--f10);
+}
+
+.f9 {
+    flex: var(--f9);
+}
+
+.f8 {
+    flex: var(--f8);
+}
+
+.f7 {
+    flex: var(--f7);
+}
+
+.f6 {
+    flex: var(--f6);
+}
+
+.f5 {
+    flex: var(--f5);
+}
+
+.f4 {
+    flex: var(--f4);
+}
+
+.f3 {
+    flex: var(--f3);
+}
+
+.f2 {
+    flex: var(--f2);
+}
+
+.f1 {
+    flex: var(--f1);
+}
+
+.f0 {
+    flex: 1 0 0;
+}
+
+.fdc {
+    flex-direction: column;
+}
+
+.aic {
+    align-items: center;
+}
+
+.jcc {
+    justify-content: center;
+}
+
+.jce {
+    justify-content: end;
+}
+
+.jcsb {
+    justify-content: space-between;
+}
+
+.jcse {
+    justify-content: space-evenly;
+}
+
+.fcsa {
+    justify-content: space-around;
+}

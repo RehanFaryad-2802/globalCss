@@ -1,4 +1,43 @@
-@import url('./paddingMargin.css');
+@import url('paddingMargin.css');
+@import url('flexSystem.css');
+
+
+:root {
+  font-size: 1rem;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  --mbgc: #00000b;
+
+  --mtc: #a307e6;
+  --tc: #08b917;
+  --stc: #414303;
+  
+  --mhc: #ff0000;
+  --hc: #ff5500;
+  --shc: #189fff;
+
+
+
+  --mh: 3.4rem;
+  --sh: 1.5rem;
+
+  --mp: 1.3rem;
+  --para: 1rem;
+  --sp: 0.75rem;
+
+  --f1: 0 0 10%;
+  --f2: 0 0 20%;
+  --f3: 0 0 30%;
+  --f4: 0 0 40%;
+  --f5: 0 0 50%;
+  --f6: 0 0 60%;
+  --f7: 0 0 70%;
+  --f8: 0 0 80%;
+  --f9: 0 0 90%;
+  --f10: 0 0 100%;
+}
+
+
 
 * {
   margin: 0;
@@ -20,97 +59,6 @@
   cursor: pointer;
 }
 
-/* Flex System */
-.f {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.nowrap {
-  flex-wrap: nowrap !important;
-}
-
-.f10 {
-  flex: var(--f10);
-}
-
-.f9 {
-  flex: var(--f9);
-}
-
-.f8 {
-  flex: var(--f8);
-}
-
-.f7 {
-  flex: var(--f7);
-}
-
-.f6 {
-  flex: var(--f6);
-}
-
-.f5 {
-  flex: var(--f5);
-}
-
-.f4 {
-  flex: var(--f4);
-}
-
-.f3 {
-  flex: var(--f3);
-}
-
-.f2 {
-  flex: var(--f2);
-}
-
-.f1 {
-  flex: var(--f1);
-}
-
-.f0 {
-  flex: 1 0 0;
-}
-
-.fdc {
-  flex-direction: column;
-}
-
-.aic {
-  align-items: center;
-}
-
-.jcc {
-  justify-content: center;
-}
-
-.jce {
-  justify-content: end;
-}
-
-.jcsb {
-  justify-content: space-between;
-}
-
-.jcse {
-  justify-content: space-evenly;
-}
-
-.fcsa {
-  justify-content: space-around;
-}
-
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-
 img[src] {
   width: 100%;
 }
@@ -124,23 +72,80 @@ img[src].auto {
 /*  */
 /*  */
 /*  */
+h1,
+h2,
+h3,
+p {
+  padding: 10px;
+}
+
 /*  */
 /*  */
 /*  */
 /*  */
 /*  */
 
-.main-bg {
-  background-color: var(--main-color);
+.mbgc {
+  background-color: var(--mbgc);
 }
 
-.main-color {
-  color: var(--main-color);
+.mtc {
+  color: var(--mtc);
+}
+/*  */
+.mhc {
+  color: var(--mhc);
+}
+.shc {
+  color: var(--shc);
+}
+/*  */
+.mtc {
+  color: var(--mtc);
+}
+.tc {
+  color: var(--tc);
+}
+.stc {
+  color: var(--stc);
 }
 
-.h-size {
-  font-size: var(--heading-size);
+.hc{
+  color: var(--hc);
 }
+
+
+h2{
+  font-size: 2.3rem;
+}
+.mh {
+  font-size: var(--mh);
+}
+
+.sh {
+  font-size: var(--sh);
+}
+.mp {
+  font-size: var(--mp);
+}
+
+.sp {
+  font-size: var(--sp);
+}
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
 
 .h-main-size {
   font-size: var(--heading-main-size);
@@ -200,4 +205,8 @@ img[src].auto {
 
 .hidden {
   overflow: hidden;
+}
+
+.c {
+  text-align: center
 }
