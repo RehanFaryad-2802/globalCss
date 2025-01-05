@@ -1,4 +1,4 @@
-@import url('https://cdn.jsdelivr.net/gh/RehanFaryad-2802/globalCss/documents/paddingMargin.css');
+@import url('./paddingMargin.css');
 
 * {
   margin: 0;
