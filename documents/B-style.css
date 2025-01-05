@@ -1,5 +1,5 @@
-@import url(B-reponsive.css);
-@import url(B-global.css);
+@import url(global.css);
+
 :root{
     --main-color: #00f7ff;
     --main-helper-color:#000000;
@@ -16,13 +16,14 @@
     --heading-min-size: 1rem;
     --container-size: 1100px;
     
-    --fl-0020: 0 0 calc(20% - 20px);
-    --fl-0025: 0 0 calc(25% - 20px);
-    --fl-0030: 0 0 calc(30% - 20);
-    --fl-0033: 0 0 calc(33.333333% - 20);
-    --fl-0040: 0 0 calc(40% - 20);
-    --fl-0050: 0 0 calc(50% - 20);
-    --fl-0060: 0 0 calc(60% - 20);
-    --fl-0070: 0 0 calc(70% - 20);
-    --fl-0080: 0 0 calc(80% - 20);
+    --f1: 0 0 10%;
+    --f2: 0 0 20%;
+    --f3: 0 0 30%;
+    --f4: 0 0 40%;
+    --f5: 0 0 50%;
+    --f6: 0 0 60%;
+    --f7: 0 0 70%;
+    --f8: 0 0 80%;
+    --f9: 0 0 90%;
+    --f10: 0 0 100%;
 }
