@@ -1,28 +1,25 @@
-@import url('paddingMargin.css');
-@import url('flexSystem.css');
-
+@import url("paddingMargin.css");
+@import url("flexSystem.css");
+@import url("border-radius.css");
 
 :root {
   font-size: 1rem;
-  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-family: "Segoe UI";
 
   --mbgc: #00000b;
 
   --mtc: #a307e6;
   --tc: #08b917;
   --stc: #414303;
-  
-  --mhc: #ff0000;
-  --hc: #ff5500;
-  --shc: #189fff;
 
-
+  --mhc: #000211;
+  --hc: #000211;
+  --shc: #000211;
 
   --mh: 3.4rem;
   --sh: 1.5rem;
 
   --mt: 1.3rem;
-  --para: 1rem;
   --st: 0.75rem;
 
   --f1: 0 0 10%;
@@ -35,10 +32,6 @@
   --f8: 0 0 80%;
   --f9: 0 0 90%;
   --f10: 0 0 100%;
-}
-
-.fdst{
-  display: grid;
 }
 
 * {
@@ -66,7 +59,7 @@ img[src] {
 }
 
 img[src].auto {
-  width: auto !important;
+  width: auto;
 }
 
 /*  */
@@ -81,11 +74,24 @@ p {
   padding: 10px;
 }
 
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
+
+.main-heading {
+  color: var(--mhc);
+  font-size: var(--mh);
+  font-weight: 800;
+  text-align: center;
+  margin: 1rem 0;
+}
+.heading {
+  color: var(--hc);
+  font-size: 2.3rem;
+  font-weight: 800;
+}
+.sub-heading {
+  color: var(--shc);
+  font-size: var(--sh);
+  font-weight: 700;
+}
 
 .mbgc {
   background-color: var(--mbgc);
@@ -102,7 +108,12 @@ p {
   color: var(--shc);
 }
 /*  */
-
+.wtc {
+  color: #fff;
+}
+.btc {
+  color: #000;
+}
 .tc {
   color: var(--tc);
 }
@@ -110,12 +121,11 @@ p {
   color: var(--stc);
 }
 
-.hc{
+.hc {
   color: var(--hc);
 }
 
-
-h2{
+h2 {
   font-size: 2.3rem;
 }
 .mh {
@@ -133,80 +143,19 @@ h2{
   font-size: var(--st);
 }
 
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-
-.h-main-size {
-  font-size: var(--heading-main-size);
-}
-
-.h-min-size {
-  font-size: var(--heading-min-size);
-}
-
-.h-main-color {
-  color: var(--heading-main-color);
-}
-
-.h-color {
-  color: var(--heading-color);
-}
-
-.p-color {
-  color: var(--para-color);
-}
-
-.p-color-2 {
-  color: var(--para-color-2);
-}
-
-.p-size {
-  font-size: var(--para-size);
-}
-
-.p-min-size {
-  font-size: var(--para-min-size);
-}
-
-.footer {
-  background-color: var(--footer-color);
-}
-
-.txt-center {
-  text-align: center;
-}
-
-.fw-400 {
-  font-weight: 400;
-}
-
-.fw-500 {
-  font-weight: 500;
-}
-
-.fw-600 {
-  font-weight: 600;
-}
-
 .hide {
   display: none;
 }
 
-.hidden {
-  overflow: hidden;
+.tac {
+  text-align: center;
 }
-
-.c {
-  text-align: center
+.m0a {
+  margin: 0 auto;
+}
+.tae {
+  text-align: end;
+}
+.tas {
+  text-align: start;
 }

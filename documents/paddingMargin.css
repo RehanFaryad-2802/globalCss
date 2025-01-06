@@ -132,9 +132,8 @@
 .p10r { padding: 10rem; }
 .p30r { padding: 30rem; }
 
-h1,
-h2,
-h3,
-p {
-  padding: 10px;
-}
+.spacer1{ padding: 1rem; }
+.spacer2{ padding: 2rem; }
+.spacer3{ padding: 3rem; }
+.spacer4{ padding: 4rem; }
+.spacer5{ padding: 5rem; }
