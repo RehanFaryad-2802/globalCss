@@ -154,27 +154,32 @@ Explanation: Spacer classes are used to add vertical spacing between elements. F
 
 - **`.tas`**  
   This class stands for aligning text to the start of the container. For left-to-right text, this means left-alignment; for right-to-left text, it means right-alignment.
-| **Variables**               | **Values (Defaults)** |
-|-----------------------------|-----------------------|
-| `--mbgc` (main background color) | `#00000b`             |
-| `--mtc` (main text color)        | `#a307e6`             |
-| `--tc` (text color)             | `#08b917`             |
-| `--stc` (sub text color)        | `#414303`             |
-| `--mhc` (main heading color)    | `#000211`             |
-| `--hc` (heading color)          | `#000211`             |
-| `--shc` (sub heading color)     | `#000211`             |
-| `--mh` (main heading)           | `3.4rem`              |
-| `--sh` (sub heading)            | `1.5rem`              |
-| `--mt` (main text)              | `1.3rem`              |
-| `--st` (sub text)               | `0.75rem`             |
-| `--font-family`                | `"Segoe UI"`          |
-| `--f1`                         | `0 0 10%`             |
-| `--f2`                         | `0 0 20%`             |
-| `--f3`                         | `0 0 30%`             |
-| `--f4`                         | `0 0 40%`             |
-| `--f5`                         | `0 0 50%`             |
-| `--f6`                         | `0 0 60%`             |
-| `--f7`                         | `0 0 70%`             |
-| `--f8`                         | `0 0 80%`             |
-| `--f9`                         | `0 0 90%`             |
-| `--f10`                        | `0 0 100%`            |
+
+
+
+
+### Default Values
+
+- `--mbgc` (main background color): `#00000b`
+- `--mtc` (main text color): `#a307e6`
+- `--tc` (text color): `#08b917`
+- `--stc` (sub text color): `#414303`
+- `--mhc` (main heading color): `#000211`
+- `--hc` (heading color): `#000211`
+- `--shc` (sub heading color): `#000211`
+- `--mh` (main heading): `3.4rem`
+- `--sh` (sub heading): `1.5rem`
+- `--mt` (main text): `1.3rem`
+- `--st` (sub text): `0.75rem`
+- `--font-family`: `"Segoe UI"`
+- `--f1`: `0 0 10%`
+- `--f2`: `0 0 20%`
+- `--f3`: `0 0 30%`
+- `--f4`: `0 0 40%`
+- `--f5`: `0 0 50%`
+- `--f6`: `0 0 60%`
+- `--f7`: `0 0 70%`
+- `--f8`: `0 0 80%`
+- `--f9`: `0 0 90%`
+- `--f10`: `0 0 100%`
+
