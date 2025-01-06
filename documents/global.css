@@ -33,7 +33,10 @@
   --f9: 0 0 90%;
   --f10: 0 0 100%;
 }
-
+.fdst{
+  display: block;
+  display: grid;
+}
 * {
   margin: 0;
   padding: 0;
