@@ -2,7 +2,7 @@
 
 This is the link to use global CSS:
 
-[Global CSS](https://cdn.jsdelivr.net/gh/RehanFaryad-2802/globalCss/documents/global.css?v=1.0)
+Global CSS](https://cdn.jsdelivr.net/gh/RehanFaryad-2802/globalCss/documents/global.css)
 
 ## Global CSS
 
