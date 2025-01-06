@@ -21,9 +21,9 @@
   --mh: 3.4rem;
   --sh: 1.5rem;
 
-  --mp: 1.3rem;
+  --mt: 1.3rem;
   --para: 1rem;
-  --sp: 0.75rem;
+  --st: 0.75rem;
 
   --f1: 0 0 10%;
   --f2: 0 0 20%;
@@ -100,9 +100,7 @@ p {
   color: var(--shc);
 }
 /*  */
-.mtc {
-  color: var(--mtc);
-}
+
 .tc {
   color: var(--tc);
 }
@@ -125,12 +123,12 @@ h2{
 .sh {
   font-size: var(--sh);
 }
-.mp {
-  font-size: var(--mp);
+.mt {
+  font-size: var(--mt);
 }
 
-.sp {
-  font-size: var(--sp);
+.st {
+  font-size: var(--st);
 }
 
 /*  */
