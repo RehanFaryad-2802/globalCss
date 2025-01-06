@@ -76,13 +76,81 @@ Explanation: Spacer classes are used to add vertical spacing between elements. F
 - `.flex` Has the properties of `display: flex;`, `justify-content: center;`, and `align-items: center;`.
 
 ## Heading, Text (Paragraphs) & Colors
-- `.pointer` This class stands for applying a pointer cursor to interactive elements (e.g., links, buttons). It changes the mouse cursor to a hand when hovering over an element with this class (`cursor: pointer;` is used for this effect).
-- `img[src]` This selector stands for targeting all `<img>` elements that have a `src` attribute. `width: 100%;` sets the image width to 100% of its parent container.
-- `img[src].auto` This selector stands for targeting images that have the `src` attribute and the `auto` class. `width: auto;` ensures that the image's natural width is preserved.
-- `h1, h2, h3, p` This selector stands for applying padding of 10px to `<h1>`, `<h2>`, `<h3>`, and `<p>` elements.
-- `.main-heading, .sub-heading` applies `font-size: 2.5rem` and `font-size: 2rem` for main and subheadings respectively.
-- `.title-text` provides a clean and neat font size of `font-size: 1.5rem`.
 
-## Color Classes
-- `.black`, `.red`, `.green`, `.blue`, `.yellow`, `.cyan`, `.pink`, `.purple`, `.brown`, `.gray` classes represent colors in their respective color names.
-- `.bg-black`, `.bg-red`, `.bg-green`, `.bg-blue`, `.bg-yellow`, `.bg-cyan`, `.bg-pink`, `.bg-purple`, `.bg-brown`, `.bg-gray` classes represent respective background colors.
+- **`.pointer`**  
+  This class stands for applying a pointer cursor to interactive elements (e.g., links, buttons). It changes the mouse cursor to a hand when hovering over an element with this class. `cursor: pointer;` is used for this effect.
+
+- **`img[src]`**  
+  This selector stands for targeting all `<img>` elements that have a `src` attribute. `width: 100%;` sets the image width to 100% of its parent container.
+
+- **`img[src].auto`**  
+  This selector stands for targeting images that have the `src` attribute and the `auto` class. `width: auto;` ensures that the image's natural width is preserved.
+
+- **`h1, h2, h3, p`**  
+  This selector stands for applying padding of 10px to `<h1>`, `<h2>`, `<h3>`, and `<p>` elements.
+
+- **`.main-heading`**  
+  This class stands for the main heading of the page. It applies specific styles such as text color (`var(--mhc)`), font size (`var(--mh)`), bold weight (`800`), center alignment (`text-align: center;`), and margin.
+
+- **`.heading`**  
+  This class stands for subheadings under the main heading. It applies a specific text color (`var(--hc)`), font size (`2.3rem`), and font weight (`800`).
+
+- **`.sub-heading`**  
+  This class stands for secondary headings and applies a distinct text color (`var(--shc)`), font size (`var(--sh)`), and font weight (`700`).
+
+- **`.mbgc`**  
+  This class stands for applying a background color to an element using the value defined in `var(--mbgc)`.
+
+- **`.mtc`**  
+  This class stands for changing the text color to `var(--mtc)`.
+
+- **`.mhc`**  
+  This class stands for applying the color for main headings, defined as `var(--mhc)`.
+
+- **`.shc`**  
+  This class stands for applying the color for subheadings, defined as `var(--shc)`.
+
+- **`.wtc`**  
+  This class stands for setting the text color to white (`#fff`).
+
+- **`.btc`**  
+  This class stands for setting the text color to black (`#000`).
+
+- **`.tc`**  
+  This class stands for setting the text color to `var(--tc)`.
+
+- **`.stc`**  
+  This class stands for applying a secondary text color defined as `var(--stc)`.
+
+- **`.hc`**  
+  This class stands for applying the color for headings, defined as `var(--hc)`.
+
+- **`h2`**  
+  This selector stands for setting the font size of `<h2>` elements to `2.3rem`.
+
+- **`.mh`**  
+  This class stands for defining the font size for main headings as `var(--mh)`.
+
+- **`.sh`**  
+  This class stands for defining the font size for subheadings as `var(--sh)`.
+
+- **`.mt`**  
+  This class stands for defining the font size for main text as `var(--mt)`.
+
+- **`.st`**  
+  This class stands for defining the font size for secondary text as `var(--st)`.
+
+- **`.hide`**  
+  This class stands for hiding elements from the page. `display: none;` ensures the element does not appear or take up space in the layout.
+
+- **`.tac`**  
+  This class stands for aligning text to the center of its container.
+
+- **`.m0a`**  
+  This class stands for centering an element horizontally by setting its margin to `0 auto`.
+
+- **`.tae`**  
+  This class stands for aligning text to the end of the container. For left-to-right text, this means right-alignment; for right-to-left text, it means left-alignment.
+
+- **`.tas`**  
+  This class stands for aligning text to the start of the container. For left-to-right text, this means left-alignment; for right-to-left text, it means right-alignment.
