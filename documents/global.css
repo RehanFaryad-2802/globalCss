@@ -37,7 +37,9 @@
   --f10: 0 0 100%;
 }
 
-
+.fdst{
+  display: grid;
+}
 
 * {
   margin: 0;
