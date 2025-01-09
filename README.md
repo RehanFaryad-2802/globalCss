@@ -1,7 +1,9 @@
 ## Global CSS
 Global CSS refers to styles that are applied universally across an entire website or application, ensuring consistency and uniformity. These styles are typically declared in a central stylesheet and affect all elements unless overridden by more specific styles.
 Global CSS Stylesheet: (https://cdn.jsdelivr.net/gh/RehanFaryad-2802/globalCss/documents/global.cs1s)
-[See doc](https://rfglobalcss.netlify.app/)
+
+[See doc ↗](https://rfglobalcss.netlify.app/)
+
 ## Margin Classes
 Explanation: Margin classes control the space outside the element's border. For example, `.mt20` adds 20px of space above an element, while `.mr10` adds 10px of space to the right.
 
