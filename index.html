@@ -1,334 +1,451 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Margin and Padding Classes</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        padding: 20px;
-        background-color: #f4f4f9;
-      }
-      table {
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Margin and Padding Classes</title>
+  <link rel="stylesheet" href="documents/global.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      background-color: #f4f4f9;
+    }
+
+    p {
+      color: var(--stc);
+    }
+
+    table {
       width: 60%;
       border-collapse: collapse;
       text-align: center;
       margin: 0 auto;
     }
-    th, td {
+
+    th,
+    td {
       padding: 4px;
       text-align: left;
       border: 1px solid #ddd;
     }
+
     .color-box {
       display: inline-block;
       width: 20px;
       height: 20px;
     }
 
-      h1,
-      h2 {
-        color: #333;
-        text-align: center;
-      }
-      p span.code-block {
-        padding: 4px;
-        margin-right: 12px;
-      }
+    h1,
+    h2 {
+      color: var(--mtc);
+      text-align: center;
+    }
 
-      .container {
-        max-width: 800px;
-        margin: 0 auto;
-        background: #fff;
-        border: 1px solid #ddd;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-      h1 {
-        font-size: 4rem;
-      }
-      h2 {
-        font-size: 2rem;
-      }
+    p span.code-block {
+      padding: 4px;
+      margin-right: 12px;
+    }
 
-      .code-block {
-        background: #272822;
-        color: #f8f8f2;
-        padding: 10px;
-        border-radius: 4px;
-        font-family: monospace;
-        overflow-x: auto;
-      }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-      .code-block span {
-        color: #66d9ef;
-      }
+    h1 {
+      font-size: 4rem;
+    }
 
-      .example {
-        margin-top: 20px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Global Css</h1>
+    h2 {
+      font-size: 2rem;
+    }
+
+    .code-block {
+      background: #272822;
+      color: #f8f8f2;
+      padding: 10px;
+      margin-top: 5px;
+      font-size: var(--st);
+      border-radius: 4px;
+      font-family: monospace;
+      overflow-x: auto;
+    }
+
+    .code-block span {
+      color: #66d9ef;
+    }
+
+    .example {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Global Css</h1>
+    <p>
+      Global CSS refers to styles that are applied universally across an
+      entire website or application, ensuring consistency and uniformity.
+      These styles are typically declared in a central stylesheet and affect
+      all elements unless overridden by more specific styles.
+    </p>
+    <p class="mt mt10 mb10">Global CSS Stylesheet
+    <pre
+      class="code-block st">&lt;link rel="stylesheet" href="https://rfglobalcss.netlify.app/documents/global.css"></pre>
+    </p>
+    <h2 class="heading mt3r">Margin & Padding Classes</h2>
+    <p>
+      <strong>Explanation:</strong> Margin and Paddding classes control the space outside
+      and inner respectively of the element's border.
+      <br>
+    <p class="mt"><b>Property Identifiers:</b></p>
+    <div class="f col-7 gap20">
       <p>
-        Global CSS refers to styles that are applied universally across an
-        entire website or application, ensuring consistency and uniformity.
-        These styles are typically declared in a central stylesheet and affect
-        all elements unless overridden by more specific styles.
+        <b>m: </b> margin
       </p>
-      <p>Global CSS Stylesheet: <pre class="code-block">(https://rfglobalcss.netlify.app/documents/global.css)</pre>
-      </p>
-      <h2>Margin Classes</h2>
       <p>
-        <strong>Explanation:</strong> Margin classes control the space outside
-        the element's border. For example, <code>.mt20</code> adds 20px of space
-        above an element, while <code>.mr10</code> adds 10px of space to the
-        right.
+        <b>p: </b> padding
       </p>
-      <p>Following are the selectors to insert margin in pixels.</p>
-      <pre class="code-block">.mt5, .mt10, .mt15, .mt20, .mt30</pre>
-      <pre class="code-block">.mr5, .mr10, .mr15, .mr20, .mr30</pre>
-      <pre class="code-block">.mb5, .mb10, .mb15, .mb20, .mb30</pre>
-      <pre class="code-block">.ml5, .ml10, .ml15, .ml20, .ml30</pre>
-      <pre class="code-block">.m5, .m10, .m15, .m20, .m30</pre>
-      <p>Following are the selectors to insert margin in rem.</p>
-      <pre class="code-block">.mt1r, .mt2r, .mt3r, .mt5r,.mt10r, .mt30</pre>
-      <pre class="code-block">.mr1r, .mr2r, .mr3r, .mr5r,.mr10r, .mr30</pre>
-      <pre class="code-block">.mb1r, .mb2r, .mb3r, .mb5r,.mb10r, .mb30</pre>
-      <pre class="code-block">.ml1r, .ml2r, .ml3r, .ml5r,.ml10r, .ml30</pre>
-      <pre class="code-block">.m5r, .m10r, .m3r, .m5r, .m10r, .m30r</pre>
-      <h2>Padding Classes</h2>
+    </div>
+    <br>
+    <p class="mt"><b>value Identifiers:</b></p>
+    <div class="f col-7 gap20">
       <p>
-        <strong>Explanation:</strong> Padding classes control the space inside
-        the element's border. For example, <code>.pt15</code> adds 15px of space
-        inside the element at the top, while <code>.pl20</code> adds 20px of
-        space inside the left side.
+        <b>l: </b> left-side
       </p>
-      <p>Following are the selectors to insert padding in pixels.</p>
-      <pre class="code-block">.pt5, .pt10, .pt15, .pt20, .pt30</pre>
-      <pre class="code-block">.pr5, .pr10, .pr15, .pr20, .pr30</pre>
-      <pre class="code-block">.pb5, .pb10, .pb15, .pb20, .pb30</pre>
-      <pre class="code-block">.pl5, .pl10, .pl15, .pl20, .pl30</pre>
-      <pre class="code-block">.p5, .p10, .p15, .p20, .p30</pre>
-      <p>Following are the selectors to insert margin in rem.</p>
-      <pre class="code-block">.pt1r, .pt2r, .pt3r, .pt5r,.pt10r, .pt30</pre>
-      <pre class="code-block">.pr1r, .pr2r, .pr3r, .pr5r,.pr10r, .pr30</pre>
-      <pre class="code-block">.pb1r, .pb2r, .pb3r, .pb5r,.pb10r, .pb30</pre>
-      <pre class="code-block">.pl1r, .pl2r, .pl3r, .pl5r,.pl10r, .pl30</pre>
-      <pre class="code-block">.p5r, .p10r, .p3r, .p5r, .p10r, .p30r</pre>
-      <h2>Border Radius Classes</h2>
       <p>
-        <strong>Explanation:</strong> Border radius classes round the corners of
-        an element. For example, <code>.br10</code> adds a border radius of 10px
-        to all corners, creating a slightly rounded effect.
+        <b>r: </b> right-side
       </p>
-      <pre class="code-block">.br1, .br2, .br3, .br4, .br5, .br6, .br7, .br8, .br9, .br10, .br15, .br20, .br25</pre
-      >
-      <pre class="code-block">.brt1, .brt2, .brt3, .brt4, .brt5, .brt6, .brt7, .brt8, .brt9, .brt10, .brt15, .brt20, .brt25</pre
-      >
-      <pre class="code-block">.brb1, .brb2, .brb3, .brb4, .brb5, .brb6, .brb7, .brb8, .brb9, .brb10, .brb15, .brb20, .brb25</pre
-      >
-      <pre class="code-block">.brl1, .brl2, .brl3, .brl4, .brl5, .brl6, .brl7, .brl8, .brl9, .brl10, .brl15, .brl20, .brl25</pre
-      >
-      <pre class="code-block">.brr1, .brr2, .brr3, .brr4, .brr5, .brr6, .brr7, .brr8, .brr9, .brr10, .brr15, .brr20, .brr25</pre>
+      <p>
+        <b>t: </b> top-side
+      </p>
+      <p>
+        <b>b: </b> bottom-side
+      </p>
+      <p>
+        <b>r: </b> Value in ram
+      </p>
+    </div>
+    <br>
+    <p class="mt"><b>Values:</b></p>
+    <div class="mb5">
+      <p>
+        Allowd Numbers in px: 5, 10, 15, 20, 30
+      </p>
+      <p>
+        Allowd Numbers in rem: 1, 2, 3, 5, 10, 30
+      </p>
+    </div>
+    <p class="mt"><b>Pattern:</b></p>
+    <div class="f col-7 gap20">
+      <p>
+        Use this Pattern while using [property][side][value][unit]
+      </p>
+    </div>
+    <br>
+    <p class="mt"><b>Key Points:</b></p>
+    <div class="f col-7 gap20">
+      <ul class="ml20">
+        <li style="list-style: disc;">Defining no side will works for all sides.</li>
+        <li style="list-style: disc;">Defining no unit will works in px.</li>
+      </ul>
+    </div>
+    <br>
+    For example, <code>.m20</code> adds 20px of margin
+    to all sides of an element, while <code>.mr10</code> adds 10px of space to the
+    right.
+    </p>
+    <p class="mt">Examples :</p>
+    <div class="code-block">.pmt1r: adds 10px of padding to the
+      top of 1rem.</div>
+    <div class="code-block">.p20: adds 20px of padding to the
+      all sides of 20px.</div>
 
-      <pre class="code-block">.br10r, .brt10r, .brb10r, .brl10r, .brr10r</pre>
-      <pre class="code-block">.br100p, .brt100p, .brb100p, .brl100p, .brr100p</pre>
+    <h2 class="heading mt3r">Border Radius Classes</h2>
 
-      <pre class="code-block">.brtl1, .brtl2, .brtl3, .brtl4, .brtl5, .brtl6, .brtl7, .brtl8, .brtl9, .brtl10, .brtl15, .brtl20, .brtl25</pre
-      >
-      <pre class="code-block">.brtr1, .brtr2, .brtr3, .brtr4, .brtr5, .brtr6, .brtr7, .brtr8, .brtr9, .brtr10, .brtr15, .brtr20, .brtr25</pre
-      >
-      <pre class="code-block">.brbl1, .brbl2, .brbl3, .brbl4, .brbl5, .brbl6, .brbl7, .brbl8, .brbl9, .brbl10, .brbl15, .brbl20, .brbl25</pre
-      >
-      <pre class="code-block">.brbr1, .brbr2, .brbr3, .brbr4, .brbr5, .brbr6, .brbr7, .brbr8, .brbr9, .brbr10, .brbr15, .brbr20, .brbr25</pre
-      >
+    <p>
+      <strong>Explanation:</strong> Border radius classes round the corners of
+      an element.
 
-      <pre class="code-block">.brtl10r, .brtr10r, .brbl10r, .brbr10r</pre>
-      <pre class="code-block">.brtl100p, .brtr100p, .brbl100p, .brbr100p</pre>
-
-      <h2>Spacer Classes</h2>
+    <p class="mt"><b>Property Identifiers:</b></p>
+    <div class="f col-7 gap20">
       <p>
-        <strong>Explanation:</strong> Spacer classes are used to add vertical
-        spacing between elements. For example, <code>.spacer3</code> creates a
-        3rem padding gap.
-      </p>
-      <pre class="code-block">.spacer1, .spacer2, .spacer3, .spacer4, .spacer5</pre
-      >
-      <h2>Flex system</h2>
-      <p>
-        <span class="code-block">.f</span> Defines a flex container with the
-        <code>display: flex;</code> property and enables wrapping of flex items
-        with <code>flex-wrap: wrap;</code>.
-      </p>
-
-      <p>
-        <span class="code-block">.nowrap</span> Forces the flex container to
-        have no wrapping of items using
-        <code>flex-wrap: nowrap !important;</code>.
+        <b>br: </b> border-radius
       </p>
 
+    </div>
+    <br>
+    <p class="mt"><b>Value Identifiers:</b></p>
+    <div class="f col-7 gap20">
       <p>
-        <span class="code-block">.f0</span> Sets the flex property to
-        <code>flex: 1 0 0;</code>, meaning the item can grow to fill available
-        space but has no initial size (<code>flex-grow: 1</code>,
-        <code>flex-shrink: 0</code>, <code>flex-basis: 0</code>).
+        <b>r: </b>right side corners
       </p>
+      <p>
+        <b>l: </b>left side corners
+      </p>
+      <p>
+        <b>t: </b> top side corners
+      </p>
+      <p>
+        <b>b: </b> bottom side corners
+      </p>
+      <p>
+        <b>r: </b> Value in rem [If used at last]
+      </p>
+    </div>
+    <br>
+    <p class="mt"><b>Values:</b></p>
+    <div class="mb5">
+      <p>
+        Allowd Numbers in px: 1-10, 15, 20, 25
+      </p>
+      <p>
+        Allowd Numbers in rem: 10
+      </p>
+      <p>
+        Allowd Numbers in percentage: 100
+      </p>
+    </div>
+    <p class="mt"><b>Pattern:</b></p>
+    <div class="f col-7 gap20">
+      <p>
+        Use this Pattern while using [property][side][value][unit]
+      </p>
+    </div>
+    <br>
+    <p class="mt"><b>Key Points:</b></p>
+    <div class="f col-7 gap20">
+      <ul class="ml20">
+        <li style="list-style: disc;">Defining no side will works for all sides.</li>
+        <li style="list-style: disc;">Defining no unit will works in px.</li>
+        <li style="list-style: disc;">For single corner use relative side. For example, .brtl10
+          (border-radius-top-left)rounds top left corner. This can't be .brlt10(border-radius-left-top)</li>
+      </ul>
+    </div>
+    <br>
+    For example, <code>.m20</code> adds 20px of margin
+    to all sides of an element, while <code>.mr10</code> adds 10px of space to the
+    right.
+    </p>
+    <p class="mt">Examples :</p>
+    <div class="code-block">.brtl6 (border-radius-top-left)</div>
+    <div class="code-block">.brtr6 (border-radius-top-right)</div>
+    <div class="code-block">.brbl6 (border-radius-bottom-left)</div>
+    <div class="code-block">.brbr6 (border-radius-bottom-right)</div>
 
-      <p>
-        <span class="code-block">.f1 - f10 </span> Applies a custom flex value
-        to the item by dividing into total 10 parts. <code>.f1</code> means
-        <code>1/10</code> and <code> .f10</code> mean
-        <code>10/10</code>(complete area).
-      </p>
+    
 
-      <p>
-        <span class="code-block">.fdc</span> Changes the flex direction to
-        column using <code>flex-direction: column;</code>.
-      </p>
+    <h2 class="heading mt3r">Spacer Classes</h2>
 
-      <p>
-        <span class="code-block">.aic</span> Aligns the flex items in the center
-        along the cross axis using <code>align-items: center;</code>.
-      </p>
+    <p>
+      <strong>Explanation:</strong> Spacer classes are used to add vertical
+      spacing between elements. For example, <code>.spacer3</code> creates a
+      3rem padding gap.
+    </p>
+    <p class="mt mt5"><b>There are 5 spacers:</b> </p>
+    <pre class="code-block">.spacer1, .spacer2, .spacer3, .spacer4, .spacer5</pre>
+    <h2>Flex system</h2>
+    <p>
+      <span class="code-block">.f</span> Defines a flex container with the
+      <code>display: flex;</code> property and enables wrapping of flex items
+      with <code>flex-wrap: wrap;</code>.
+    </p>
 
-      <p>
-        <span class="code-block">.jcc</span> Centers the flex items along the
-        main axis with <code>justify-content: center;</code>.
-      </p>
+    <p>
+      <span class="code-block">.nowrap</span> Forces the flex container to
+      have no wrapping of items using
+      <code>flex-wrap: nowrap !important;</code>.
+    </p>
 
-      <p>
-        <span class="code-block">.jce</span> Aligns the flex items to the end of
-        the main axis using <code>justify-content: end;</code>.
-      </p>
+    <p>
+      <span class="code-block">.f0</span> Sets the flex property to
+      <code>flex: 1 0 0;</code>, meaning the item can grow to fill available
+      space but has no initial size (<code>flex-grow: 1</code>,
+      <code>flex-shrink: 0</code>, <code>flex-basis: 0</code>).
+    </p>
 
-      <p>
-        <span class="code-block">.jcsb</span> Distributes space between flex
-        items with <code>justify-content: space-between;</code>.
-      </p>
+    <p>
+      <span class="code-block">.f1 - f10 </span> Applies a custom flex value
+      to the item by dividing into total 10 parts. <code>.f1</code> means
+      <code>1/10</code> and <code> .f10</code> mean
+      <code>10/10</code>(complete area).
+    </p>
 
-      <p>
-        <span class="code-block">.jcse</span> Distributes space evenly between
-        flex items with <code>justify-content: space-evenly;</code>.
-      </p>
+    <p>
+      <span class="code-block">.fdc</span> Changes the flex direction to
+      column using <code>flex-direction: column;</code>.
+    </p>
 
-      <p>
-        <span class="code-block">.fcsa</span> Distributes space around flex
-        items with <code>justify-content: space-around;</code>.
-      </p>
+    <p>
+      <span class="code-block">.aic</span> Aligns the flex items in the center
+      along the cross axis using <code>align-items: center;</code>.
+    </p>
 
-      <p>
-        <span class="code-block">.flex</span> Hava the properties of
-        <code>displat: flex;</code>, <code>justify-content: center;</code>, and
-        <code>align-items: center;</code>
-      </p>
-      <h2>Heading, Text(Paragraaphs) & Colors</h2>
-      <p>
-        <span class="code-block">.pointer</span> This class stands for applying a pointer cursor to interactive elements (e.g., links, buttons). It changes the mouse cursor to a hand when hovering over an element with this class. <code>cursor: pointer;</code> is used for this effect.
-    </p>
-    
     <p>
-        <span class="code-block">img[src]</span> This selector stands for targeting all <code>&lt;img&gt;</code> elements that have a <code>src</code> attribute. <code>width: 100%;</code> sets the image width to 100% of its parent container.
+      <span class="code-block">.jcc</span> Centers the flex items along the
+      main axis with <code>justify-content: center;</code>.
     </p>
-    
+
     <p>
-        <span class="code-block">img[src].auto</span> This selector stands for targeting images that have the <code>src</code> attribute and the <code>auto</code> class. <code>width: auto;</code> ensures that the image's natural width is preserved.
+      <span class="code-block">.jce</span> Aligns the flex items to the end of
+      the main axis using <code>justify-content: end;</code>.
     </p>
-    
+
     <p>
-        <span class="code-block">h1, h2, h3, p</span> This selector stands for applying padding of <code>10px</code> to <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, and <code>&lt;p&gt;</code> elements.
+      <span class="code-block">.jcsb</span> Distributes space between flex
+      items with <code>justify-content: space-between;</code>.
     </p>
-    
+
     <p>
-        <span class="code-block">.main-heading</span> This class stands for the main heading of the page. It applies specific styles such as text color (<code>var(--mhc)</code>), font size (<code>var(--mh)</code>), bold weight (<code>800</code>), center alignment (<code>text-align: center;</code>), and margin.
+      <span class="code-block">.jcse</span> Distributes space evenly between
+      flex items with <code>justify-content: space-evenly;</code>.
     </p>
-    
+
     <p>
-        <span class="code-block">.heading</span> This class stands for subheadings under the main heading. It applies a specific text color (<code>var(--hc)</code>), font size (<code>2.3rem</code>), and font weight (<code>800</code>).
+      <span class="code-block">.fcsa</span> Distributes space around flex
+      items with <code>justify-content: space-around;</code>.
     </p>
-    
+
     <p>
-        <span class="code-block">.sub-heading</span> This class stands for secondary headings and applies a distinct text color (<code>var(--shc)</code>), font size (<code>var(--sh)</code>), and font weight (<code>700</code>).
+      <span class="code-block">.flex</span> Hava the properties of
+      <code>displat: flex;</code>, <code>justify-content: center;</code>, and
+      <code>align-items: center;</code>
     </p>
-    
+    <h2>Heading, Text(Paragraaphs) & Colors</h2>
     <p>
-        <span class="code-block">.mbgc</span> This class stands for applying a background color to an element using the value defined in <code>var(--mbgc)</code>.
+      <span class="code-block">.pointer</span> This class stands for applying a pointer cursor to interactive elements
+      (e.g., links, buttons). It changes the mouse cursor to a hand when hovering over an element with this class.
+      <code>cursor: pointer;</code> is used for this effect.
     </p>
-    
+
     <p>
-        <span class="code-block">.mtc</span> This class stands for changing the text color to <code>var(--mtc)</code>.
+      <span class="code-block">img[src]</span> This selector stands for targeting all <code>&lt;img&gt;</code> elements
+      that have a <code>src</code> attribute. <code>width: 100%;</code> sets the image width to 100% of its parent
+      container.
     </p>
-    
+
     <p>
-        <span class="code-block">.mhc</span> This class stands for applying the color for main headings, defined as <code>var(--mhc)</code>.
+      <span class="code-block">img[src].auto</span> This selector stands for targeting images that have the
+      <code>src</code> attribute and the <code>auto</code> class. <code>width: auto;</code> ensures that the image's
+      natural width is preserved.
     </p>
-    
+
     <p>
-        <span class="code-block">.shc</span> This class stands for applying the color for subheadings, defined as <code>var(--shc)</code>.
+      <span class="code-block">h1, h2, h3, p</span> This selector stands for applying padding of <code>10px</code> to
+      <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, and <code>&lt;p&gt;</code> elements.
     </p>
-    
+
     <p>
-        <span class="code-block">.wtc</span> This class stands for setting the text color to white (<code>#fff</code>).
+      <span class="code-block">.main-heading</span> This class stands for the main heading of the page. It applies
+      specific styles such as text color (<code>var(--mhc)</code>), font size (<code>var(--mh)</code>), bold weight
+      (<code>800</code>), center alignment (<code>text-align: center;</code>), and margin.
     </p>
-    
+
     <p>
-        <span class="code-block">.btc</span> This class stands for setting the text color to black (<code>#000</code>).
+      <span class="code-block">.heading</span> This class stands for subheadings under the main heading. It applies a
+      specific text color (<code>var(--hc)</code>), font size (<code>2.3rem</code>), and font weight (<code>800</code>).
     </p>
-    
+
     <p>
-        <span class="code-block">.tc</span> This class stands for setting the text color to <code>var(--tc)</code>.
+      <span class="code-block">.sub-heading</span> This class stands for secondary headings and applies a distinct text
+      color (<code>var(--shc)</code>), font size (<code>var(--sh)</code>), and font weight (<code>700</code>).
     </p>
-    
+
     <p>
-        <span class="code-block">.stc</span> This class stands for applying a secondary text color defined as <code>var(--stc)</code>.
+      <span class="code-block">.mbgc</span> This class stands for applying a background color to an element using the
+      value defined in <code>var(--mbgc)</code>.
     </p>
-    
+
     <p>
-        <span class="code-block">.hc</span> This class stands for applying the color for headings, defined as <code>var(--hc)</code>.
+      <span class="code-block">.mtc</span> This class stands for changing the text color to <code>var(--mtc)</code>.
     </p>
-    
+
     <p>
-        <span class="code-block">h2</span> This selector stands for setting the font size of <code>&lt;h2&gt;</code> elements to <code>2.3rem</code>.
+      <span class="code-block">.mhc</span> This class stands for applying the color for main headings, defined as
+      <code>var(--mhc)</code>.
     </p>
-    
+
     <p>
-        <span class="code-block">.mh</span> This class stands for defining the font size for main headings as <code>var(--mh)</code>.
+      <span class="code-block">.shc</span> This class stands for applying the color for subheadings, defined as
+      <code>var(--shc)</code>.
     </p>
-    
+
     <p>
-        <span class="code-block">.sh</span> This class stands for defining the font size for subheadings as <code>var(--sh)</code>.
+      <span class="code-block">.wtc</span> This class stands for setting the text color to white (<code>#fff</code>).
     </p>
-    
+
     <p>
-        <span class="code-block">.mt</span> This class stands for defining the font size for main text as <code>var(--mt)</code>.
+      <span class="code-block">.btc</span> This class stands for setting the text color to black (<code>#000</code>).
     </p>
-    
+
     <p>
-        <span class="code-block">.st</span> This class stands for defining the font size for secondary text as <code>var(--st)</code>.
+      <span class="code-block">.tc</span> This class stands for setting the text color to <code>var(--tc)</code>.
     </p>
-    
+
     <p>
-        <span class="code-block">.hide</span> This class stands for hiding elements from the page. <code>display: none;</code> ensures the element does not appear or take up space in the layout.
+      <span class="code-block">.stc</span> This class stands for applying a secondary text color defined as
+      <code>var(--stc)</code>.
     </p>
-    
+
     <p>
-        <span class="code-block">.tac</span> This class stands for aligning text to the center of its container.
+      <span class="code-block">.hc</span> This class stands for applying the color for headings, defined as
+      <code>var(--hc)</code>.
     </p>
-    
+
     <p>
-        <span class="code-block">.m0a</span> This class stands for centering an element horizontally by setting its margin to <code>0 auto</code>.
+      <span class="code-block">h2</span> This selector stands for setting the font size of <code>&lt;h2&gt;</code>
+      elements to <code>2.3rem</code>.
     </p>
-    
+
     <p>
-        <span class="code-block">.tae</span> This class stands for aligning text to the end of the container. For left-to-right text, this means right-alignment; for right-to-left text, it means left-alignment.
+      <span class="code-block">.mh</span> This class stands for defining the font size for main headings as
+      <code>var(--mh)</code>.
     </p>
-    
+
     <p>
-        <span class="code-block">.tas</span> This class stands for aligning text to the start of the container. For left-to-right text, this means left-alignment; for right-to-left text, it means right-alignment.
+      <span class="code-block">.sh</span> This class stands for defining the font size for subheadings as
+      <code>var(--sh)</code>.
+    </p>
+
+    <p>
+      <span class="code-block">.mt</span> This class stands for defining the font size for main text as
+      <code>var(--mt)</code>.
+    </p>
+
+    <p>
+      <span class="code-block">.st</span> This class stands for defining the font size for secondary text as
+      <code>var(--st)</code>.
+    </p>
+
+    <p>
+      <span class="code-block">.hide</span> This class stands for hiding elements from the page.
+      <code>display: none;</code> ensures the element does not appear or take up space in the layout.
+    </p>
+
+    <p>
+      <span class="code-block">.tac</span> This class stands for aligning text to the center of its container.
+    </p>
+
+    <p>
+      <span class="code-block">.m0a</span> This class stands for centering an element horizontally by setting its margin
+      to <code>0 auto</code>.
+    </p>
+
+    <p>
+      <span class="code-block">.tae</span> This class stands for aligning text to the end of the container. For
+      left-to-right text, this means right-alignment; for right-to-left text, it means left-alignment.
+    </p>
+
+    <p>
+      <span class="code-block">.tas</span> This class stands for aligning text to the start of the container. For
+      left-to-right text, this means left-alignment; for right-to-left text, it means right-alignment.
     </p>
     <h2>Default values</h2>
     <table>
@@ -425,6 +542,7 @@
         <td>0 0 100%</td>
       </tr>
     </table>
-    </div>
-  </body>
+  </div>
+</body>
+
 </html>

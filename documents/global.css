@@ -5,19 +5,19 @@
 :root {
   font-size: 1rem;
   --font-family: "Segoe UI";
-  --container-size: min(1200px, calc(100% - 10px));
+  --my-container: min(var(--container-size) ,100%);
+  --container-size: 1200px;
   --mbgc: #00000b;
 
-  --mtc: #a307e6;
-  --tc: #08b917;
-  --stc: #414303;
-  --flex-box-min-width: 200px;
-  --mhc: #000211;
-  --hc: #000211;
-  --shc: #000211;
+  --mtc: #161616;
+  --tc: #161616;
+  --stc: #161616;
+  --mhc: #161616;
+  --hc: #161616;
+  --shc: #161616;
 
   --mh: 3.4rem;
-  --sh: 1.5rem;
+  --sh: 1rem;
 
   --differ: 10px;
 
@@ -58,10 +58,9 @@
   font-family: var(--font-family);
 }
 .container {
-  width: 100%;
-  /* padding: 10px; */
+  width: var(--my-container);
+  padding: 10px;
   margin: 0 auto;
-  width: var(--container-size);
 }
 
 .pointer {
@@ -81,12 +80,6 @@ img[src].auto {
 /*  */
 /*  */
 /*  */
-h1,
-h2,
-h3,
-p {
-  padding: 10px;
-}
 
 .main-heading {
   color: var(--mhc);
@@ -127,13 +120,18 @@ p {
 .btc {
   color: #000;
 }
+.wbgc {
+  background-color: #fff;
+}
+.bbgc {
+  background-color: #000;
+}
 .tc {
   color: var(--tc);
 }
 .stc {
   color: var(--stc);
 }
-
 .hc {
   color: var(--hc);
 }
@@ -180,4 +178,18 @@ h2 {
 }
 .full.screen {
   width: 100vw;
+}
+.f-grow > *{
+  flex-grow: 1;
+}
+.bglight{
+  background-color: rgb(218, 218, 218);
+}
+
+
+.grow > * {
+  transition: scale .1s ease-in;
+}
+.grow > *:hover{
+  scale: 1.03;
 }

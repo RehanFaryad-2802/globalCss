@@ -13,7 +13,8 @@
     min-width: 200px;
 } */
 
-.f:not(:has(.nowrap)) > * {
-   
-    min-width: var(--flex-box-min-width);
-  }
+.img img{
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    width: max(100px , 100%);
+}
