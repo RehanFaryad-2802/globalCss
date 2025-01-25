@@ -1,0 +1,19 @@
+.test-box{
+    background-color: red;
+    box-sizing: border-box;
+    border: 1px solid black;
+    height: 100px;
+}
+.width{
+    width: 100px;
+}
+
+
+/* .f:not(:has(.nowrap)) .f33{
+    min-width: 200px;
+} */
+
+.f:not(:has(.nowrap)) > * {
+   
+    min-width: var(--flex-box-min-width);
+  }

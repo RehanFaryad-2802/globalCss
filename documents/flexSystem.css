@@ -1,85 +1,114 @@
 .f {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .nowrap {
-    flex-wrap: nowrap !important;
+  flex-wrap: nowrap !important;
 }
 
 .f10 {
-    flex: var(--f10);
+  flex: var(--f10);
 }
 
 .f9 {
-    flex: var(--f9);
+  flex: var(--f9);
 }
 
 .f8 {
-    flex: var(--f8);
+  flex: var(--f8);
 }
 
 .f7 {
-    flex: var(--f7);
+  flex: var(--f7);
 }
 
 .f6 {
-    flex: var(--f6);
+  flex: var(--f6);
 }
 
 .f5 {
-    flex: var(--f5);
+  flex: var(--f5);
 }
 
 .f4 {
-    flex: var(--f4);
+  flex: var(--f4);
 }
 
 .f3 {
-    flex: var(--f3);
+  flex: var(--f3);
+}
+.f33 {
+  flex: var(--f33);
 }
 
 .f2 {
-    flex: var(--f2);
+  flex: var(--f2);
 }
 
 .f1 {
-    flex: var(--f1);
+  flex: var(--f1);
 }
 
 .f0 {
-    flex: 1 0 0;
+  flex: 1 1 0;
 }
-
+.f1-5 {
+  flex: var(--f1-5);
+}
+.f2-5 {
+  flex: var(--f2-5);
+}
+.f3-5 {
+  flex: var(--f3-5);
+}
+.f4-5 {
+  flex: var(--f4-5);
+}
+.f5-5 {
+  flex: var(--f5-5);
+}
+.f6-5 {
+  flex: var(--f6-5);
+}
+.f7-5 {
+  flex: var(--f7-5);
+}
+.f8-5 {
+  flex: var(--f8-5);
+}
+.f9-5 {
+  flex: var(--f9-5);
+}
 .fdc {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 .aic {
-    align-items: center;
+  align-items: center;
 }
 
 .jcc {
-    justify-content: center;
+  justify-content: center;
 }
 
 .jce {
-    justify-content: end;
+  justify-content: end;
 }
 
 .jcsb {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .jcse {
-    justify-content: space-evenly;
+  justify-content: space-evenly;
 }
 
 .fcsa {
-    justify-content: space-around;
+  justify-content: space-around;
 }
-.flex{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

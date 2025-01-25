@@ -5,13 +5,13 @@
 :root {
   font-size: 1rem;
   --font-family: "Segoe UI";
-
+  --container-size: min(1200px, calc(100% - 10px));
   --mbgc: #00000b;
 
   --mtc: #a307e6;
   --tc: #08b917;
   --stc: #414303;
-
+  --flex-box-min-width: 200px;
   --mhc: #000211;
   --hc: #000211;
   --shc: #000211;
@@ -19,21 +19,33 @@
   --mh: 3.4rem;
   --sh: 1.5rem;
 
+  --differ: 10px;
+
   --mt: 1.3rem;
   --st: 0.75rem;
 
-  --f1: 0 0 10%;
-  --f2: 0 0 20%;
-  --f3: 0 0 30%;
-  --f4: 0 0 40%;
-  --f5: 0 0 50%;
-  --f6: 0 0 60%;
-  --f7: 0 0 70%;
-  --f8: 0 0 80%;
-  --f9: 0 0 90%;
-  --f10: 0 0 100%;
+  --f1: 0 0 calc(10% - var(--differ));
+  --f2: 0 0 calc(20% - var(--differ));
+  --f3: 0 0 calc(30% - var(--differ));
+  --f33: 0 0 calc(33.33% - var(--differ));
+  --f4: 0 0 calc(40% - var(--differ));
+  --f5: 0 0 calc(50% - var(--differ));
+  --f6: 0 0 calc(60% - var(--differ));
+  --f7: 0 0 calc(70% - var(--differ));
+  --f8: 0 0 calc(80% - var(--differ));
+  --f9: 0 0 calc(90% - var(--differ));
+  --f1-5: 0 0 calc(15% - var(--differ));
+  --f2-5: 0 0 calc(25% - var(--differ));
+  --f3-5: 0 0 calc(35% - var(--differ));
+  --f4-5: 0 0 calc(45% - var(--differ));
+  --f5-5: 0 0 calc(55% - var(--differ));
+  --f6-5: 0 0 calc(65% - var(--differ));
+  --f7-5: 0 0 calc(75% - var(--differ));
+  --f8-5: 0 0 calc(85% - var(--differ));
+  --f9-5: 0 0 calc(95% - var(--differ));
+  --f10: 0 0 calc(100% - var(--differ));
 }
-.fdst{
+.fdst {
   display: block;
   display: grid;
 }
@@ -45,12 +57,11 @@
   box-sizing: border-box;
   font-family: var(--font-family);
 }
-
 .container {
   width: 100%;
-  padding: 10px;
+  /* padding: 10px; */
   margin: 0 auto;
-  max-width: var(--container-size);
+  width: var(--container-size);
 }
 
 .pointer {
@@ -76,7 +87,6 @@ h3,
 p {
   padding: 10px;
 }
-
 
 .main-heading {
   color: var(--mhc);
@@ -161,4 +171,13 @@ h2 {
 }
 .tas {
   text-align: start;
+}
+
+/*  */
+
+.full:not(.screen) {
+  width: 100%;
+}
+.full.screen {
+  width: 100vw;
 }
