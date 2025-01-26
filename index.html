@@ -5,136 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Margin and Padding Classes</title>
     <link rel="stylesheet" href="documents/global.css" />
-    <link rel="stylesheet" href="./documents/B-style.css">
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        padding: 20px;
-        background-color: #f4f4f9;
-      }
-      .example-box{
-        width: 100px;
-        height: 100px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-        background-color: orange;
-      }
-      p {
-        color: var(--stc);
-      }
-
-      table {
-        width: 60%;
-        border-collapse: collapse;
-        text-align: start;
-        margin: 0 auto;
-      }
-
-      th,
-      td {
-        padding: 4px;
-        text-align: left;
-        border: 1px solid #ddd;
-      }
-
-      .color-box {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-      }
-      .examples{
-        width: 500px;
-        margin: 0 auto;
-        display: flex;
-        padding: 1rem;
-        border-bottom: #272822 1px solid;
-      }
-      h1,
-      h2 {
-        color: var(--mtc);
-        text-align: center;
-      }
-
-      p span.code-block {
-        padding: 4px;
-        height: auto;
-        margin-right: 12px;
-        display: inline-block;
-      }
-
-      /* .container {
-        max-width: 800px;
-        margin: 0 auto;
-        background: #fff;
-        border: 1px solid #ddd;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      } */
-
-      h1 {
-        font-size: 4rem;
-      }
-
-      h2 {
-        font-size: 2rem;
-      }
-
-      .code-block {
-        background: #272822;
-        color: #f8f8f2;
-        padding: 10px;
-        height: 36px;
-        white-space: nowrap;
-
-        margin-top: 5px;
-        font-size: var(--st);
-        font-family: monospace;
-        overflow-y: hidden;
-        position: relative;
-      }
-      .code-block:before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0%;
-        height: 5px;
-        background-color: red;
-        z-index: 9999;
-      }
-
-      .code-block::-webkit-scrollbar {
-        height: 3px;
-      }
-      .code-block::-webkit-scrollbar-thumb {
-        background: linear-gradient(
-          45deg,
-          rgb(48, 48, 48),
-          rgba(255, 255, 255, 0.452)
-        );
-        border-radius: 10px;
-      }
-      p {
-        display: flex;
-        align-items: start;
-      }
-
-      .code-block span {
-        color: #66d9ef;
-      }
-      b,
-      strong {
-        margin-right: 9px;
-      }
-
-      .example {
-        margin-top: 20px;
-      }
-    </style>
+    <link rel="stylesheet" href="./documents/B-style.css" />
   </head>
   <body class="bglight">
     <div class="container wbgc">
@@ -262,21 +133,6 @@
       <pre class="code-block">
 .spacer1, .spacer2, .spacer3, .spacer4, .spacer5</pre
       >
-
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
       <h2 class="heading mt3r">Flex System</h2>
       <p>
         <span class="code-block f1">.f</span>
@@ -327,13 +183,12 @@
           </span>
           <br />
           <br />
-            <span>
+          <span>
             `.col-1` will set the min-width of the children to
-            calc(var(--container-size) - 50px). <br>
-            `.col-2` divides the container
-            into 2, setting each child’s min-width to calc(var(--container-size)
-            / 2 - 50px). <br>
-             This continues for .col-3, .col-4, and so on.
+            calc(var(--container-size) - 50px). <br />
+            `.col-2` divides the container into 2, setting each child’s
+            min-width to calc(var(--container-size) / 2 - 50px). <br />
+            This continues for .col-3, .col-4, and so on.
           </span>
         </span>
       </p>
@@ -398,15 +253,11 @@
       </p>
       <p>
         <span class="code-block f1">.cgX</span>
-        <span class="f9"
-          >Sets the `column gap` to `X` px.</span
-        >
+        <span class="f9">Sets the `column gap` to `X` px.</span>
       </p>
       <p>
         <span class="code-block f1">.rgX: </span>
-        <span class="f9"
-          >Sets the `row gap` to `X` px.</span
-        >
+        <span class="f9">Sets the `row gap` to `X` px.</span>
       </p>
       <p>
         <span class="code-block f1">.gapX: </span>
@@ -415,417 +266,365 @@
         >
       </p>
       <p>The values for `X` can be 5, 10, 15, 20, or 30.</p>
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
 
       <h2 class="heading mt3r">Headings, Texts(Paragraaphs)</h2>
       <h2 class="heading mb10">& Colors</h2>
 
-
       <!--  -->
-     <b class="mt">Headings:</b>
+      <b class="mt">Headings:</b>
       <p>
         <span class="code-block f1-5">.main-heading</span>
-        <span class="f8-5">This class stands for the main heading of the page. It applies specific styles such as text color (var(--mhc)), font size (var(--mh)), bold weight (800), center alignment (text-align: center;), and margin.</span>
+        <span class="f8-5"
+          >This class stands for the main heading of the page. It applies
+          specific styles such as text color (var(--mhc)), font size
+          (var(--mh)), bold weight (800), center alignment (text-align:
+          center;), and margin.</span
+        >
       </p>
       <p>
         <span class="code-block f1-5">.heading</span>
-        <span class="f8-5">This class stands for subheadings under the main heading. It applies a specific text color (var(--hc)), font size (2.3rem), and font weight (800).</span>
+        <span class="f8-5"
+          >This class stands for subheadings under the main heading. It applies
+          a specific text color (var(--hc)), font size (2.3rem), and font weight
+          (800).</span
+        >
       </p>
       <p>
         <span class="code-block f1-5">.sub-heading</span>
-        <span class="f8-5">This class stands for secondary headings and applies a distinct text color (var(--shc)), font size (var(--sh)), and font weight (700).</span>
+        <span class="f8-5"
+          >This class stands for secondary headings and applies a distinct text
+          color (var(--shc)), font size (var(--sh)), and font weight
+          (700).</span
+        >
       </p>
 
-     <b class="mt">Colors:</b>
+      <b class="mt">Colors:</b>
 
       <p>
         <span class="code-block f1-5">.bglight</span>
-        <span class="f8-5">This class stands for (background light) applying a light background color temporary.</span>
+        <span class="f8-5"
+          >This class stands for (background light) applying a light background
+          color temporary.</span
+        >
       </p>
-      <p>
+      <p></p>
       <p>
         <span class="code-block f1-5">.mbgc</span>
-        <span class="f8-5">This class stands for (main background color) applying a background color to an element using the value defined in var(--mbgc).</span>
+        <span class="f8-5"
+          >This class stands for (main background color) applying a background
+          color to an element using the value defined in var(--mbgc).</span
+        >
       </p>
       <p>
         <span class="code-block f1-5">.wbgc</span>
-        <span class="f8-5">This class stands for (white-space background color) applying a background color to an element of white.</span>
+        <span class="f8-5"
+          >This class stands for (white-space background color) applying a
+          background color to an element of white.</span
+        >
       </p>
       <p>
         <span class="code-block f1-5">.bbgc</span>
-        <span class="f8-5">This class stands for (black background color) applying a background color to an element of black.</span>
+        <span class="f8-5"
+          >This class stands for (black background color) applying a background
+          color to an element of black.</span
+        >
       </p>
       <p>
         <span class="code-block f1-5">.mtc</span>
-        <span class="f8-5">This class stands for (main text color) changing the text color to var(--mtc).</span>
+        <span class="f8-5"
+          >This class stands for (main text color) changing the text color to
+          var(--mtc).</span
+        >
       </p>
       <p>
         <span class="code-block f1-5">.mhc</span>
-        <span class="f8-5">This class stands for (main heading color) applying the color for main headings, defined as var(--mhc).</span>
+        <span class="f8-5"
+          >This class stands for (main heading color) applying the color for
+          main headings, defined as var(--mhc).</span
+        >
       </p>
       <p>
         <span class="code-block f1-5">.shc</span>
-        <span class="f8-5">This class stands for (sub heading color) applying the color for subheadings, defined as var(--shc).</span>
+        <span class="f8-5"
+          >This class stands for (sub heading color) applying the color for
+          subheadings, defined as var(--shc).</span
+        >
       </p>
       <p>
         <span class="code-block f1-5">.wtc</span>
-        <span class="f8-5">This class stands for (white text color) setting the text color to white (#fff).</span>
+        <span class="f8-5"
+          >This class stands for (white text color) setting the text color to
+          white (#fff).</span
+        >
       </p>
       <p>
         <span class="code-block f1-5">.btc</span>
-        <span class="f8-5">This class stands for (black text color) setting the text color to black (#000).</span>
+        <span class="f8-5"
+          >This class stands for (black text color) setting the text color to
+          black (#000).</span
+        >
       </p>
       <p>
         <span class="code-block f1-5">.tc</span>
-        <span class="f8-5">This class stands for (text color) setting the text color to var(--tc).</span>
+        <span class="f8-5"
+          >This class stands for (text color) setting the text color to
+          var(--tc).</span
+        >
       </p>
       <p>
         <span class="code-block f1-5">.stc</span>
-        <span class="f8-5">This class stands for (sub text color) applying a secondary text color defined as var(--stc).</span>
+        <span class="f8-5"
+          >This class stands for (sub text color) applying a secondary text
+          color defined as var(--stc).</span
+        >
       </p>
       <p>
         <span class="code-block f1-5">.hc</span>
-        <span class="f8-5">This class stands for (heading color) applying the color for headings, defined as var(--hc).</span>
+        <span class="f8-5"
+          >This class stands for (heading color) applying the color for
+          headings, defined as var(--hc).</span
+        >
       </p>
-     <b class="mt">Sizes:</b>
+      <b class="mt">Sizes:</b>
       <p>
         <span class="code-block f1-5">.mh</span>
-        <span class="f8-5">This class stands for (main heading) defining the font size for main headings as var(--mh).</span>
+        <span class="f8-5"
+          >This class stands for (main heading) defining the font size for main
+          headings as var(--mh).</span
+        >
       </p>
       <p>
         <span class="code-block f1-5">.sh</span>
-        <span class="f8-5">This class stands for (sub heading) defining the font size for subheadings as var(--sh).</span>
+        <span class="f8-5"
+          >This class stands for (sub heading) defining the font size for
+          subheadings as var(--sh).</span
+        >
       </p>
       <p>
         <span class="code-block f1-5">.mt</span>
-        <span class="f8-5">This class stands for (main text) defining the font size for main text as var(--mt).</span>
+        <span class="f8-5"
+          >This class stands for (main text) defining the font size for main
+          text as var(--mt).</span
+        >
       </p>
       <p>
         <span class="code-block f1-5">.st</span>
-        <span class="f8-5">This class stands for (sub text) defining the font size for secondary text as var(--st).</span>
+        <span class="f8-5"
+          >This class stands for (sub text) defining the font size for secondary
+          text as var(--st).</span
+        >
       </p>
-     <b class="mt">Alignments:</b>
-      
+      <b class="mt">Alignments:</b>
+
       <p>
         <span class="code-block f1-5">.m0a</span>
-        <span class="f8-5">This class stands (margin: 0 auto) for centering an element horizontally by setting its margin to 0 auto.</span>
+        <span class="f8-5"
+          >This class stands (margin: 0 auto) for centering an element
+          horizontally by setting its margin to 0 auto.</span
+        >
       </p>
       <p>
         <span class="code-block f1-5">.tac</span>
-        <span class="f8-5">This class stands for (text align center) aligning text to the center of its container.</span>
+        <span class="f8-5"
+          >This class stands for (text align center) aligning text to the center
+          of its container.</span
+        >
       </p>
       <p>
         <span class="code-block f1-5">.tae</span>
-        <span class="f8-5">This class stands for (text align end) aligning text to the end of the container. For left-to-right text, this means right-alignment; for right-to-left text, it means left-alignment.</span>
+        <span class="f8-5"
+          >This class stands for (text align end) aligning text to the end of
+          the container. For left-to-right text, this means right-alignment; for
+          right-to-left text, it means left-alignment.</span
+        >
       </p>
       <p>
         <span class="code-block f1-5">.tas</span>
-        <span class="f8-5">This class stands for (text align start) aligning text to the start of the container. For left-to-right text, this means left-alignment; for right-to-left text, it means right-alignment.</span>
+        <span class="f8-5"
+          >This class stands for (text align start) aligning text to the start
+          of the container. For left-to-right text, this means left-alignment;
+          for right-to-left text, it means right-alignment.</span
+        >
       </p>
-      
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
+
       <h2 class="mt3r heading">Hover Animation</h2>
       <p>
         <span class="code-block f1-5">.grow</span>
-        <span class="f8-5">`.grow` should be applied to the parent element. When a child element inside the parent is hovered, the scale(3%) effect is applied to it.</span>
+        <span class="f8-5"
+          >`.grow` should be applied to the parent element. When a child element
+          inside the parent is hovered, the scale(3%) effect is applied to
+          it.</span
+        >
       </p>
       <div class="grow examples">
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
-        <div class="example-box">Hover me</div>
       </div>
-      
+
       <p>
         <span class="code-block f1-5">.shrink</span>
-        <span class="f8-5">`.shrink` should be applied to the parent element. When a child element inside the parent is hovered, the scale(-3%) effect is applied to it.</span>
+        <span class="f8-5"
+          >`.shrink` should be applied to the parent element. When a child
+          element inside the parent is hovered, the scale(-3%) effect is applied
+          to it.</span
+        >
       </p>
       <div class="shrink examples">
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
-        <div class="example-box">Hover me</div>
       </div>
-      
+
       <p>
         <span class="code-block f1-5">.fadeIn</span>
-        <span class="f8-5">`.fadeIn` applies a low-opacity effect to child elements. On hover, the opacity transitions to full (1).</span>
+        <span class="f8-5"
+          >`.fadeIn` applies a low-opacity effect to child elements. On hover,
+          the opacity transitions to full (1).</span
+        >
       </p>
       <div class="fadeIn examples">
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
-        <div class="example-box">Hover me</div>
       </div>
-      
+
       <p>
         <span class="code-block f1-5">.fadeOut</span>
-        <span class="f8-5">`.fadeOut` applies a full-opacity effect to child elements. On hover, the opacity transitions to 0.8.</span>
+        <span class="f8-5"
+          >`.fadeOut` applies a full-opacity effect to child elements. On hover,
+          the opacity transitions to 0.8.</span
+        >
       </p>
       <div class="fadeOut examples">
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
-        <div class="example-box">Hover me</div>
       </div>
-      
+
       <p>
         <span class="code-block f1-5">.flip</span>
-        <span class="f8-5">`.flip` rotates the child element 180 degrees on hover, creating a 3D flipping effect.</span>
+        <span class="f8-5"
+          >`.flip` rotates the child element 180 degrees on hover, creating a 3D
+          flipping effect.</span
+        >
       </p>
       <div class="flip examples">
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
-        <div class="example-box">Hover me</div>
       </div>
-      
+
       <p>
         <span class="code-block f1-5">.grow-blur</span>
-        <span class="f8-5">`.grow-blur` applies a scaling and blur transition. On hover, the blur effect is removed, and the scale increases slightly.</span>
+        <span class="f8-5"
+          >`.grow-blur` applies a scaling and blur transition. On hover, the
+          blur effect is removed, and the scale increases slightly.</span
+        >
       </p>
-      <div class="grow examples blur">
-        <div class="example-box">Hover me</div>
+      <div class="grow-blur examples">
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
       </div>
-      
+
       <p>
         <span class="code-block f1-5">.pulse</span>
-        <span class="f8-5">`.pulse` creates a subtle pulsing animation on hover.</span>
+        <span class="f8-5"
+          >`.pulse` creates a subtle pulsing animation on hover.</span
+        >
       </p>
       <div class="pulse examples">
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
-        <div class="example-box">Hover me</div>
       </div>
-      
+
       <p>
         <span class="code-block f1-5">.shake</span>
-        <span class="f8-5">`.shake` causes a quick shaking motion when the child element is hovered.</span>
+        <span class="f8-5"
+          >`.shake` causes a quick shaking motion when the child element is
+          hovered.</span
+        >
       </p>
       <div class="shake examples">
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
-        <div class="example-box">Hover me</div>
       </div>
-      
+
       <p>
         <span class="code-block f1-5">.wobble-zoom</span>
-        <span class="f8-5">`.wobble-zoom` applies a wobbly zoom-in effect when hovered.</span>
+        <span class="f8-5"
+          >`.wobble-zoom` applies a wobbly zoom-in effect when hovered.</span
+        >
       </p>
-      <div class="wobble examples wobble-zoom">
-        <div class="example-box">Hover me</div>
+      <div class="wobble-zoom examples">
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
       </div>
-      
+
       <p>
         <span class="code-block f1-5">.ripple</span>
-        <span class="f8-5">`.ripple` adds a ripple effect originating from the center of the child element on hover.</span>
+        <span class="f8-5"
+          >`.ripple` adds a ripple effect originating from the center of the
+          child element on hover.</span
+        >
       </p>
       <div class="ripple examples">
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
-        <div class="example-box">Hover me</div>
       </div>
-      
-      
-      
+
       <p>
         <span class="code-block f1-5">.blur</span>
-        <span class="f8-5">`.blur` applies a blur effect to child elements, which disappears on hover.</span>
+        <span class="f8-5"
+          >`.blur` applies a blur effect to child elements, which disappears on
+          hover.</span
+        >
       </p>
       <div class="blur examples">
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
-        <div class="example-box">Hover me</div>
       </div>
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!-- <h2 class="mt3r heading">Animation</h2>
-      <p>
-        <span class="code-block f1-5">.wave</span>
-        <span class="f8-5">`.grow` should be applied to the parent element. When a child element inside the parent is hovered, the scale(3%) effect is applied to it.</span>
-      </p> -->
-      
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
+
       <h2 class="mt3r heading tas">More...</h2>
       <p>
         <span class="code-block f1-5">.pointer</span>
-        <span class="f8-5">This class stands for applying a pointer cursor to interactive elements (e.g., links, buttons). It changes the mouse cursor to a hand when hovering over an element with this class. cursor: pointer; is used for this effect.</span>
+        <span class="f8-5"
+          >This class stands for applying a pointer cursor to interactive
+          elements (e.g., links, buttons). It changes the mouse cursor to a hand
+          when hovering over an element with this class. cursor: pointer; is
+          used for this effect.</span
+        >
       </p>
       <p>
         <span class="code-block f1-5">img[src]</span>
-        <span class="f8-5">This selector stands for targeting all <img> elements that have a src attribute. width: 100%; sets the image width to 100% of its parent container.</span>
+        <span class="f8-5"
+          >This selector stands for targeting all <img /> elements that have a
+          src attribute. width: 100%; sets the image width to 100% of its parent
+          container.</span
+        >
       </p>
       <p>
         <span class="code-block f1-5">img[src].auto</span>
-        <span class="f8-5">This selector stands for targeting images that have the src attribute and the auto class. width: auto; ensures that the image's natural width is preserved.</span>
+        <span class="f8-5"
+          >This selector stands for targeting images that have the src attribute
+          and the auto class. width: auto; ensures that the image's natural
+          width is preserved.</span
+        >
       </p>
       <p>
         <span class="code-block f1-5">.hide</span>
-        <span class="f8-5">This class stands for hiding elements from the page. display: none; ensures the element does not appear or take up space in the layout.</span>
+        <span class="f8-5"
+          >This class stands for hiding elements from the page. display: none;
+          ensures the element does not appear or take up space in the
+          layout.</span
+        >
       </p>
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      <!--  -->
-      
-      <h2>Default values</h2>
-      <table>
-        <tr>
-          <th>Variables</th>
-          <th>Values (default)</th>
-        </tr>
-        <tr>
-          <td>--mbgc (main background color)</td>
-          <td>#00000b</td>
-        </tr>
-        <tr>
-          <td>--mtc (main text color)</td>
-          <td>#a307e6</td>
-        </tr>
-        <tr>
-          <td>--tc (text color)</td>
-          <td>#08b917</td>
-        </tr>
-        <tr>
-          <td>--stc (sub text color)</td>
-          <td>#414303</td>
-        </tr>
-        <tr>
-          <td>--mhc (main heading color)</td>
-          <td>#000211</td>
-        </tr>
-        <tr>
-          <td>--hc (heading color)</td>
-          <td>#000211</td>
-        </tr>
-        <tr>
-          <td>--shc (sub heading color)</td>
-          <td>#000211</td>
-        </tr>
-        <tr>
-          <td>--mh (main heading)</td>
-          <td>3.4rem</td>
-        </tr>
-        <tr>
-          <td>--sh (sub heading)</td>
-          <td>1.5rem</td>
-        </tr>
-        <tr>
-          <td>--mt (main text)</td>
-          <td>1.3rem</td>
-        </tr>
-        <tr>
-          <td>--st (sub text)</td>
-          <td>0.75rem</td>
-        </tr>
-        <tr>
-          <td>--font-family</td>
-          <td>"Segoe UI"</td>
-        </tr>
-        <tr>
-          <td>--f1</td>
-          <td>0 0 10%</td>
-        </tr>
-        <tr>
-          <td>--f2</td>
-          <td>0 0 20%</td>
-        </tr>
-        <tr>
-          <td>--f3</td>
-          <td>0 0 30%</td>
-        </tr>
-        <tr>
-          <td>--f4</td>
-          <td>0 0 40%</td>
-        </tr>
-        <tr>
-          <td>--f5</td>
-          <td>0 0 50%</td>
-        </tr>
-        <tr>
-          <td>--f6</td>
-          <td>0 0 60%</td>
-        </tr>
-        <tr>
-          <td>--f7</td>
-          <td>0 0 70%</td>
-        </tr>
-        <tr>
-          <td>--f8</td>
-          <td>0 0 80%</td>
-        </tr>
-        <tr>
-          <td>--f9</td>
-          <td>0 0 90%</td>
-        </tr>
-        <tr>
-          <td>--f10</td>
-          <td>0 0 100%</td>
-        </tr>
-      </table>
     </div>
   </body>
 </html>

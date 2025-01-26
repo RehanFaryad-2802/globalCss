@@ -1,46 +1,127 @@
 @import url(global.css);
 
 :root {
-    font-size: 1rem;
-    --font-family: "Segoe UI";
-    --my-container: min(var(--container-size) ,100%);
-    --container-size: 1000px;
-    --mbgc: #00000b;
-  
-    --mtc: #161616;
-    --tc: #161616;
-    --stc: #161616;
-    --mhc: #161616;
-    --hc: #161616;
-    --shc: #161616;
-  
-    --mh: 3.4rem;
-    --sh: 1rem;
-  
-    --differ: 10px;
-  
-    --mt: 1.3rem;
-    --st: 0.75rem;
-  
-    --f1: 0 0 calc(10% - var(--differ));
-    --f2: 0 0 calc(20% - var(--differ));
-    --f3: 0 0 calc(30% - var(--differ));
-    --f33: 0 0 calc(33.33% - var(--differ));
-    --f4: 0 0 calc(40% - var(--differ));
-    --f5: 0 0 calc(50% - var(--differ));
-    --f6: 0 0 calc(60% - var(--differ));
-    --f7: 0 0 calc(70% - var(--differ));
-    --f8: 0 0 calc(80% - var(--differ));
-    --f9: 0 0 calc(90% - var(--differ));
-    --f0-5: 0 0 calc(05% - var(--differ));
-    --f1-5: 0 0 calc(15% - var(--differ));
-    --f2-5: 0 0 calc(25% - var(--differ));
-    --f3-5: 0 0 calc(35% - var(--differ));
-    --f4-5: 0 0 calc(45% - var(--differ));
-    --f5-5: 0 0 calc(55% - var(--differ));
-    --f6-5: 0 0 calc(65% - var(--differ));
-    --f7-5: 0 0 calc(75% - var(--differ));
-    --f8-5: 0 0 calc(85% - var(--differ));
-    --f9-5: 0 0 calc(95% - var(--differ));
-    --f10: 0 0 calc(100% - var(--differ));
-  }
+  font-size: 1rem;
+  --font-family: "Segoe UI";
+  --container-size: 1000px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  background-color: #f4f4f9;
+}
+.example-box {
+  padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: orange;
+}
+p {
+  color: var(--stc);
+}
+
+table {
+  width: 60%;
+  border-collapse: collapse;
+  text-align: start;
+  margin: 0 auto;
+}
+
+th,
+td {
+  padding: 4px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.color-box {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+.examples {
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  border-bottom: #272822 1px solid;
+}
+h1,
+h2 {
+  color: var(--mtc);
+  text-align: center;
+}
+
+p span.code-block {
+  padding: 4px;
+  height: auto;
+  margin-right: 12px;
+  display: inline-block;
+}
+
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+.code-block {
+  background: #272822;
+  color: #f8f8f2;
+  padding: 10px;
+  height: 36px;
+  white-space: nowrap;
+
+  margin-top: 5px;
+  font-size: var(--st);
+  font-family: monospace;
+  overflow-y: hidden;
+  position: relative;
+}
+.code-block:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 5px;
+  background-color: red;
+  z-index: 9999;
+}
+
+.code-block::-webkit-scrollbar {
+  height: 3px;
+}
+.code-block::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    45deg,
+    rgb(48, 48, 48),
+    rgba(255, 255, 255, 0.452)
+  );
+  border-radius: 10px;
+}
+p {
+  display: flex;
+  align-items: start;
+}
+
+.code-block span {
+  color: #66d9ef;
+}
+b,
+strong {
+  margin-right: 9px;
+}
+
+.example {
+  margin-top: 20px;
+}
