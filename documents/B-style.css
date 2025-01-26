@@ -1,29 +1,46 @@
 @import url(global.css);
 
-:root{
-    --main-color: #00f7ff;
-    --main-helper-color:#000000;
-    --para-color: #000000;
-    --para-color-2: #000000;
-    --heading-main-color: #000000;
-    --heading-color: #000000;
-    --footer-color: #000000;
-    
-    --para-size: 1rem;
-    --para-min-size: calc(1rem - 3px);
-    --heading-main-size: 2rem;
-    --heading-size: calc(2rem - 8px);
-    --heading-min-size: 1rem;
-    --container-size: 1100px;
-    
-    --f1: 0 0 10%;
-    --f2: 0 0 20%;
-    --f3: 0 0 30%;
-    --f4: 0 0 40%;
-    --f5: 0 0 50%;
-    --f6: 0 0 60%;
-    --f7: 0 0 70%;
-    --f8: 0 0 80%;
-    --f9: 0 0 90%;
-    --f10: 0 0 100%;
-}
+:root {
+    font-size: 1rem;
+    --font-family: "Segoe UI";
+    --my-container: min(var(--container-size) ,100%);
+    --container-size: 1000px;
+    --mbgc: #00000b;
+  
+    --mtc: #161616;
+    --tc: #161616;
+    --stc: #161616;
+    --mhc: #161616;
+    --hc: #161616;
+    --shc: #161616;
+  
+    --mh: 3.4rem;
+    --sh: 1rem;
+  
+    --differ: 10px;
+  
+    --mt: 1.3rem;
+    --st: 0.75rem;
+  
+    --f1: 0 0 calc(10% - var(--differ));
+    --f2: 0 0 calc(20% - var(--differ));
+    --f3: 0 0 calc(30% - var(--differ));
+    --f33: 0 0 calc(33.33% - var(--differ));
+    --f4: 0 0 calc(40% - var(--differ));
+    --f5: 0 0 calc(50% - var(--differ));
+    --f6: 0 0 calc(60% - var(--differ));
+    --f7: 0 0 calc(70% - var(--differ));
+    --f8: 0 0 calc(80% - var(--differ));
+    --f9: 0 0 calc(90% - var(--differ));
+    --f0-5: 0 0 calc(05% - var(--differ));
+    --f1-5: 0 0 calc(15% - var(--differ));
+    --f2-5: 0 0 calc(25% - var(--differ));
+    --f3-5: 0 0 calc(35% - var(--differ));
+    --f4-5: 0 0 calc(45% - var(--differ));
+    --f5-5: 0 0 calc(55% - var(--differ));
+    --f6-5: 0 0 calc(65% - var(--differ));
+    --f7-5: 0 0 calc(75% - var(--differ));
+    --f8-5: 0 0 calc(85% - var(--differ));
+    --f9-5: 0 0 calc(95% - var(--differ));
+    --f10: 0 0 calc(100% - var(--differ));
+  }

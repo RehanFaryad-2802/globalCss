@@ -18,3 +18,7 @@
     object-fit: cover;
     width: max(100px , 100%);
 }
+.code-block{
+    max-height: 100px;
+
+}

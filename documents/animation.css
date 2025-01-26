@@ -1,0 +1,28 @@
+.wave > * {
+  display: inline-block;
+  animation: wave 1.5s infinite ease-in-out;
+}
+@keyframes wave {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.ani-ripple > * {
+  display: inline-block;
+  animation: rippleEffect 1.5s infinite ease-in-out;
+}
+@keyframes rippleEffect {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.5;
+  }
+}
