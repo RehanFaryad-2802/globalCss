@@ -1,117 +1,137 @@
+/* Animation Base */
+.grow > *,
+.shrink > *,
+.fadeIn > *,
+.fadeOut > *,
+.flip > *,
+.grow-blur > *,
+.pulse > *,
+.shake > *,
+.glow > *,
+.wobble-zoom > *,
+.ripple > *,
+.drop-in > *,
+.blur > * {
+  transition: all 0.3s ease-in-out;
+}
 
-.grow > * {
-    transition: scale .1s ease-in;
+/* Grow Animation */
+.grow > *:hover {
+  transform: scale(1.03);
+}
+
+/* Shrink Animation */
+.shrink > *:hover {
+  transform: scale(0.97);
+}
+
+/* Fade In Animation */
+.fadeIn > * {
+  opacity: 0.3;
+}
+.fadeIn > *:hover {
+  opacity: 1;
+}
+
+/* Fade Out Animation */
+.fadeOut > * {
+  opacity: 1;
+}
+.fadeOut > *:hover {
+  opacity: 0.4;
+}
+
+/* Flip Animation */
+.flip > * {
+  transform-style: preserve-3d;
+}
+.flip > *:hover {
+  transform: rotateY(180deg);
+}
+
+/* Grow with Blur Animation */
+.grow-blur > * {
+  filter: blur(2px);
+}
+.grow-blur > *:hover {
+  transform: scale(1.03);
+  filter: blur(0);
+}
+
+/* Pulse Animation */
+.pulse > *:hover {
+  animation: pulse 0.5s ease-in-out;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Shake Animation */
+.shake > *:hover {
+  animation: shake 0.1s ease-in-out;
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+}
+
+/* Glow Animation */
+.glow > *:hover {
+  box-shadow: 0 0 10px rgba(255, 165, 0, 1); /* Orange glow */
+}
+
+/* Wobble Zoom Animation */
+.wobble-zoom > *:hover {
+  animation: wobble 0.8s ease;
+}
+@keyframes wobble {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(-5deg) scale(1.08); }
+  75% { transform: rotate(5deg); }
+}
+
+/* Ripple Animation */
+.ripple > * {
+  position: relative;
+  overflow: hidden;
+}
+.ripple > *:hover::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  animation: ripple 0.6s linear;
+}
+@keyframes ripple {
+  to {
+    transform: translate(-50%, -50%) scale(50);
+    opacity: 0;
   }
-  .grow > *:hover{
-    scale: 1.03;
-  }
-  .shrink > * {
-    transition: scale .1s ease-in;
-  }
-  .shrink > *:hover{
-    scale: 0.97;
-  }
-  .fadeIn > * {
-    opacity: 0.3;
-    transition: opacity 0.3s ease-in-out;
-  }
-  .fadeIn > *:hover {
-    opacity: 1;
-  }
-  .fadeOut > * {
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
-  }
-  .fadeOut > *:hover {
-    opacity: 0.4;
-  }
-  .flip > * {
-    transition: transform 0.5s ease-in-out;
-    transform-style: preserve-3d;
-  }
-  .flip > *:hover {
-    transform: rotateY(180deg);
-  }
-  
-  .grow-blur > * {
-    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-    filter: blur(2px);
-  }
-  .grow-blur > *:hover {
-    transform: scale(1.03);
-    filter: blur(0px);
-  }
-  .pulse > *:hover {
-    animation: pulse .5s 1 ease-in-out;
-  }
-  
-  @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-  }
-  
-  
-  .shake > *:hover {
-    animation: shake 0.1s ease-in-out 1;
-  }
-  @keyframes shake {
-    0% { transform: translateX(-5px); }
-    25% { transform: translateX(5px); }
-    50% { transform: translateX(-5px); }
-    75% { transform: translateX(5px); }
-    100% { transform: translateX(0); }
-  }
-  .glow > * {
-    transition: box-shadow 0.3s ease;
-  }
-  .glow > *:hover {
-    box-shadow: 0 0 10px rgba(255, 165, 0, 1); /* Orange glow */
-  }
-  .wobble-zoom > *:hover {
-    animation: wobble .8s ease 1;
-  }
-  @keyframes wobble {
-    0%, 100% { transform: rotate(0deg) scale(1); }
-    25% { transform: rotate(5deg); }
-    50% { transform: rotate(-5deg) scale(1.08); }
-    75% { transform: rotate(5deg); }
-  }
-  .ripple > * {
-    position: relative;
-    overflow: hidden;
-  }
-  .ripple > *:hover::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 10px;
-    height: 10px;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    animation: ripple 0.6s linear;
-  }
-  @keyframes ripple {
-    to {
-      transform: translate(-50%, -50%) scale(50);
-      opacity: 0;
-    }
-  }
-  
-  .drop-in > *:hover {
-    animation: dropIn 1s 1;
-  }
-  @keyframes dropIn {
-    0% { transform: translateY(-100%); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
-  }
-  .blur > * {
-    transition: filter 0.3s ease;
-    filter: blur(2px);
-  }
-  .blur > *:hover {
-    filter: blur(0px);
-  }
-  
+}
+
+/* Drop In Animation */
+.drop-in > *:hover {
+  animation: dropIn 1s ease;
+}
+@keyframes dropIn {
+  0% { transform: translateY(-100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Blur Animation */
+.blur > * {
+  filter: blur(2px);
+}
+.blur > *:hover {
+  filter: blur(0);
+}
