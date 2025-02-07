@@ -6,12 +6,32 @@
 .flip > *,
 .grow-blur > *,
 .pulse > *,
+.skew > *,
+.hologram > *,
+.swing > *,
+.fade-slide > *,
 .shake > *,
+.rotate-scale > *,
+.slide-in > *,
 .glow > *,
+.bounce > *,
 .wobble-zoom > *,
 .ripple > *,
 .drop-in > *,
-.blur > * {
+.blur > *,
+.color-change > *,
+.border-pulse > *,
+.rotate-skew > *,
+.blur-darken > *,
+.slide-up > *,
+.tilt > *,
+.scale-rotate > *,
+.outline > *,
+.wiggle 
+
+
+
+{
   transition: all 0.3s ease-in-out;
 }
 
@@ -134,4 +154,119 @@
 }
 .blur > *:hover {
   filter: blur(0);
+}
+
+
+
+
+
+
+
+/* After */
+.spin{
+  overflow: hidden;
+}
+/* Spin Animation */
+.spin > *:hover {
+  transform: rotate(360deg);
+  transition: all 0.5s ease-in-out;
+}
+
+/* Slide In Animation */
+.slide-in > *:hover {
+  transform: translateX(15px);
+}
+
+/* Bounce Animation */
+.bounce > *:hover {
+  transition: all 0.5s ease-in-out;
+  animation: bounce 0.5s ease-in-out;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Swing Animation */
+.swing > *:hover {
+  animation: swing 0.5s ease-in-out;
+}
+@keyframes swing {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(15deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Skew Animation */
+.skew > *:hover {
+  transform: skewX(10deg);
+}
+
+/* Rotate and Scale Animation */
+.rotate-scale > *:hover {
+  transform: rotate(10deg) scale(1.1);
+}
+
+
+
+.liquid > * {
+  position: relative;
+  overflow: hidden;
+}
+.liquid > *::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(52, 152, 219, 0.5);
+  transition: top 0.5s ease-in-out;
+}
+.liquid > *:hover::before {
+  top: 0;
+}
+
+.wave > * {
+  position: relative;
+  overflow: hidden;
+}
+.wave > *::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+}
+.wave > *:hover::before {
+  transition: left 0.5s ease-in-out;
+  left: 100%;
+}
+
+
+
+.hologram > * {
+  position: relative;
+  border: 2px solid transparent;
+  /* transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; */
+}
+.hologram > *:hover {
+  border-color: rgba(0, 255, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 40px rgba(0, 255, 255, 0.5);
+}
+
+
+
+.holographic > * {
+  background: linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-position: 0 100%;
+  color: transparent;
+  transition: background-position 0.5s ease-in-out;
+}
+.holographic > *:hover {
+  background-position: 100% 0;
 }

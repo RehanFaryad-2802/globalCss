@@ -2,52 +2,62 @@
 @import url("flexSystem.css");
 @import url("border-radius.css");
 @import url("hover.css");
-@import url("animation.css");
 
 :root {
   font-size: 1rem;
-  --font-family: "Segoe UI";
-  --my-container: min(var(--container-size) ,100%);
-  --container-size: 1200px;
-  --mbgc: #00000b;
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --my-container: min(var(--container-size), 100%);
+  --container-size: 1100px;
+  --mbgc: #000127;
 
-  --mtc: #161616;
-  --tc: #161616;
-  --stc: #161616;
-  --mhc: #161616;
-  --hc: #161616;
-  --shc: #161616;
+  --mtc: #303030;
+  --tc: #303030;
+  --stc: #303030;
+  --mhc: #303030;
+  --hc: #303030;
+  --shc: #303030;
 
-  --mh: 3.4rem;
-  --sh: 1rem;
+  /* --mh: 3.2rem;
+  --heading: 2.3rem;
+  --sh: 1.2rem;
 
-  --differ: 10px;
+  --mt: 1.2rem;
+  --text: 1.01rem;
+  --st: 0.80rem; */
 
-  --mt: 1.3rem;
-  --st: 0.75rem;
-
-  --f1: 0 0 calc(10% - var(--differ));
-  --f2: 0 0 calc(20% - var(--differ));
-  --f3: 0 0 calc(30% - var(--differ));
-  --f33: 0 0 calc(33.33% - var(--differ));
-  --f4: 0 0 calc(40% - var(--differ));
-  --f5: 0 0 calc(50% - var(--differ));
-  --f6: 0 0 calc(60% - var(--differ));
-  --f7: 0 0 calc(70% - var(--differ));
-  --f8: 0 0 calc(80% - var(--differ));
-  --f9: 0 0 calc(90% - var(--differ));
-  --f0-5: 0 0 calc(05% - var(--differ));
-  --f1-5: 0 0 calc(15% - var(--differ));
-  --f2-5: 0 0 calc(25% - var(--differ));
-  --f3-5: 0 0 calc(35% - var(--differ));
-  --f4-5: 0 0 calc(45% - var(--differ));
-  --f5-5: 0 0 calc(55% - var(--differ));
-  --f6-5: 0 0 calc(65% - var(--differ));
-  --f7-5: 0 0 calc(75% - var(--differ));
-  --f8-5: 0 0 calc(85% - var(--differ));
-  --f9-5: 0 0 calc(95% - var(--differ));
-  --f10: 0 0 calc(100% - var(--differ));
+  --f1: 0 0 calc(10% - 10px);
+  --f2: 0 0 calc(20% - 10px);
+  --f3: 0 0 calc(30% - 10px);
+  --f33: 0 0 calc(33.33% - 10px);
+  --f4: 0 0 calc(40% - 10px);
+  --f5: 0 0 calc(50% - 10px);
+  --f6: 0 0 calc(60% - 10px);
+  --f7: 0 0 calc(70% - 10px);
+  --f8: 0 0 calc(80% - 10px);
+  --f9: 0 0 calc(90% - 10px);
+  --f0-5: 0 0 calc(05% - 10px);
+  --f1-5: 0 0 calc(15% - 10px);
+  --f2-5: 0 0 calc(25% - 10px);
+  --f3-5: 0 0 calc(35% - 10px);
+  --f4-5: 0 0 calc(45% - 10px);
+  --f5-5: 0 0 calc(55% - 10px);
+  --f6-5: 0 0 calc(65% - 10px);
+  --f7-5: 0 0 calc(75% - 10px);
+  --f8-5: 0 0 calc(85% - 10px);
+  --f9-5: 0 0 calc(95% - 10px);
+  --f10: 0 0 100%;
 }
+
+:root {
+  --mh: clamp(2rem, 4vw, 4rem); /* Main heading size */
+  --heading: clamp(1.8rem, 3vw, 3rem); /* Subheading */
+  --sh: clamp(1.2rem, 2vw, 2rem); /* Small heading size */
+
+  --mt: clamp(1rem, 1.6vw, 1.8rem); /* Main text size */
+  --text: clamp(0.85rem, 1.4vw, 1.2rem); /* Text */
+  --st: clamp(0.7rem, 1vw, 1rem); /* Small text */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -57,8 +67,8 @@
   font-family: var(--font-family);
 }
 .container {
-  width: var(--my-container);
-  padding: 10px;
+  max-width: var(--my-container);
+  padding: 15px;
   margin: 0 auto;
 }
 
@@ -80,22 +90,47 @@ img[src].auto {
 /*  */
 /*  */
 
+/* margin */
+.main-heading,
+.heading,
+.sub-heading,
+.text,
+.sub-text,
+.main-text {
+  margin-top: 10px;
+}
+
 .main-heading {
   color: var(--mhc);
   font-size: var(--mh);
-  font-weight: 800;
-  text-align: center;
+  font-weight: 700;
   margin: 1rem 0;
 }
 .heading {
   color: var(--hc);
-  font-size: 2.3rem;
-  font-weight: 800;
+  font-size: var(--heading);
+  font-weight: 700;
 }
 .sub-heading {
   color: var(--shc);
   font-size: var(--sh);
   font-weight: 700;
+}
+
+.main-text {
+  color: var(--mtc);
+  font-size: var(--mt);
+  font-weight: 400;
+}
+.text {
+  color: var(--tc);
+  font-size: var(--text);
+  font-weight: 400;
+}
+.sub-text {
+  color: var(--stc);
+  font-size: var(--st);
+  font-weight: 400;
 }
 
 .mbgc {
@@ -170,7 +205,7 @@ h2 {
   text-align: start;
 }
 
-.bglight{
+.bglight {
   background-color: rgb(218, 218, 218);
 }
 
@@ -182,7 +217,5 @@ h2 {
 .full.screen {
   width: 100vw;
 }
-
-
 
 
