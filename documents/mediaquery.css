@@ -71,12 +71,12 @@
   .f.col-2 > *,
   .f.col-3 > *,
   .f.col-4 > *,
-  .f.col-5.wrap > *,
-  .f.col-6.wrap > *,
-  .f.col-7.wrap > *,
-  .f.col-8.wrap > *,
-  .f.col-9.wrap > *,
-  .f.col-10.wrap > * {
+  .f.col-5 > *,
+  .f.col-6 > *,
+  .f.col-7 > *,
+  .f.col-8 > *,
+  .f.col-9 > *,
+  .f.col-10 > * {
     flex: var(--col-1) !important;
   }
 }

@@ -244,29 +244,3 @@
   transition: left 0.5s ease-in-out;
   left: 100%;
 }
-
-
-
-.hologram > * {
-  position: relative;
-  border: 2px solid transparent;
-  /* transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; */
-}
-.hologram > *:hover {
-  border-color: rgba(0, 255, 255, 0.5);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 40px rgba(0, 255, 255, 0.5);
-}
-
-
-
-.holographic > * {
-  background: linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc);
-  background-clip: text;
-  -webkit-background-clip: text;
-  background-position: 0 100%;
-  color: transparent;
-  transition: background-position 0.5s ease-in-out;
-}
-.holographic > *:hover {
-  background-position: 100% 0;
-}

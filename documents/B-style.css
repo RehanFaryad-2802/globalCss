@@ -75,10 +75,12 @@ code {
   padding: 10px;
   border-radius: 5px;
   font-family: "Courier New", monospace;
-  margin: 10px 0;
+  margin-bottom: 10px;
   display: block;
 }
-
+p:has(.code-block) {
+  margin-top: 10px;
+}
 .f {
   display: flex;
   flex-wrap: wrap;

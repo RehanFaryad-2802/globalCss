@@ -22,6 +22,9 @@
         &lt;link rel="stylesheet"
         href="https://rfglobalcss.netlify.app/documents/global.css"&gt;
       </div>
+      <div class="code-block st">
+        &lt;script src="href="https://rfglobalcss.netlify.app/documents/C-global.js"&gt;&lt;/script&gt;
+      </div>
       <h2 class="heading mt3r">Margin & Padding Classes</h2>
       <p>
         <strong>Explanation:</strong> Margin and Padding classes control the
@@ -174,22 +177,12 @@
         <span class="code-block f1">.col-[X]</span>
         <span class="f9">
           <span>
-            This class dynamically sets the min-width of child elements based on
-            the column count (col-X) where X starts from 1 to 10 by dividing the
-            container size (--container-size) by the number of columns (X) and
-            subtracting 50px. It applies only if the parent doesn’t contain a
-            descendant with the .nowrap class, allowing flexible layouts unless
-            .nowrap is present. <br />
-            For example:
+            This is a responsive flexbox grid system that adjusts column sizes and behavior based on screen width. The grid supports up to 10 columns <code>(col-1 to col-10)</code> and ensures a consistent layout across devices with various breakpoints.
           </span>
           <br />
           <br />
           <span>
-            `.col-1` will set the min-width of the children to
-            calc(var(--container-size) - 50px). <br />
-            `.col-2` divides the container into 2, setting each child’s
-            min-width to calc(var(--container-size) / 2 - 50px). <br />
-            This continues for .col-3, .col-4, and so on.
+            
           </span>
         </span>
       </p>
@@ -276,28 +269,40 @@
       <p>
         <span class="code-block f1-5">.main-heading</span>
         <span class="f8-5"
-          >This class stands for the main heading of the page. It applies
-          specific styles such as text color (var(--mhc)), font size
-          (var(--mh)), bold weight (800), center alignment (text-align:
-          center;), and margin.</span
+          >This class represents the main heading of the page, usually used for the most important titles.</span
         >
       </p>
       <p>
         <span class="code-block f1-5">.heading</span>
         <span class="f8-5"
-          >This class stands for subheadings under the main heading. It applies
-          a specific text color (var(--hc)), font size (2.3rem), and font weight
-          (800).</span
+          >This class is for subheadings, typically placed under the main heading to introduce sections.</span
         >
       </p>
       <p>
         <span class="code-block f1-5">.sub-heading</span>
         <span class="f8-5"
-          >This class stands for secondary headings and applies a distinct text
-          color (var(--shc)), font size (var(--sh)), and font weight
-          (700).</span
+          >This class is used for secondary headings, offering additional context or subtopics.</span
         >
       </p>
+      <p>
+        <span class="code-block f1-5">.main-text</span>
+        <span class="f8-5"
+          >This class is for the primary content text, generally used for body paragraphs.</span
+        >
+      </p>
+      <p>
+        <span class="code-block f1-5">.text</span>
+        <span class="f8-5"
+          >This class is for regular text, often used for smaller sections or descriptions.</span
+        >
+      </p>
+      <p>
+        <span class="code-block f1-5">.sub-text</span>
+        <span class="f8-5"
+          >This class is for secondary text, usually in a smaller size, for less prominent content.</span
+        >
+      </p>
+      
 
       <b class="mt">Colors:</b>
 
@@ -447,7 +452,40 @@
           for right-to-left text, it means right-alignment.</span
         >
       </p>
-
+      <h2 class="mt3r heading tas">More...</h2>
+      <p>
+        <span class="code-block f1-5">.pointer</span>
+        <span class="f8-5"
+          >This class stands for applying a pointer cursor to interactive
+          elements (e.g., links, buttons). It changes the mouse cursor to a hand
+          when hovering over an element with this class. cursor: pointer; is
+          used for this effect.</span
+        >
+      </p>
+      <p>
+        <span class="code-block f1-5">img[src]</span>
+        <span class="f8-5"
+          >This selector stands for targeting all <img /> elements that have a
+          src attribute. width: 100%; sets the image width to 100% of its parent
+          container.</span
+        >
+      </p>
+      <p>
+        <span class="code-block f1-5">img[src].auto</span>
+        <span class="f8-5"
+          >This selector stands for targeting images that have the src attribute
+          and the auto class. width: auto; ensures that the image's natural
+          width is preserved.</span
+        >
+      </p>
+      <p>
+        <span class="code-block f1-5">.hide</span>
+        <span class="f8-5"
+          >This class stands for hiding elements from the page. display: none;
+          ensures the element does not appear or take up space in the
+          layout.</span
+        >
+      </p>
       <h2 class="mt3r heading">Hover Animation</h2>
       <p>
         <span class="code-block f1-5">.grow</span>
@@ -679,40 +717,7 @@
         <div class="example-box">Hover me</div>
       </div>
       
-      <h2 class="mt3r heading tas">More...</h2>
-      <p>
-        <span class="code-block f1-5">.pointer</span>
-        <span class="f8-5"
-          >This class stands for applying a pointer cursor to interactive
-          elements (e.g., links, buttons). It changes the mouse cursor to a hand
-          when hovering over an element with this class. cursor: pointer; is
-          used for this effect.</span
-        >
-      </p>
-      <p>
-        <span class="code-block f1-5">img[src]</span>
-        <span class="f8-5"
-          >This selector stands for targeting all <img /> elements that have a
-          src attribute. width: 100%; sets the image width to 100% of its parent
-          container.</span
-        >
-      </p>
-      <p>
-        <span class="code-block f1-5">img[src].auto</span>
-        <span class="f8-5"
-          >This selector stands for targeting images that have the src attribute
-          and the auto class. width: auto; ensures that the image's natural
-          width is preserved.</span
-        >
-      </p>
-      <p>
-        <span class="code-block f1-5">.hide</span>
-        <span class="f8-5"
-          >This class stands for hiding elements from the page. display: none;
-          ensures the element does not appear or take up space in the
-          layout.</span
-        >
-      </p>
+      
     </div>
   </body>
 </html>
