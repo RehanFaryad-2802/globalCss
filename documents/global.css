@@ -1,3 +1,4 @@
+@import url("mediaquery.css");
 @import url("paddingMargin.css");
 @import url("flexSystem.css");
 @import url("border-radius.css");
@@ -17,34 +18,26 @@
   --hc: #303030;
   --shc: #303030;
 
-  /* --mh: 3.2rem;
-  --heading: 2.3rem;
-  --sh: 1.2rem;
-
-  --mt: 1.2rem;
-  --text: 1.01rem;
-  --st: 0.80rem; */
-
-  --f1: 0 0 calc(10% - 10px);
-  --f2: 0 0 calc(20% - 10px);
-  --f3: 0 0 calc(30% - 10px);
-  --f33: 0 0 calc(33.33% - 10px);
-  --f4: 0 0 calc(40% - 10px);
-  --f5: 0 0 calc(50% - 10px);
-  --f6: 0 0 calc(60% - 10px);
-  --f7: 0 0 calc(70% - 10px);
-  --f8: 0 0 calc(80% - 10px);
-  --f9: 0 0 calc(90% - 10px);
-  --f0-5: 0 0 calc(05% - 10px);
-  --f1-5: 0 0 calc(15% - 10px);
-  --f2-5: 0 0 calc(25% - 10px);
-  --f3-5: 0 0 calc(35% - 10px);
-  --f4-5: 0 0 calc(45% - 10px);
-  --f5-5: 0 0 calc(55% - 10px);
-  --f6-5: 0 0 calc(65% - 10px);
-  --f7-5: 0 0 calc(75% - 10px);
-  --f8-5: 0 0 calc(85% - 10px);
-  --f9-5: 0 0 calc(95% - 10px);
+  --f1: 0 0 10%;
+  --f2: 0 0 20%;
+  --f3: 0 0 30%;
+  --f33: 0 0 33.33%;
+  --f4: 0 0 40%;
+  --f5: 0 0 50%;
+  --f6: 0 0 60%;
+  --f7: 0 0 70%;
+  --f8: 0 0 80%;
+  --f9: 0 0 90%;
+  --f0-5: 0 0 05%;
+  --f1-5: 0 0 15%;
+  --f2-5: 0 0 25%;
+  --f3-5: 0 0 35%;
+  --f4-5: 0 0 45%;
+  --f5-5: 0 0 55%;
+  --f6-5: 0 0 65%;
+  --f7-5: 0 0 75%;
+  --f8-5: 0 0 85%;
+  --f9-5: 0 0 95%;
   --f10: 0 0 100%;
 }
 
@@ -53,8 +46,8 @@
   --heading: clamp(1.8rem, 3vw, 3rem); /* Subheading */
   --sh: clamp(1.2rem, 2vw, 2rem); /* Small heading size */
 
-  --mt: clamp(1rem, 1.6vw, 1.8rem); /* Main text size */
-  --text: clamp(0.85rem, 1.4vw, 1.2rem); /* Text */
+  --mt: clamp(1rem, 1.4vw, 1.8rem); /* Main text size */
+  --text: clamp(0.85rem, 1.3vw, 1.2rem); /* Text */
   --st: clamp(0.7rem, 1vw, 1rem); /* Small text */
 }
 

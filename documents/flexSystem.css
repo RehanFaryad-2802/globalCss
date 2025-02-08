@@ -2,6 +2,18 @@
   display: flex;
   flex-wrap: wrap;
 }
+:root {
+  --col-1: 0 0 100%;
+  --col-2: 0 0 calc(50% - 10px);
+  --col-3: 0 0 calc(33.33% - 10px);
+  --col-4: 0 0 calc(25% - 10px);
+  --col-5: 0 0 calc(20% - 10px);
+  --col-6: 0 0 calc(16.66% - 10px);
+  --col-7: 0 0 calc(14.28% - 10px);
+  --col-8: 0 0 calc(12.5% - 10px);
+  --col-9: 0 0 calc(11.11% - 10px);
+  --col-10: 0 0 calc(10% - 10px);
+}
 
 .nowrap {
   flex-wrap: nowrap !important;
@@ -117,36 +129,48 @@
   align-items: center;
   justify-content: center;
 }
+.f.col-2,
+.f.col-3,
+.f.col-4,
+.f.col-5,
+.f.col-6,
+.f.col-7,
+.f.col-8,
+.f.col-9,
+.f.col-10
+{
+  gap: 10px;
+}
 
 .f.col-1:not(:has(.nowrap)) > * {
-  min-width: calc(var(--container-size) - 50px);
+  flex: var(--col-1);
 }
 .f.col-2:not(:has(.nowrap)) > * {
-  min-width: calc(var(--container-size) / 2 - 50px);
+  flex: var(--col-2);
 }
 .f.col-3:not(:has(.nowrap)) > * {
-  min-width: calc(var(--container-size) / 3 - 50px);
+  flex : var(--col-3);
 }
 .f.col-4:not(:has(.nowrap)) > * {
-  min-width: calc(var(--container-size) / 4 - 50px);
+  flex: var(--col-4);
 }
 .f.col-5:not(:has(.nowrap)) > * {
-  min-width: calc(var(--container-size) / 5 - 50px);
+  flex: var(--col-5);
 }
 .f.col-6:not(:has(.nowrap)) > * {
-  min-width: calc(var(--container-size) / 6 - 50px);
+  flex: var(--col-6);
 }
 .f.col-7:not(:has(.nowrap)) > * {
-  min-width: calc(var(--container-size) / 7 - 50px);
+  flex: var(--col-7);
 }
 .f.col-8:not(:has(.nowrap)) > * {
-  min-width: calc(var(--container-size) / 8 - 50px);
+  flex: var(--col-8);
 }
 .f.col-9:not(:has(.nowrap)) > * {
-  min-width: calc(var(--container-size) / 9 - 50px);
+  flex: var(--col-9);
 }
 .f.col-10:not(:has(.nowrap)) > * {
-  min-width: calc(var(--container-size) / 10 - 50px);
+  flex: var(--col-10);
 }
 
 /*  */
