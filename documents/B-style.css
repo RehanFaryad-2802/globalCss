@@ -6,31 +6,26 @@
   --light-gray: #4d4d4d;
   --white: #fff;
   --accent: #ff6b6b;
+  --mh: clamp(2.8rem, 7vw, 9rem);
+  --mhc: #ff6b6b;
+  --hc: #ff6b6b;
+  --container-size: 1200px;
   --font: "Arial", sans-serif;
   --transition: all 0.3s ease;
 }
+
 
 body {
   font-family: var(--font);
   color: var(--white);
   background-color: var(--black);
   line-height: 1.6;
-  margin: 0;
-  padding: 0;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
   background-color: #0e0e0e;
-  padding: 20px;
 }
 
-h1,
-h2,
-h3 {
-  color: var(--accent);
-}
 
 code {
   background-color: var(--dark-gray);
@@ -81,83 +76,28 @@ code {
 p:has(.code-block) {
   margin-top: 10px;
 }
-.f {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.col-7 {
-  flex: 0 0 calc(100% / 7);
-}
-
-.gap20 {
-  gap: 20px;
-}
-
-.mt {
-  margin-top: 10px;
-}
-
-.mb10 {
-  margin-bottom: 10px;
-}
-
-.ml20 {
-  margin-left: 20px;
-}
-
-.heading {
-  font-size: 2rem;
-  color: var(--accent);
-}
-
-.examples {
-  display: flex;
-  gap: 10px;
-  margin: 20px 0;
-}
 
 .example-box {
   background-color: var(--gray);
   color: var(--white);
-  padding: 20px;
+  padding: 10px;
   text-align: center;
+  cursor: pointer;
   border-radius: 5px;
   flex: 1;
 }
-
-/* .example-box:hover {
-  background-color: var(--light-gray);
-  transform: scale(1.05);
-} */
-
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-
-
-:root {
-  font-size: 1rem;
-  --font-family: "Segoe UI";
-  --container-size: 1000px;
-}
-
-.example-box {
-  cursor: pointer;
-}
-
 .examples {
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
+  column-gap: 10px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   padding: 1rem;
   border-bottom: #272822 1px solid;
+}
+.examples:last-child {
+  border-bottom: none;
 }
 h1,
 h2 {
@@ -170,15 +110,6 @@ p span.code-block {
   margin-right: 12px;
   display: inline-block;
 }
-
-h1 {
-  font-size: 4rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
 .code-block:before {
   content: "";
   position: absolute;
@@ -201,9 +132,13 @@ h2 {
   );
   border-radius: 10px;
 }
+.ofxs{
+  overflow-x: scroll;
+}
 p {
   display: flex;
   align-items: start;
+  overflow-x: hidden;
 }
 
 .code-block span {

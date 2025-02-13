@@ -4,40 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Margin and Padding Classes</title>
-    <link rel="stylesheet" href="./documents/global.css">
-    <link rel="stylesheet" href="./documents/B-style.css">
-    
+    <link rel="stylesheet" href="./documents/global.css" />
+    <link rel="stylesheet" href="./documents/B-style.css" />
   </head>
-  <body>
-    <div class="container wbgc">
-      <h1>Global Css</h1>
+  <body> 
+    <div class="container">
+      <h1 class="main-heading">Global Css</h1>
       <p>
         Global CSS refers to styles that are applied universally across an
         entire website or application, ensuring consistency and uniformity.
         These styles are typically declared in a central stylesheet and affect
         all elements unless overridden by more specific styles.
       </p>
-      <p class="mt mt10 mb10">Global CSS Stylesheet</p>
-      <div class="code-block st">
+      <p class="mt10 mb10">Global CSS Stylesheet</p>
+      <div class="code-block ofxs st">
         &lt;link rel="stylesheet"
         href="https://rfglobalcss.netlify.app/documents/global.css"&gt;
       </div>
-      <div class="code-block st">
-        &lt;script src="href="https://rfglobalcss.netlify.app/documents/C-global.js"&gt;&lt;/script&gt;
+      <div class="code-block ofxs st">
+        &lt;script
+        src="href="https://rfglobalcss.netlify.app/documents/C-global.js"&gt;&lt;/script&gt;
       </div>
       <h2 class="heading mt3r">Margin & Padding Classes</h2>
       <p>
         <strong>Explanation:</strong> Margin and Padding classes control the
         space outside and inner respectively of the element's border.<br />
       </p>
-      <p class="mt"><b>Property Identifiers:</b></p>
-      <div class="f col-7 gap20">
+      <p class="mt20"><b>Property Identifiers:</b></p>
+      <div class="f col-1 gap10">
         <p><b>m:</b> margin</p>
         <p><b>p:</b> padding</p>
       </div>
       <br />
-      <p class="mt"><b>value Identifiers:</b></p>
-      <div class="f col-7 gap20">
+      <p class="mt20"><b>value Identifiers:</b></p>
+      <div class="f col-1 gap10">
         <p><b>l:</b> left-side</p>
         <p><b>r:</b> right-side</p>
         <p><b>t:</b> top-side</p>
@@ -50,13 +50,13 @@
         <p>Allowed Numbers in px: 5, 10, 15, 20, 30</p>
         <p>Allowed Numbers in rem: 1, 2, 3, 5, 10, 30</p>
       </div>
-      <p class="mt"><b>Pattern:</b></p>
-      <div class="f col-7 gap20">
+      <p class="mt20"><b>Pattern:</b></p>
+      <div class="f col-1 gap10">
         <p>Use this Pattern while using [property][side][value][unit]</p>
       </div>
       <br />
-      <p class="mt"><b>Key Points:</b></p>
-      <div class="f col-7 gap20">
+      <p class="mt20"><b>Key Points:</b></p>
+      <div class="f col-1 gap10">
         <ul class="ml20">
           <li style="list-style: disc">
             Defining no side will works for all sides.
@@ -65,27 +65,27 @@
         </ul>
       </div>
       <br />
-      For example, <code>.m20</code> adds 20px of margin to all sides of an
-      element, while <code>.mr10</code> adds 10px of space to the right.
+      For example, <code>m20</code> adds 20px of margin to all sides of an
+      element, while <code>mr10</code> adds 10px of space to the right.
       <p class="mt">Examples :</p>
       <div class="code-block">
-        .pmt1r: adds 10px of padding to the top of 1rem.
+        pt1r: adds 10px of padding to the top of 1rem.
       </div>
       <div class="code-block">
-        .p20: adds 20px of padding to the all sides of 20px.
+        p20: adds 20px of padding to the all sides of 20px.
       </div>
       <h2 class="heading mt3r">Border Radius Classes</h2>
       <p>
         <strong>Explanation:</strong> Border radius classes round the corners of
         an element.
       </p>
-      <p class="mt"><b>Property Identifiers:</b></p>
-      <div class="f col-7 gap20">
+      <p class="mt20"><b>Property Identifiers:</b></p>
+      <div class="f col-1 gap10">
         <p><b>br:</b> border-radius</p>
       </div>
       <br />
-      <p class="mt"><b>Value Identifiers:</b></p>
-      <div class="f col-7 gap20">
+      <p class="mt20"><b>Value Identifiers:</b></p>
+      <div class="f col-1 gap10">
         <p><b>r:</b> right side corners</p>
         <p><b>l:</b> left side corners</p>
         <p><b>t:</b> top side corners</p>
@@ -99,14 +99,14 @@
         <p>Allowed Numbers in rem: 10</p>
         <p>Allowed Numbers in percentage: 100</p>
       </div>
-      <p class="mt"><b>Pattern:</b></p>
-      <div class="f col-7 gap20">
+      <p class="mt20"><b>Pattern:</b></p>
+      <div class="f col-1 gap10">
         <p>Use this Pattern while using [property][side][value][unit]</p>
       </div>
       <br />
       <p class="mt"><b>Key Points:</b></p>
-      <div class="f col-7 gap20">
-        <ul class="ml20">
+      <div class="m20">
+        <ul class="f col-1 gap10">
           <li style="list-style: disc">
             Defining no side will works for all sides.
           </li>
@@ -119,13 +119,13 @@
         </ul>
       </div>
       <br />
-      For example, <code>.m20</code> adds 20px of margin to all sides of an
-      element, while <code>.mr10</code> adds 10px of space to the right.
+      For example, <code>m20</code> adds 20px of margin to all sides of an
+      element, while <code>mr10</code> adds 10px of space to the right.
       <p class="mt">Examples :</p>
-      <div class="code-block">.brtl6 (border-radius-top-left)</div>
-      <div class="code-block">.brtr6 (border-radius-top-right)</div>
-      <div class="code-block">.brbl6 (border-radius-bottom-left)</div>
-      <div class="code-block">.brbr6 (border-radius-bottom-right)</div>
+      <div class="code-block">brtl6 (border-radius-top-left)</div>
+      <div class="code-block">brtr6 (border-radius-top-right)</div>
+      <div class="code-block">brbl6 (border-radius-bottom-left)</div>
+      <div class="code-block">brbr6 (border-radius-bottom-right)</div>
 
       <h2 class="heading mt3r">Spacer Classes</h2>
       <p>
@@ -133,39 +133,39 @@
         spacing between elements. For example, <code>.spacer3</code> creates a
         3rem padding gap.
       </p>
-      <p class="mt mt5"><b>There are 5 spacers:</b></p>
-      <pre class="code-block">
-.spacer1, .spacer2, .spacer3, .spacer4, .spacer5</pre
-      >
+      <p class="mt5"><b>There are 5 spacers:</b></p>
+      <div class="code-block">
+        spacer1, spacer2, spacer3, spacer4, spacer5
+      </div>
       <h2 class="heading mt3r">Flex System</h2>
       <p>
-        <span class="code-block f1">.f</span>
+        <span class="code-block f1">f</span>
         <span class="f9"
           >Defines a flex container with display: flex; and enables wrapping of
           flex items with flex-wrap: wrap;.</span
         >
       </p>
       <p>
-        <span class="code-block f1">.nowrap</span>
+        <span class="code-block f1">nowrap</span>
         <span class="f9"
           >Prevents wrapping of items using flex-wrap: nowrap !important;.</span
         >
       </p>
       <p>
-        <span class="code-block f1">.f-grow</span>
+        <span class="code-block f1">f-grow</span>
         <span class="f9"
           >Allow to cover full width to items using flex-grow: 1;.</span
         >
       </p>
       <p>
-        <span class="code-block f1">.f0</span>
+        <span class="code-block f1">f0</span>
         <span class="f9"
           >Sets flex: 1 1 0;, allowing the item to grow but with no initial size
           (flex-grow: 1, flex-shrink: 1, flex-basis: 0).</span
         >
       </p>
       <p>
-        <span class="code-block f1">.f1-f10</span>
+        <span class="code-block f1">f1-f10</span>
         <span class="f9"
           >Divides the space into 10 parts; `.f1` equals 1/10, while `.f10`
           occupies the entire space. Half of each part can be obtain by using
@@ -174,87 +174,88 @@
         >
       </p>
       <p>
-        <span class="code-block f1">.col-[X]</span>
+        <span class="code-block f1">col-[X]</span>
         <span class="f9">
           <span>
-            This is a responsive flexbox grid system that adjusts column sizes and behavior based on screen width. The grid supports up to 10 columns <code>(col-1 to col-10)</code> and ensures a consistent layout across devices with various breakpoints.
+            This is a responsive flexbox grid system that adjusts column sizes
+            and behavior based on screen width. The grid supports up to 1020
+            columns <1ode>(col-1 to 1ol-10)</1ode> and ensures a consistent
+            layout across devices with various breakpoints.
           </span>
           <br />
           <br />
-          <span>
-            
-          </span>
+          <span> </span>
         </span>
       </p>
 
       <p>
-        <span class="code-block f1">.fdc</span>
+        <span class="code-block f1">fdc</span>
         <span class="f9"
           >Changes flex direction to column using flex-direction: column;.</span
         >
       </p>
       <p>
-        <span class="code-block f1">.aic</span>
+        <span class="code-block f1">aic</span>
         <span class="f9"
           >Centers flex items along the cross axis with align-items:
           center;.</span
         >
       </p>
       <p>
-        <span class="code-block f1">.jcc</span>
+        <span class="code-block f1">jcc</span>
         <span class="f9"
           >Centers flex items along the main axis with justify-content:
           center;.</span
         >
       </p>
       <p>
-        <span class="code-block f1">.jce</span>
+        <span class="code-block f1">jce</span>
         <span class="f9"
           >Aligns flex items to the end of the main axis using justify-content:
           end;.</span
         >
       </p>
       <p>
-        <span class="code-block f1">.jcsb</span>
+        <span class="code-block f1">jcsb</span>
         <span class="f9"
           >Distributes space between flex items with justify-content:
           space-between;.</span
         >
       </p>
       <p>
-        <span class="code-block f1">.jcse</span>
+        <span class="code-block f1">jcse</span>
         <span class="f9"
           >Distributes space evenly between flex items with justify-content:
           space-evenly;.</span
         >
       </p>
       <p>
-        <span class="code-block f1">.fcsa</span>
+        <span class="code-block f1">fcsa</span>
         <span class="f9"
           >Distributes space around flex items with justify-content:
           space-around;.</span
         >
       </p>
       <p>
-        <span class="code-block f1">.flex</span>
+        <span class="code-block f1">flex</span>
         <span class="f9"
           >Combines display: flex;, justify-content: center;, and align-items:
           center;.</span
         >
       </p>
       <p>
-        <b class="mt mt10">Gaps:</b>
+        <b class="mt10">Gaps:</b>
       </p>
       <p>
-        <span class="code-block f1">.cgX</span>
+        <span class="code-block f1">cgX</span>
         <span class="f9">Sets the `column gap` to `X` px.</span>
       </p>
       <p>
-        <span class="code-block f1">.rgX: </span>
+        <span class="code-block f1">rgX: </span>
         <span class="f9">Sets the `row gap` to `X` px.</span>
       </p>
       <p>
-        <span class="code-block f1">.gapX: </span>
+        <span class="code-block f1">gapX: </span>
         <span class="f9"
           >A shorthand that sets both `column` and `row` gaps to `X` px.</span
         >
@@ -267,155 +268,160 @@
       <!--  -->
       <b class="mt">Headings:</b>
       <p>
-        <span class="code-block f1-5">.main-heading</span>
-        <span class="f8-5"
-          >This class represents the main heading of the page, usually used for the most important titles.</span
+        <span class="code-block f1-5">main-heading</span>
+        <span class="f8"
+          >This class represents the main heading of the page, usually used for
+          the most important titles.</span
         >
       </p>
       <p>
-        <span class="code-block f1-5">.heading</span>
-        <span class="f8-5"
-          >This class is for subheadings, typically placed under the main heading to introduce sections.</span
+        <span class="code-block f1-5">heading</span>
+        <span class="f8"
+          >This class is for subheadings, typically placed under the main
+          heading to introduce sections.</span
         >
       </p>
       <p>
-        <span class="code-block f1-5">.sub-heading</span>
-        <span class="f8-5"
-          >This class is used for secondary headings, offering additional context or subtopics.</span
+        <span class="code-block f1-5">sub-heading</span>
+        <span class="f8"
+          >This class is used for secondary headings, offering additional
+          context or subtopics.</span
         >
       </p>
       <p>
-        <span class="code-block f1-5">.main-text</span>
-        <span class="f8-5"
-          >This class is for the primary content text, generally used for body paragraphs.</span
+        <span class="code-block f1-5">main-text</span>
+        <span class="f8"
+          >This class is for the primary content text, generally used for body
+          paragraphs.</span
         >
       </p>
       <p>
-        <span class="code-block f1-5">.text</span>
-        <span class="f8-5"
-          >This class is for regular text, often used for smaller sections or descriptions.</span
+        <span class="code-block f1-5">text</span>
+        <span class="f8"
+          >This class is for regular text, often used for smaller sections or
+          descriptions.</span
         >
       </p>
       <p>
-        <span class="code-block f1-5">.sub-text</span>
-        <span class="f8-5"
-          >This class is for secondary text, usually in a smaller size, for less prominent content.</span
+        <span class="code-block f1-5">sub-text</span>
+        <span class="f8"
+          >This class is for secondary text, usually in a smaller size, for less
+          prominent content.</span
         >
       </p>
-      
 
       <b class="mt">Colors:</b>
 
       <p>
-        <span class="code-block f1-5">.bglight</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">bglight</span>
+        <span class="f8"
           >This class stands for (background light) applying a light background
           color temporary.</span
         >
       </p>
       <p></p>
       <p>
-        <span class="code-block f1-5">.mbgc</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">mbgc</span>
+        <span class="f8"
           >This class stands for (main background color) applying a background
           color to an element using the value defined in var(--mbgc).</span
         >
       </p>
       <p>
-        <span class="code-block f1-5">.wbgc</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">wbgc</span>
+        <span class="f8"
           >This class stands for (white-space background color) applying a
           background color to an element of white.</span
         >
       </p>
       <p>
-        <span class="code-block f1-5">.bbgc</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">bbgc</span>
+        <span class="f8"
           >This class stands for (black background color) applying a background
           color to an element of black.</span
         >
       </p>
       <p>
-        <span class="code-block f1-5">.mtc</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">mtc</span>
+        <span class="f8"
           >This class stands for (main text color) changing the text color to
           var(--mtc).</span
         >
       </p>
       <p>
-        <span class="code-block f1-5">.mhc</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">mhc</span>
+        <span class="f8"
           >This class stands for (main heading color) applying the color for
           main headings, defined as var(--mhc).</span
         >
       </p>
       <p>
-        <span class="code-block f1-5">.shc</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">shc</span>
+        <span class="f8"
           >This class stands for (sub heading color) applying the color for
           subheadings, defined as var(--shc).</span
         >
       </p>
       <p>
-        <span class="code-block f1-5">.wtc</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">wtc</span>
+        <span class="f8"
           >This class stands for (white text color) setting the text color to
           white (#fff).</span
         >
       </p>
       <p>
-        <span class="code-block f1-5">.btc</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">btc</span>
+        <span class="f8"
           >This class stands for (black text color) setting the text color to
           black (#000).</span
         >
       </p>
       <p>
-        <span class="code-block f1-5">.tc</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">tc</span>
+        <span class="f8"
           >This class stands for (text color) setting the text color to
           var(--tc).</span
         >
       </p>
       <p>
-        <span class="code-block f1-5">.stc</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">stc</span>
+        <span class="f8"
           >This class stands for (sub text color) applying a secondary text
           color defined as var(--stc).</span
         >
       </p>
       <p>
-        <span class="code-block f1-5">.hc</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">hc</span>
+        <span class="f8"
           >This class stands for (heading color) applying the color for
           headings, defined as var(--hc).</span
         >
       </p>
       <b class="mt">Sizes:</b>
       <p>
-        <span class="code-block f1-5">.mh</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">mh</span>
+        <span class="f8"
           >This class stands for (main heading) defining the font size for main
           headings as var(--mh).</span
         >
       </p>
       <p>
-        <span class="code-block f1-5">.sh</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">sh</span>
+        <span class="f8"
           >This class stands for (sub heading) defining the font size for
           subheadings as var(--sh).</span
         >
       </p>
       <p>
-        <span class="code-block f1-5">.mt</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">mt</span>
+        <span class="f8"
           >This class stands for (main text) defining the font size for main
           text as var(--mt).</span
         >
       </p>
       <p>
-        <span class="code-block f1-5">.st</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">st</span>
+        <span class="f8"
           >This class stands for (sub text) defining the font size for secondary
           text as var(--st).</span
         >
@@ -423,30 +429,30 @@
       <b class="mt">Alignments:</b>
 
       <p>
-        <span class="code-block f1-5">.m0a</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">m0a</span>
+        <span class="f8"
           >This class stands (margin: 0 auto) for centering an element
           horizontally by setting its margin to 0 auto.</span
         >
       </p>
       <p>
-        <span class="code-block f1-5">.tac</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">tac</span>
+        <span class="f8"
           >This class stands for (text align center) aligning text to the center
           of its container.</span
         >
       </p>
       <p>
-        <span class="code-block f1-5">.tae</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">tae</span>
+        <span class="f8"
           >This class stands for (text align end) aligning text to the end of
           the container. For left-to-right text, this means right-alignment; for
           right-to-left text, it means left-alignment.</span
         >
       </p>
       <p>
-        <span class="code-block f1-5">.tas</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">tas</span>
+        <span class="f8"
           >This class stands for (text align start) aligning text to the start
           of the container. For left-to-right text, this means left-alignment;
           for right-to-left text, it means right-alignment.</span
@@ -454,8 +460,8 @@
       </p>
       <h2 class="mt3r heading tas">More...</h2>
       <p>
-        <span class="code-block f1-5">.pointer</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">pointer</span>
+        <span class="f8"
           >This class stands for applying a pointer cursor to interactive
           elements (e.g., links, buttons). It changes the mouse cursor to a hand
           when hovering over an element with this class. cursor: pointer; is
@@ -464,7 +470,7 @@
       </p>
       <p>
         <span class="code-block f1-5">img[src]</span>
-        <span class="f8-5"
+        <span class="f8"
           >This selector stands for targeting all <img /> elements that have a
           src attribute. width: 100%; sets the image width to 100% of its parent
           container.</span
@@ -472,15 +478,15 @@
       </p>
       <p>
         <span class="code-block f1-5">img[src].auto</span>
-        <span class="f8-5"
+        <span class="f8"
           >This selector stands for targeting images that have the src attribute
           and the auto class. width: auto; ensures that the image's natural
           width is preserved.</span
         >
       </p>
       <p>
-        <span class="code-block f1-5">.hide</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">hide</span>
+        <span class="f8"
           >This class stands for hiding elements from the page. display: none;
           ensures the element does not appear or take up space in the
           layout.</span
@@ -488,8 +494,8 @@
       </p>
       <h2 class="mt3r heading">Hover Animation</h2>
       <p>
-        <span class="code-block f1-5">.grow</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">grow</span>
+        <span class="f8"
           >`.grow` should be applied to the parent element. When a child element
           inside the parent is hovered, the scale(3%) effect is applied to
           it.</span
@@ -502,8 +508,8 @@
       </div>
 
       <p>
-        <span class="code-block f1-5">.shrink</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">shrink</span>
+        <span class="f8"
           >`.shrink` should be applied to the parent element. When a child
           element inside the parent is hovered, the scale(-3%) effect is applied
           to it.</span
@@ -516,8 +522,8 @@
       </div>
 
       <p>
-        <span class="code-block f1-5">.fadeIn</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">fadeIn</span>
+        <span class="f8"
           >`.fadeIn` applies a low-opacity effect to child elements. On hover,
           the opacity transitions to full (1).</span
         >
@@ -529,8 +535,8 @@
       </div>
 
       <p>
-        <span class="code-block f1-5">.fadeOut</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">fadeOut</span>
+        <span class="f8"
           >`.fadeOut` applies a full-opacity effect to child elements. On hover,
           the opacity transitions to 0.8.</span
         >
@@ -542,8 +548,8 @@
       </div>
 
       <p>
-        <span class="code-block f1-5">.flip</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">flip</span>
+        <span class="f8"
           >`.flip` rotates the child element 180 degrees on hover, creating a 3D
           flipping effect.</span
         >
@@ -555,8 +561,8 @@
       </div>
 
       <p>
-        <span class="code-block f1-5">.grow-blur</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">grow-blur</span>
+        <span class="f8"
           >`.grow-blur` applies a scaling and blur transition. On hover, the
           blur effect is removed, and the scale increases slightly.</span
         >
@@ -568,8 +574,8 @@
       </div>
 
       <p>
-        <span class="code-block f1-5">.pulse</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">pulse</span>
+        <span class="f8"
           >`.pulse` creates a subtle pulsing animation on hover.</span
         >
       </p>
@@ -580,8 +586,8 @@
       </div>
 
       <p>
-        <span class="code-block f1-5">.shake</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">shake</span>
+        <span class="f8"
           >`.shake` causes a quick shaking motion when the child element is
           hovered.</span
         >
@@ -593,8 +599,8 @@
       </div>
 
       <p>
-        <span class="code-block f1-5">.wobble-zoom</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">wobble-zoom</span>
+        <span class="f8"
           >`.wobble-zoom` applies a wobbly zoom-in effect when hovered.</span
         >
       </p>
@@ -605,8 +611,8 @@
       </div>
 
       <p>
-        <span class="code-block f1-5">.ripple</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">ripple</span>
+        <span class="f8"
           >`.ripple` adds a ripple effect originating from the center of the
           child element on hover.</span
         >
@@ -618,8 +624,8 @@
       </div>
 
       <p>
-        <span class="code-block f1-5">.blur</span>
-        <span class="f8-5"
+        <span class="code-block f1-5">blur</span>
+        <span class="f8"
           >`.blur` applies a blur effect to child elements, which disappears on
           hover.</span
         >
@@ -630,9 +636,10 @@
         <div class="example-box">Hover me</div>
       </div>
       <p>
-        <span class="code-block f1-5">.spin</span>
-        <span class="f8-5">
-          `.spin` hides overflow content to prevent visual issues during animations.
+        <span class="code-block f1-5">spin</span>
+        <span class="f8">
+          `.spin` hides overflow content to prevent visual issues during
+          animations.
         </span>
       </p>
       <div class="spin examples">
@@ -640,11 +647,12 @@
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
       </div>
-      
+
       <p>
-        <span class="code-block f1-5">.slide-in</span>
-        <span class="f8-5">
-          `.slide-in` creates a slide-in effect by moving the element 15px to the right on hover.
+        <span class="code-block f1-5">slide-in</span>
+        <span class="f8">
+          `.slide-in` creates a slide-in effect by moving the element 15px to
+          the right on hover.
         </span>
       </p>
       <div class="slide-in examples">
@@ -652,11 +660,12 @@
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
       </div>
-      
+
       <p>
-        <span class="code-block f1-5">.bounce</span>
-        <span class="f8-5">
-          `.bounce` applies a bounce animation that moves the element up and down.
+        <span class="code-block f1-5">bounce</span>
+        <span class="f8">
+          `.bounce` applies a bounce animation that moves the element up and
+          down.
         </span>
       </p>
       <div class="bounce examples">
@@ -664,11 +673,12 @@
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
       </div>
-      
+
       <p>
-        <span class="code-block f1-5">.swing</span>
-        <span class="f8-5">
-          `.swing` creates a swinging effect that rotates the element back and forth on hover.
+        <span class="code-block f1-5">swing</span>
+        <span class="f8">
+          `.swing` creates a swinging effect that rotates the element back and
+          forth on hover.
         </span>
       </p>
       <div class="swing examples">
@@ -676,11 +686,12 @@
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
       </div>
-      
+
       <p>
-        <span class="code-block f1-5">.skew</span>
-        <span class="f8-5">
-          `.skew` tilts the element horizontally by applying a skew transformation.
+        <span class="code-block f1-5">skew</span>
+        <span class="f8">
+          `.skew` tilts the element horizontally by applying a skew
+          transformation.
         </span>
       </p>
       <div class="skew examples">
@@ -688,11 +699,12 @@
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
       </div>
-      
+
       <p>
-        <span class="code-block f1-5">.rotate-scale</span>
-        <span class="f8-5">
-          `.rotate-scale` applies a combination of rotation and scaling effects on hover.
+        <span class="code-block f1-5">rotate-scale</span>
+        <span class="f8">
+          `.rotate-scale` applies a combination of rotation and scaling effects
+          on hover.
         </span>
       </p>
       <div class="rotate-scale examples">
@@ -701,7 +713,7 @@
         <div class="example-box">Hover me</div>
       </div>
       <p>
-        <span class="code-block f1-5">.wave</span>
+        <span class="code-block f1-5">wave</span>
       </p>
       <div class="wave examples">
         <div class="example-box">Hover me</div>
@@ -709,15 +721,13 @@
         <div class="example-box">Hover me</div>
       </div>
       <p>
-        <span class="code-block f1-5">.liquid</span>
+        <span class="code-block f1-5">liquid</span>
       </p>
       <div class="liquid examples">
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
         <div class="example-box">Hover me</div>
       </div>
-      
-      
     </div>
   </body>
 </html>
