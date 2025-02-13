@@ -6,7 +6,6 @@
 :root {
   font-size: 1rem;
   --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  --my-container: min(var(--container-size), 100%);
   --container-size: 1100px;
   --mbgc: #000127;
 
@@ -59,8 +58,9 @@
   font-family: var(--font-family);
 }
 .container {
-  max-width: var(--my-container);
+  max-width: var(--container-size);
   padding: 15px;
+  width: 100%;
   margin: 0 auto;
 }
 
