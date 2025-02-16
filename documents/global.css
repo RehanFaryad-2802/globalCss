@@ -2,7 +2,7 @@
 @import url("flexSystem.css");
 @import url("border-radius.css");
 @import url("hover.css");
-
+@import url("buttons.css");
 :root {
   font-size: 1rem;
   --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -63,7 +63,12 @@
   width: 100%;
   margin: 0 auto;
 }
-
+.hide {
+  display: none;
+}
+.hidden{
+  overflow: hidden;
+}
 .pointer {
   cursor: pointer;
 }
@@ -75,7 +80,9 @@ img[src] {
 img[src].auto {
   width: auto;
 }
-
+.dn{
+  display: none;
+}
 /*  */
 /*  */
 /*  */
@@ -180,10 +187,6 @@ h2 {
   font-size: var(--st);
 }
 
-.hide {
-  display: none;
-}
-
 .tac {
   text-align: center;
 }
@@ -208,6 +211,32 @@ h2 {
 }
 .full.screen {
   width: 100vw;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+  padding: 8px;
+  z-index: 1000;
+}
+.dropdown-menu.left {
+  left: auto;
+  right: 0 !important;
+}
+.dropdown:focus-within .dropdown-menu {
+  display: block;
 }
 
 
