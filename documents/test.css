@@ -1,24 +1,27 @@
-.test-box{
-    background-color: red;
-    box-sizing: border-box;
-    border: 1px solid black;
-    height: 100px;
+.test-box {
+  background-color: red;
+  box-sizing: border-box;
+  border: 2px solid black;
+  height: 100px;
 }
-.width{
-    width: 100px;
+.width {
+  width: 100px;
+}
+:root {
+  --container-size: 1200px;
 }
 
-
-/* .f:not(:has(.nowrap)) .f33{
-    min-width: 200px;
-} */
-
-.img img{
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    width: max(100px , 100%);
+.cs{
+  cursor: text;
+  user-select: all;
 }
-.code-block{
-    max-height: 100px;
 
+.img img {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  width: max(100px, 100%);
 }
+.code-block {
+  max-height: 100px;
+}
+

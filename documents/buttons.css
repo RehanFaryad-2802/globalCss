@@ -1,0 +1,44 @@
+.btn {
+    font-weight: 400;
+    background-color: transparent;
+    cursor: pointer;
+    color: white;
+    border-radius: 6px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    background-color: black;
+    padding: 8px 16px;
+  }
+  .btn.red:not(:has(.outline)) {
+    border-color: #e74c3c;
+    background-color: #e74c3c;
+  }
+  .btn.green:not(:has(.outline)) {
+    border-color: #2ecc71;
+    background-color: #2ecc71;
+  }
+  .btn.red.outline {
+    background-color: transparent;
+    color: #e74c3c;
+  }
+  .btn.green.outline {
+    background-color: transparent;
+    color: #2ecc71;
+  }
+  .btn.underline:not(:has(.outline)) {
+    border: none;
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+    padding-bottom: 5px;
+  }
+  .btn.red.underline:not(:has(.outline)) {
+    color: #e74c3c;
+    border-bottom: 1px solid #e74c3c;
+  }
+  .btn.green.underline:not(:has(.outline)) {
+    color: #2ecc71;
+    border-bottom: 1px solid #2ecc71;
+  }
+  
