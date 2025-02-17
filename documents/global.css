@@ -2,6 +2,7 @@
 @import url("flexSystem.css");
 @import url("border-radius.css");
 @import url("hover.css");
+@import url("card-drop-down.css");
 @import url("buttons.css");
 :root {
   font-size: 1rem;
@@ -180,18 +181,21 @@ h2 {
 .mh {
   font-size: var(--mh);
 }
-
+.hs{
+  font-size: var(--heading);
+}
 .sh {
   font-size: var(--sh);
 }
 .mt {
   font-size: var(--mt);
 }
-
+.ts{
+  font-size: var(--text);
+}
 .st {
   font-size: var(--st);
 }
-
 .tac {
   text-align: center;
 }

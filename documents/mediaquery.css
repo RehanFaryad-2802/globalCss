@@ -1,82 +1,82 @@
 @media screen and (max-width: 800px) {
-  .f.col-3 > * {
+  .f.col-3:not(.nowrap) > * {
     flex: var(--col-2) !important;
   }
-  .f.col-4 > * {
+  .f.col-4:not(.nowrap) > * {
     flex: var(--col-3) !important;
   }
 }
 @media screen and (max-width: 900px) {
-  .f.col-8 {
+  .f.col-8:not(.nowrap) {
     flex-wrap: nowrap !important;
     overflow-x: auto;
   }
-  .f.col-8 > * {
+  .f.col-8:not(.nowrap) > * {
     min-width: calc(var(--container-size) / 10 - 10px) !important;
   }
-  .f.col-7 {
+  .f.col-7:not(.nowrap) {
     flex-wrap: nowrap !important;
     overflow-x: auto;
   }
-  .f.col-7 > * {
+  .f.col-7:not(.nowrap) > * {
     min-width: calc(var(--container-size) / 10 - 10px) !important;
   }
 }
 @media screen and (max-width: 600px) {
-  .f.col-2 > * {
+  .f.col-2:not(.nowrap) > * {
     flex: var(--col-1) !important;
   }
-  .f.col-3 > * {
+  .f.col-3:not(.nowrap) > * {
     flex: var(--col-2) !important;
   }
-  .f.col-4 > * {
+  .f.col-4:not(.nowrap) > * {
     flex: var(--col-2) !important;
   }
-  .f.col-5,
-  .f.col-6,
-  .f.col-7,
-  .f.col-8,
-  .f.col-9,
-  .f.col-10 {
+  .f.col-5:not(.nowrap),
+  .f.col-6:not(.nowrap),
+  .f.col-7:not(.nowrap),
+  .f.col-8:not(.nowrap),
+  .f.col-9:not(.nowrap),
+  .f.col-1:not(.nowrap) {
     flex-wrap: nowrap !important;
     overflow-x: auto;
   }
-  .f.col-5 > *,
-  .f.col-6 > *,
-  .f.col-7 > *,
-  .f.col-8 > *,
-  .f.col-9 > *,
-  .f.col-10 > * {
+  .f.col-5:not(.nowrap) > *,
+  .f.col-6:not(.nowrap) > *,
+  .f.col-7:not(.nowrap) > *,
+  .f.col-8:not(.nowrap) > *,
+  .f.col-9:not(.nowrap) > *,
+  .f.col-1:not(.nowrap) > * {
     min-width: calc(var(--container-size) / 10 - 10px) !important;
   }
 }
 @media screen and (max-width: 1000px) {
-  .f.col-9 {
+  .f.col-9:not(.nowrap) {
     flex-wrap: nowrap !important;
     overflow-x: auto;
   }
-  .f.col-9 > * {
+  .f.col-9:not(.nowrap) > * {
     min-width: calc(var(--container-size) / 10 - 10px) !important;
   }
-  .f.col-10 {
+  .f.col-1:not(.nowrap) {
     flex-wrap: nowrap !important;
     overflow-x: auto;
   }
-  .f.col-10 > * {
+  .f.col-1:not(.nowrap) > * {
     min-width: calc(var(--container-size) / 10 - 10px) !important;
   }
 }
 
 @media screen and (max-width: 450px) {
-  .f.col-2 > *,
-  .f.col-3 > *,
-  .f.col-4 > *,
-  .f.col-5 > *,
-  .f.col-6 > *,
-  .f.col-7 > *,
-  .f.col-8 > *,
-  .f.col-9 > *,
-  .f.col-10 > * {
+  .f.col-2:not(.nowrap) > *,
+  .f.col-3:not(.nowrap) > *,
+  .f.col-4:not(.nowrap) > *,
+  .f.col-5:not(.nowrap) > *,
+  .f.col-6:not(.nowrap) > *,
+  .f.col-7:not(.nowrap) > *,
+  .f.col-8:not(.nowrap) > *,
+  .f.col-9:not(.nowrap) > *,
+  .f.col-1:not(.nowrap) > * {
     flex: var(--col-1) !important;
   }
 }
