@@ -2,13 +2,7 @@
 @import url("flexSystem.css");
 @import url("border-radius.css");
 @import url("hover.css");
-<<<<<<< HEAD
-@import url("card-drop-down.css");
-
-
-=======
 @import url("buttons.css");
->>>>>>> 1394d158fcb2ca866029186cf822845e65305805
 :root {
   font-size: 1rem;
   --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -86,7 +80,6 @@ img[src] {
 img[src].auto {
   width: auto;
 }
-<<<<<<< HEAD
 
 .hide {
   display: none;
@@ -95,11 +88,6 @@ img[src].auto {
   overflow: hidden;
 }
 
-=======
-.dn{
-  display: none;
-}
->>>>>>> 1394d158fcb2ca866029186cf822845e65305805
 /*  */
 /*  */
 /*  */
@@ -204,10 +192,6 @@ h2 {
   font-size: var(--st);
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 1394d158fcb2ca866029186cf822845e65305805
 .tac {
   text-align: center;
 }
