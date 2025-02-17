@@ -1,44 +1,92 @@
 .btn {
-    font-weight: 400;
-    background-color: transparent;
-    cursor: pointer;
-    color: white;
-    border-radius: 6px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: black;
-    background-color: black;
-    padding: 8px 16px;
-  }
-  .btn.red:not(:has(.outline)) {
-    border-color: #e74c3c;
-    background-color: #e74c3c;
-  }
-  .btn.green:not(:has(.outline)) {
-    border-color: #2ecc71;
-    background-color: #2ecc71;
-  }
-  .btn.red.outline {
-    background-color: transparent;
-    color: #e74c3c;
-  }
-  .btn.green.outline {
-    background-color: transparent;
-    color: #2ecc71;
-  }
-  .btn.underline:not(:has(.outline)) {
-    border: none;
-    background-color: transparent;
-    border-radius: 0;
-    padding: 0;
-    padding-bottom: 5px;
-  }
-  .btn.red.underline:not(:has(.outline)) {
-    color: #e74c3c;
-    border-bottom: 1px solid #e74c3c;
-  }
-  .btn.green.underline:not(:has(.outline)) {
-    color: #2ecc71;
-    border-bottom: 1px solid #2ecc71;
-  }
-  
+  font-weight: 500;
+  cursor: pointer;
+  color: #ffffff;
+  border-radius: 6px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+  background-color: black;
+  padding: 8px 16px;
+}
+
+:root {
+  --c1: #e74c3c; /* Blue */
+  --c2: #2ecc71; /* Purple */
+  --c3: #f1c40f; /* Yellow */
+  --c4: #e67e22; /* Orange */
+  --c5: #1abc9c; /* Teal */
+}
+.btn.outline,
+.btn.underline {
+  background-color: transparent !important;
+}
+.btn.underline {
+  border: none;
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+}
+
+.block{
+  display: block;
+}
+/* Additional colors using CSS variables */
+.btn.color1 {
+  border-color: var(--c1);
+  background-color: var(--c1);
+}
+.btn.color2 {
+  border-color: var(--c2);
+  background-color: var(--c2);
+}
+.btn.color3 {
+  border-color: var(--c3);
+  background-color: var(--c3);
+}
+.btn.color4 {
+  border-color: var(--c4);
+  background-color: var(--c4);
+}
+.btn.color5 {
+  border-color: var(--c5);
+  background-color: var(--c5);
+}
+.btn.color1.outline {
+  color: var(--c1);
+}
+.btn.color2.outline {
+  color: var(--c2);
+}
+.btn.color3.outline {
+  color: var(--c3);
+}
+.btn.color4.outline {
+  color: var(--c4);
+}
+.btn.color5.outline {
+  color: var(--c5);
+}
+
+.btn.color1.underline:not(:has(.outline)) {
+  color: var(--c1);
+  border-bottom-color: var(--c1);
+}
+.btn.color2.underline:not(:has(.outline)) {
+  color: var(--c2);
+  border-bottom-color: var(--c2);
+}
+.btn.color3.underline:not(:has(.outline)) {
+  color: var(--c3);
+  border-bottom-color: var(--c3);
+}
+.btn.color4.underline:not(:has(.outline)) {
+  color: var(--c4);
+  border-bottom-color: var(--c4);
+}
+.btn.color5.underline:not(:has(.outline)) {
+  color: var(--c5);
+  border-bottom-color: var(--c5);
+}

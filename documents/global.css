@@ -175,17 +175,23 @@ h2 {
 .mh {
   font-size: var(--mh);
 }
-
+.hs{
+  font-size: var(--heading);
+}
 .sh {
   font-size: var(--sh);
 }
 .mt {
   font-size: var(--mt);
 }
-
+.ts{
+  font-size: var(--text);
+}
 .st {
   font-size: var(--st);
 }
+
+
 
 .tac {
   text-align: center;
