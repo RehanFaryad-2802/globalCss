@@ -2,6 +2,7 @@
 @import url("flexSystem.css");
 @import url("border-radius.css");
 @import url("hover.css");
+@import url("card-drop-down.css");
 @import url("buttons.css");
 :root {
   font-size: 1rem;
@@ -80,9 +81,14 @@ img[src] {
 img[src].auto {
   width: auto;
 }
-.dn{
+
+.hide {
   display: none;
 }
+.hidden {
+  overflow: hidden;
+}
+
 /*  */
 /*  */
 /*  */
@@ -190,9 +196,6 @@ h2 {
 .st {
   font-size: var(--st);
 }
-
-
-
 .tac {
   text-align: center;
 }
