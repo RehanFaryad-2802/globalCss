@@ -1,0 +1,27 @@
+/* Dropdown */
+.dropdown {
+    position: relative;
+  }
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
+    padding: 8px;
+    z-index: 1000;
+  }
+  .dropdown-menu.left {
+    left: auto;
+    right: 0 !important;
+  }
+  .dropdown:focus-within .dropdown-menu {
+    display: block;
+  }
+  
+  

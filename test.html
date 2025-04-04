@@ -3,120 +3,144 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="documents/global.css" />
-    <link rel="stylesheet" href="documents/test.css" />
-  </head>
-  <body class="bbgc">
-    <div class="container">
-      <div class="navbar f col-3 aic jcsb">
-        <div class="logo">
-          <h1 class="heading wtc pointer">Hami</h1>
-        </div>
-        <nav class="nav">
-          <ol class="f aic jcsb fadeIn">
-            <li><a href="/" class="wtc">Home1</a></li>
-            <li><a href="/" class="wtc">Home2</a></li>
-            <li><a href="/" class="wtc">Home3</a></li>
-            <li><a href="/" class="wtc">Home4</a></li>
-          </ol>
-        </nav>
-        <div class="dropdown tae">
-          <div class="box icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#ffffff"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="pointer"
-            >
-              <path
-                d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"
-              />
-              <path d="m7 16.5-4.74-2.85" />
-              <path d="m7 16.5 5-3" />
-              <path d="M7 16.5v5.17" />
-              <path
-                d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"
-              />
-              <path d="m17 16.5-5-3" />
-              <path d="m17 16.5 4.74-2.85" />
-              <path d="M17 16.5v5.17" />
-              <path
-                d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"
-              />
-              <path d="M12 8 7.26 5.15" />
-              <path d="m12 8 4.74-2.85" />
-              <path d="M12 13.5V8" />
-            </svg>
-          </div>
-          <div class="dropdown">
-            <input type="checkbox">
-            <ol class="hover">
-              <li><a href="/">sublinks-1</a></li>
-              <li><a href="/">sublinks-2</a></li>
-              <li><a href="/">sublinks-3</a></li>
-              <li><a href="/">sublinks-4</a></li>
-            </ol>
+    <title>Flex System Demo</title>
+    <link rel="stylesheet" href="./documents/global.css" />
+    <!-- Your original flex system -->
 
-  <body class="bbc">
-    <div class="f col-3 nowrap aic jcc container">
-      <div class="logo">
-        <h1 class="heading">Hami</h1>
+    <!-- RESPONSIVE ENHANCEMENTS (safe additions) -->
+    <style>
+      /* Demo content styling only */
+      [class*=] > * {
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 1rem;
+        background: white;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      .demo-img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header
+      class="f aic jcsb gap10 responsive-header"
+      style="padding: 1rem; background: #f8fafc"
+    >
+      <div class="f aic gap10">
+        <img
+          src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=100"
+          style="
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+          "
+          alt="Logo"
+        />
+        <h1>FlexSystem</h1>
       </div>
-      <nav class="nav f jcc">
-        <ol class="f aic gcc cg20">
-          <li><a href="/" class="text">Home1</a></li>
-          <li>
-            <div class="dropdown">
-              <a href="#" class="text">Home2</a>
-              <div class="dropdown-menu">
-                <ol>
-                  <li class="mt5 pointer">
-                    <a href="#"
-                      >Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Rerum modi minus ex ipsam fugiat natus molestiae!
-                      Praesentium eum recusandae voluptates dicta officia neque,
-                      fuga minima numquam pariatur, eius aliquam expedita.</a
-                    >
-                  </li>
-                </ol>
-              </div>
-            </div>
-          </li>
-          <li><a href="/" class="text">Home3</a></li>
-          <li><a href="/" class="text">Home4</a></li>
-        </ol>
+      <nav class="f gap10 nowrap">
+        <a href="#features">Features</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <div class="login f aic jce gap20">
-        <button class="btn color1 outline ts">Sign Up</button>
-        <div class="dropdown">
-          <button class="btn color3 outline ts">Log In</button>
-          <div class="dropdown-menu">
-            <h3>
-              <a href="#" class="cs">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut ad
-                ipsum, dolor laudantium deleniti molestiae! Magnam, perferendis
-                ullam officiis sit ipsam deleniti architecto unde omnis minus
-                repellat voluptatem hic mollitia.
-              </a>
-            </h3>
-          </div>
-        </div>
+    </header>
+
+    <!-- FEATURE CARDS -->
+    <section
+      id="features"
+      class="f gap10 jcsb rg15 container"
+      style="padding: 2rem 0"
+    >
+      <div class="f3">
+        <img
+          src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=400"
+          class="demo-img"
+          alt="Responsive Design"
+        />
+        <h2>Responsive Grids</h2>
+        <p>3 columns on desktop → 2 on tablet → 1 on mobile</p>
       </div>
-    </div>
-    <div class="box">
-      <button>Clock</button>
-      <div class="box-1">
-        <h1 class="heading pointer">Hami</h1>
-        <a href="https://youtube.com">Youtube</a>
+      <div class="f3">
+        <img
+          src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=400"
+          class="demo-img"
+          alt="Flexible Items"
+        />
+        <h2>Flexible Items</h2>
+        <p>Uses your - variables for perfect sizing</p>
       </div>
-    </div>
-    <script src="documents/C-global.js"></script>
+      <div class="f3">
+        <img
+          src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=400"
+          class="demo-img"
+          alt="Scrollable Areas"
+        />
+        <h2>Scrollable Areas</h2>
+        <p>Horizontal scrolling when needed</p>
+      </div>
+    </section>
+
+    <!-- IMAGE GALLERY -->
+    <section
+      id="gallery"
+      class="f gap10 responsive-gallery"
+      style="padding: 2rem 0; background: #f8fafc"
+    >
+      <h2 style="flex: var(-)">Photo Gallery</h2>
+      <img
+        src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=400"
+        class="demo-img"
+        alt="Nature"
+      />
+      <img
+        src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=400"
+        class="demo-img"
+        alt="Architecture"
+      />
+      <img
+        src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=400"
+        class="demo-img"
+        alt="People"
+      />
+      <img
+        src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=400"
+        class="demo-img"
+        alt="Technology"
+      />
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section id="contact" class="f fdc aic gap10" style="padding: 2rem 0">
+      <h2>Contact Us</h2>
+      <div
+        style="
+          width: min(100%, 500px);
+          background: #f1f5f9;
+          padding: 2rem;
+          border-radius: 8px;
+        "
+      >
+        <img
+          src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=400"
+          style="
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+          "
+          alt="Contact"
+        />
+        <p>Form would go here</p>
+      </div>
+    </section>
   </body>
 </html>

@@ -14,6 +14,30 @@
   --col-8: 0 0 calc(12.5% - 10px);
   --col-9: 0 0 calc(11.11% - 10px);
   --col-10: 0 0 calc(10% - 10px);
+
+  --f0: 0 0 auto;
+  --f1: 1 1 0%;
+  --f2: 2 2 0%;
+  --f3: 3 3 0%;
+  --f4: 4 4 0%;
+  --f5: 5 5 0%;
+  --f6: 6 6 0%;
+  --f7: 7 7 0%;
+  --f8: 8 8 0%;
+  --f9: 9 9 0%;
+  --f10: 10 10 0%;
+
+  /* Half-step values */
+  --f0-5: 0.5 0.5 0%;
+  --f1-5: 1.5 1.5 0%;
+  --f2-5: 2.5 2.5 0%;
+  --f3-5: 3.5 3.5 0%;
+  --f4-5: 4.5 4.5 0%;
+  --f5-5: 5.5 5.5 0%;
+  --f6-5: 6.5 6.5 0%;
+  --f7-5: 7.5 7.5 0%;
+  --f8-5: 8.5 8.5 0%;
+  --f9-5: 9.5 9.5 0%;
 }
 
 .nowrap {
@@ -105,6 +129,18 @@
 .aic {
   align-items: center;
 }
+.ais {
+  align-items: stretch;
+}
+.aifs {
+  align-items: flex-start;
+}
+.aife {
+  align-items: flex-end;
+}
+.aib {
+  align-items: baseline;
+}
 
 .jcc {
   justify-content: center;
@@ -122,7 +158,7 @@
   justify-content: space-evenly;
 }
 
-.fcsa {
+.jcsa {
   justify-content: space-around;
 }
 .flex {
@@ -138,9 +174,8 @@
 .f.col-7,
 .f.col-8,
 .f.col-9,
-.f.col-10
-{
-  gap: 10px;
+.f.col-10 {
+  justify-content: space-between;
 }
 
 .f.col-1:not(:has(.nowrap)) > * {
@@ -150,7 +185,7 @@
   flex: var(--col-2);
 }
 .f.col-3:not(:has(.nowrap)) > * {
-  flex : var(--col-3);
+  flex: var(--col-3);
 }
 .f.col-4:not(:has(.nowrap)) > * {
   flex: var(--col-4);
@@ -174,8 +209,6 @@
   flex: var(--col-10);
 }
 
-/*  */
-/* Column Gap */
 .cg5 {
   column-gap: 5px;
 }
@@ -192,7 +225,6 @@
   column-gap: 30px;
 }
 
-/* Row Gap */
 .rg5 {
   row-gap: 5px;
 }
@@ -206,28 +238,6 @@
   row-gap: 20px;
 }
 .rg30 {
-  row-gap: 30px;
-}
-
-/* Column and Row Gap */
-.rcg5 {
-  column-gap: 5px;
-  row-gap: 5px;
-}
-.rcg10 {
-  column-gap: 10px;
-  row-gap: 10px;
-}
-.rcg15 {
-  column-gap: 15px;
-  row-gap: 15px;
-}
-.rcg20 {
-  column-gap: 20px;
-  row-gap: 20px;
-}
-.rcg30 {
-  column-gap: 30px;
   row-gap: 30px;
 }
 
