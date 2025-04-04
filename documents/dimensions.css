@@ -1,0 +1,161 @@
+/* ===== WIDTH SYSTEM ===== */
+/* Fixed sizes (pixel-based) */
+.w-xs { width: 320px; }    /* Extra small */
+.w-sm { width: 480px; }    /* Small */
+.w-md { width: 768px; }    /* Medium */
+.w-lg { width: 1024px; }   /* Large */
+.w-xl { width: 1280px; }   /* Extra large */
+.w-2xl { width: 1536px; }  /* 2X large */
+
+/* Fluid sizes */
+.wq { width: 25%; }
+.wt { width: 33.333%; }
+.wh { width: 50%; }
+.wtt { width: 66.666%; }
+.wtq { width: 75%; }
+.full { width: 100%; }
+
+/* Special cases */
+.wa { width: auto; }
+.w-screen { width: 100vw; }
+.w-min { width: min-content; }
+.w-max { width: max-content; }
+
+/* ===== HEIGHT SYSTEM ===== */
+/* Fixed heights */
+.h-xs { height: 160px; }
+.h-sm { height: 240px; }
+.h-md { height: 360px; }
+.h-lg { height: 480px; }
+.h-xl { height: 640px; }
+
+/* Fluid heights */
+.hq { height: 25%; }
+.hh { height: 50%; }
+.htq { height: 75%; }
+.h-full { height: 100%; }
+.h-screen { height: 100vh; }
+
+/* Special cases */
+.h-auto { height: auto; }
+.h-min { height: min-content; }
+.h-max { height: max-content; }
+
+/* ===== CONSTRAINTS ===== */
+/* Width */
+.min-w-0 { min-width: 0; }
+.min-w-full { min-width: 100%; }
+.max-w-xs { max-width: 320px; }
+.max-w-md { max-width: 768px; }
+.max-w-lg { max-width: 1024px; }
+.max-w-full { max-width: 100%; }
+
+/* Height */
+.min-h-0 { min-height: 0; }
+.min-h-full { min-height: 100%; }
+.min-h-screen { min-height: 100vh; }
+.max-h-xs { max-height: 160px; }
+.max-h-md { max-height: 360px; }
+.max-h-full { max-height: 100%; }
+
+/* ===== PRECISE WIDTHS ===== */
+/* Pixel-perfect (small elements) */
+.w-50 { width: 50px; }
+.w-100 { width: 100px; }
+.w-150 { width: 150px; }
+.w-200 { width: 200px; }
+
+/* Standard sizes */
+.w-250 { width: 250px; }
+.w-300 { width: 300px; }
+.w-350 { width: 350px; }
+.w-400 { width: 400px; }
+
+/* Large containers */
+.w-500 { width: 500px; }
+.w-600 { width: 600px; }
+.w-800 { width: 800px; }
+.w-1000 { width: 1000px; }
+
+/* ===== PRECISE HEIGHTS ===== */
+/* Small elements (logos, icons) */
+.h-50 { height: 50px; }
+.h-80 { height: 80px; }  /* Common logo height */
+.h-100 { height: 100px; }
+.h-120 { height: 120px; }
+
+/* Standard sizes */
+.h-150 { height: 150px; }
+.h-200 { height: 200px; }
+.h-250 { height: 250px; }
+.h-300 { height: 300px; }
+
+/* Large sections */
+.h-400 { height: 400px; }
+.h-500 { height: 500px; }
+.h-600 { height: 600px; }
+
+/* ===== SPECIAL CASES ===== */
+/* Square ratios */
+.sq-50 { width: 50px; height: 50px; }
+.sq-100 { width: 100px; height: 100px; }
+.sq-200 { width: 200px; height: 200px; }
+
+
+/* ===== RESPONSIVE OVERRIDES ===== */
+@media (max-width: 768px) {
+  .md-w-full { width: 100% !important; }
+  .md-h-auto { height: auto !important; }
+}
+
+
+
+/* ===== CORE ASPECT RATIOS ===== */
+/* Squares */
+.ar1By1 { aspect-ratio: 1/1; }
+.ar1By1,
+.ar1By2,
+.ar2By3,
+.ar3By4,
+.ar9By16,
+.ar3By2,
+.ar4By3,
+.ar16By9,
+.ar21By9,
+.d-sqr,
+.d-port,
+.d-land,
+.d-cinema {
+  object-fit: cover;
+}
+
+/* Portraits */
+.ar1By2 { aspect-ratio: 1/2; }  /* Ultra tall */
+.ar2By3 { aspect-ratio: 2/3; }  /* Classic portrait */
+.ar3By4 { aspect-ratio: 3/4; }  /* Standard vertical */
+.ar9By16 { aspect-ratio: 9/16; } /* Mobile portrait */
+
+/* Landscapes */
+.ar3By2 { aspect-ratio: 3/2; }  /* Classic landscape */
+.ar4By3 { aspect-ratio: 4/3; }  /* Standard photo */
+.ar16By9 { aspect-ratio: 16/9; } /* Widescreen */
+.ar21By9 { aspect-ratio: 21/9; } /* Cinematic */
+
+/* ===== DIMENSION PRESETS ===== */
+.arsqr { aspect-ratio: 1/1; }     /* Square */
+.arport { aspect-ratio: 3/4; }    /* Default portrait */
+.arland { aspect-ratio: 16/9; }   /* Default landscape */
+.arcinema { aspect-ratio: 21/9; } /* Ultra-wide */
+
+/* ===== OBJECT FIT VARIANTS ===== */
+.of-cover { object-fit: cover; }
+.of-contain { object-fit: contain; }
+.of-fill { object-fit: fill; }
+
+/* ===== SPECIAL CASES ===== */
+/* For when you need to override defaults */
+.ar-unset {
+  aspect-ratio: unset;
+  width: auto;
+  height: auto;
+}

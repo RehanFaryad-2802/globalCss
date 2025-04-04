@@ -3,41 +3,23 @@
 @import url("border-radius.css");
 @import url("hover.css");
 @import url("card-drop-down.css");
+@import url("dimensions.css");
 @import url("buttons.css");
+
+
+
 :root {
   font-size: 1rem;
   --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   --container-size: 1100px;
   --mbgc: #000127;
 
-  --mtc: #303030;
-  --tc: #303030;
-  --stc: #303030;
-  --mhc: #303030;
-  --hc: #303030;
-  --shc: #303030;
-
-  --f1: 0 0 10%;
-  --f2: 0 0 20%;
-  --f3: 0 0 30%;
-  --f33: 0 0 33.33%;
-  --f4: 0 0 40%;
-  --f5: 0 0 50%;
-  --f6: 0 0 60%;
-  --f7: 0 0 70%;
-  --f8: 0 0 80%;
-  --f9: 0 0 90%;
-  --f0-5: 0 0 05%;
-  --f1-5: 0 0 15%;
-  --f2-5: 0 0 25%;
-  --f3-5: 0 0 35%;
-  --f4-5: 0 0 45%;
-  --f5-5: 0 0 55%;
-  --f6-5: 0 0 65%;
-  --f7-5: 0 0 75%;
-  --f8-5: 0 0 85%;
-  --f9-5: 0 0 95%;
-  --f10: 0 0 100%;
+  --mtc: #e3e3e3;
+  --tc: #dbdbdb;
+  --stc: #f0f0f0;
+  --mhc: #f0f0f0;
+  --hc: #e4dbdb;
+  --shc: #eee6e6;
 }
 
 :root {

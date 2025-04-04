@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typography Documentation</title>
+  <link rel="stylesheet" href="../documents/global.css">
+  <style>
+    /* THEME */
+    :root {
+      --bg-dark: #121212;
+      --gold: #FFD700;
+      --gold-light: #FFECB3;
+      --orange: #FFA500;
+      --text-light: #F5F5F5;
+      --card-bg: #1E1E1E;
+    }
+    
+    body {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+    }
+    
+    /* NAVBAR */
+    .navbar {
+      background: rgba(18, 18, 18, 0.98);
+      border-bottom: 2px solid var(--gold);
+      padding: 15px 5%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .nav-logo {
+      color: var(--gold);
+      font-weight: bold;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+    
+    .nav-link {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: all 0.3s;
+      font-weight: 500;
+      padding: 5px 0;
+      border-bottom: 2px solid transparent;
+    }
+    
+    .nav-link:hover, .nav-link.active {
+      color: var(--orange);
+      border-bottom-color: var(--orange);
+    }
+    
+    /* MAIN CONTENT */
+    .container {
+      max-width: 1400px;
+      margin: 40px auto;
+      padding: 0 5%;
+    }
+    
+    .hero {
+      text-align: center;
+      margin-bottom: 60px;
+      padding: 40px 0;
+      border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+    }
+    
+    .hero h1 {
+      color: var(--gold);
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: var(--gold-light);
+    }
+    
+    /* UTILITY SECTIONS */
+    .utility-section {
+      margin-bottom: 80px;
+    }
+    
+    .section-title {
+      color: var(--gold);
+      font-size: 2rem;
+      margin-bottom: 30px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100px;
+      height: 3px;
+      background: var(--orange);
+    }
+    
+    /* UTILITY CARDS */
+    .utility-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      gap: 30px;
+    }
+    
+    .utility-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      border-radius: 8px;
+      padding: 30px;
+      transition: all 0.3s;
+    }
+    
+    .utility-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+      transform: translateY(-5px);
+    }
+    
+    .card-title {
+      color: var(--gold-light);
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .card-title .icon {
+      color: var(--orange);
+    }
+    
+    .card-desc {
+      margin-bottom: 25px;
+      color: #ccc;
+    }
+    
+    .pattern {
+      background: rgba(255, 215, 0, 0.08);
+      color: var(--gold-light);
+      padding: 15px;
+      border-radius: 6px;
+      font-family: monospace;
+      margin-bottom: 20px;
+      border-left: 3px solid var(--orange);
+    }
+    
+    .example-group {
+      margin-top: 25px;
+    }
+    
+    .example-title {
+      color: var(--gold-light);
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+    
+    .example {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 12px 15px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      font-family: monospace;
+      display: block;
+    }
+    
+    /* VALUE TABLES */
+    .value-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+    }
+    
+    .value-table th {
+      background: rgba(255, 215, 0, 0.1);
+      color: var(--gold);
+      padding: 12px;
+      text-align: left;
+    }
+    
+    .value-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+    }
+    
+    .value-table tr:hover {
+      background: rgba(255, 215, 0, 0.05);
+    }
+    
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .utility-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+      
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 20px;
+      }
+      
+      .utility-card {
+        padding: 20px;
+      }
+    }
+    
+    /* TYPOGRAPHY DEMOS */
+    .type-demo {
+      margin: 20px 0;
+      padding: 15px;
+      border-radius: 6px;
+      background: rgba(255, 215, 0, 0.05);
+      border-left: 3px solid var(--gold);
+    }
+    
+    .color-swatch {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      margin-right: 10px;
+      vertical-align: middle;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Global CSS</a>
+      <div class="nav-links">
+        <a href="test.html" class="nav-link">Margin/Padding</a>
+        <a href="flex.html" class="nav-link">Flex System</a>
+        <a href="animation.html" class="nav-link">Animation</a>
+        <a href="#" class="nav-link active">Typography</a>
+        <a href="button.html" class="nav-link">Button</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+    <section class="hero">
+      <h1>Typography System</h1>
+      <p>Comprehensive typography hierarchy with responsive sizing, color controls, and text utilities</p>
+    </section>
+
+    <!-- TEXT HIERARCHY SECTION -->
+    <section class="utility-section">
+      <h2 class="section-title">Text Hierarchy</h2>
+      
+      <div class="utility-grid">
+        <div class="utility-card">
+          <h3 class="card-title"><span class="icon">H1</span> Main Headings</h3>
+          <p class="card-desc">Primary headings with the largest size and bold weight</p>
+          <div class="pattern">.main-heading</div>
+          
+          <div class="type-demo main-heading">
+            Main Heading Example
+          </div>
+          
+          <table class="value-table">
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Font Size</td>
+                <td>var(--mh) = clamp(2rem, 4vw, 4rem)</td>
+              </tr>
+              <tr>
+                <td>Font Weight</td>
+                <td>700</td>
+              </tr>
+              <tr>
+                <td>Color</td>
+                <td>var(--mhc) = #303030</td>
+              </tr>
+              <tr>
+                <td>Margin</td>
+                <td>1rem 0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="utility-card">
+          <h3 class="card-title"><span class="icon">H2</span> Headings</h3>
+          <p class="card-desc">Secondary headings for section titles</p>
+          <div class="pattern">.heading</div>
+          
+          <div class="type-demo heading">
+            Heading Example
+          </div>
+          
+          <table class="value-table">
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Font Size</td>
+                <td>var(--heading) = clamp(1.8rem, 3vw, 3rem)</td>
+              </tr>
+              <tr>
+                <td>Font Weight</td>
+                <td>700</td>
+              </tr>
+              <tr>
+                <td>Color</td>
+                <td>var(--hc) = #303030</td>
+              </tr>
+              <tr>
+                <td>Margin</td>
+                <td>10px top</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="utility-grid mt40">
+        <div class="utility-card">
+          <h3 class="card-title"><span class="icon">H3</span> Sub Headings</h3>
+          <p class="card-desc">Tertiary headings for subsections</p>
+          <div class="pattern">.sub-heading</div>
+          
+          <div class="type-demo sub-heading">
+            Sub Heading Example
+          </div>
+          
+          <table class="value-table">
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Font Size</td>
+                <td>var(--sh) = clamp(1.2rem, 2vw, 2rem)</td>
+              </tr>
+              <tr>
+                <td>Font Weight</td>
+                <td>700</td>
+              </tr>
+              <tr>
+                <td>Color</td>
+                <td>var(--shc) = #303030</td>
+              </tr>
+              <tr>
+                <td>Margin</td>
+                <td>10px top</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="utility-card">
+          <h3 class="card-title"><span class="icon">T</span> Main Text</h3>
+          <p class="card-desc">Primary body text for content</p>
+          <div class="pattern">.main-text</div>
+          
+          <div class="type-demo main-text">
+            Main text example demonstrating the standard body copy style.
+          </div>
+          
+          <table class="value-table">
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Font Size</td>
+                <td>var(--mt) = clamp(1rem, 1.4vw, 1.8rem)</td>
+              </tr>
+              <tr>
+                <td>Font Weight</td>
+                <td>400</td>
+              </tr>
+              <tr>
+                <td>Color</td>
+                <td>var(--mtc) = #303030</td>
+              </tr>
+              <tr>
+                <td>Margin</td>
+                <td>10px top</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="utility-grid mt40">
+        <div class="utility-card">
+          <h3 class="card-title"><span class="icon">t</span> Regular Text</h3>
+          <p class="card-desc">Standard body text for most content</p>
+          <div class="pattern">.text</div>
+          
+          <div class="type-demo text">
+            Regular text example demonstrating the standard body copy style that would be used for paragraphs and general content.
+          </div>
+          
+          <table class="value-table">
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Font Size</td>
+                <td>var(--text) = clamp(0.85rem, 1.3vw, 1.2rem)</td>
+              </tr>
+              <tr>
+                <td>Font Weight</td>
+                <td>400</td>
+              </tr>
+              <tr>
+                <td>Color</td>
+                <td>var(--tc) = #303030</td>
+              </tr>
+              <tr>
+                <td>Margin</td>
+                <td>10px top</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="utility-card">
+          <h3 class="card-title"><span class="icon">t</span> Small Text</h3>
+          <p class="card-desc">Fine print, captions, and secondary information</p>
+          <div class="pattern">.sub-text</div>
+          
+          <div class="type-demo sub-text">
+            Small text example for captions, footnotes, or less important information that should be de-emphasized.
+          </div>
+          
+          <table class="value-table">
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Font Size</td>
+                <td>var(--st) = clamp(0.7rem, 1vw, 1rem)</td>
+              </tr>
+              <tr>
+                <td>Font Weight</td>
+                <td>400</td>
+              </tr>
+              <tr>
+                <td>Color</td>
+                <td>var(--stc) = #303030</td>
+              </tr>
+              <tr>
+                <td>Margin</td>
+                <td>10px top</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIZE UTILITIES SECTION -->
+    <section class="utility-section">
+      <h2 class="section-title">Size Utilities</h2>
+      
+      <div class="utility-card">
+        <h3 class="card-title"><span class="icon">🔠</span> Font Size Classes</h3>
+        <p class="card-desc">Direct access to size variables without semantic meaning</p>
+        
+        <table class="value-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Variable</th>
+              <th>Value</th>
+              <th>Use Case</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>.mh</td>
+              <td>--mh</td>
+              <td>clamp(2rem, 4vw, 4rem)</td>
+              <td>Hero headings</td>
+            </tr>
+            <tr>
+              <td>.hs</td>
+              <td>--heading</td>
+              <td>clamp(1.8rem, 3vw, 3rem)</td>
+              <td>Section headings</td>
+            </tr>
+            <tr>
+              <td>.sh</td>
+              <td>--sh</td>
+              <td>clamp(1.2rem, 2vw, 2rem)</td>
+              <td>Subheadings</td>
+            </tr>
+            <tr>
+              <td>.mt</td>
+              <td>--mt</td>
+              <td>clamp(1rem, 1.4vw, 1.8rem)</td>
+              <td>Lead paragraphs</td>
+            </tr>
+            <tr>
+              <td>.ts</td>
+              <td>--text</td>
+              <td>clamp(0.85rem, 1.3vw, 1.2rem)</td>
+              <td>Body text</td>
+            </tr>
+            <tr>
+              <td>.st</td>
+              <td>--st</td>
+              <td>clamp(0.7rem, 1vw, 1rem)</td>
+              <td>Captions, fine print</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <div class="example-group">
+          <span class="example-title">Example:</span>
+          <span class="example">&lt;h2 class="hs"&gt;Section Title&lt;/h2&gt;</span>
+          <span class="example">&lt;p class="ts"&gt;Body text content...&lt;/p&gt;</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLOR UTILITIES SECTION -->
+    <section class="utility-section">
+      <h2 class="section-title">Color Utilities</h2>
+      
+      <div class="utility-grid">
+        <div class="utility-card">
+          <h3 class="card-title"><span class="icon">🎨</span> Text Colors</h3>
+          <p class="card-desc">Control text color with semantic and neutral options</p>
+          
+          <table class="value-table">
+            <thead>
+              <tr>
+                <th>Class</th>
+                <th>Color</th>
+                <th>Variable</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>.mhc</td>
+                <td><span class="color-swatch" style="background: #303030;"></span> #303030</td>
+                <td>--mhc</td>
+              </tr>
+              <tr>
+                <td>.hc</td>
+                <td><span class="color-swatch" style="background: #303030;"></span> #303030</td>
+                <td>--hc</td>
+              </tr>
+              <tr>
+                <td>.shc</td>
+                <td><span class="color-swatch" style="background: #303030;"></span> #303030</td>
+                <td>--shc</td>
+              </tr>
+              <tr>
+                <td>.mtc</td>
+                <td><span class="color-swatch" style="background: #303030;"></span> #303030</td>
+                <td>--mtc</td>
+              </tr>
+              <tr>
+                <td>.tc</td>
+                <td><span class="color-swatch" style="background: #303030;"></span> #303030</td>
+                <td>--tc</td>
+              </tr>
+              <tr>
+                <td>.stc</td>
+                <td><span class="color-swatch" style="background: #303030;"></span> #303030</td>
+                <td>--stc</td>
+              </tr>
+              <tr>
+                <td>.wtc</td>
+                <td><span class="color-swatch" style="background: #fff;"></span> #FFFFFF</td>
+                <td>N/A</td>
+              </tr>
+              <tr>
+                <td>.btc</td>
+                <td><span class="color-swatch" style="background: #000;"></span> #000000</td>
+                <td>N/A</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="utility-card">
+          <h3 class="card-title"><span class="icon">🖌️</span> Background Colors</h3>
+          <p class="card-desc">Utility classes for background colors</p>
+          
+          <table class="value-table">
+            <thead>
+              <tr>
+                <th>Class</th>
+                <th>Color</th>
+                <th>Variable</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>.mbgc</td>
+                <td><span class="color-swatch" style="background: #000127;"></span> #000127</td>
+                <td>--mbgc</td>
+              </tr>
+              <tr>
+                <td>.wbgc</td>
+                <td><span class="color-swatch" style="background: #fff;"></span> #FFFFFF</td>
+                <td>N/A</td>
+              </tr>
+              <tr>
+                <td>.bbgc</td>
+                <td><span class="color-swatch" style="background: #000;"></span> #000000</td>
+                <td>N/A</td>
+              </tr>
+              <tr>
+                <td>.bglight</td>
+                <td><span class="color-swatch" style="background: rgb(218, 218, 218);"></span> rgb(218, 218, 218)</td>
+                <td>N/A</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div class="example-group">
+            <span class="example-title">Example:</span>
+            <span class="example">&lt;div class="mbgc wtc"&gt;Dark background with white text&lt;/div&gt;</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEXT ALIGNMENT SECTION -->
+    <section class="utility-section">
+      <h2 class="section-title">Text Alignment</h2>
+      
+      <div class="utility-grid">
+        <div class="utility-card">
+          <h3 class="card-title"><span class="icon">↔</span> Horizontal Alignment</h3>
+          <p class="card-desc">Control the horizontal alignment of text</p>
+          
+          <table class="value-table">
+            <thead>
+              <tr>
+                <th>Class</th>
+                <th>Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>.tac</td>
+                <td>text-align: center</td>
+              </tr>
+              <tr>
+                <td>.tae</td>
+                <td>text-align: end</td>
+              </tr>
+              <tr>
+                <td>.tas</td>
+                <td>text-align: start</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div class="example-group">
+            <span class="example-title">Examples:</span>
+            <div class="demo-box tac">Centered Text</div>
+            <div class="demo-box tae">Right-Aligned Text</div>
+            <div class="demo-box tas">Left-Aligned Text</div>
+          </div>
+        </div>
+
+        <div class="utility-card">
+          <h3 class="card-title"><span class="icon">⏩</span> Other Text Utilities</h3>
+          <p class="card-desc">Additional text-related utility classes</p>
+          
+          <table class="value-table">
+            <thead>
+              <tr>
+                <th>Class</th>
+                <th>Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>.pointer</td>
+                <td>cursor: pointer</td>
+              </tr>
+              <tr>
+                <td>.hide</td>
+                <td>display: none</td>
+              </tr>
+              <tr>
+                <td>.hidden</td>
+                <td>overflow: hidden</td>
+              </tr>
+              <tr>
+                <td>.m0a</td>
+                <td>margin: 0 auto</td>
+              </tr>
+              <tr>
+                <td>.full</td>
+                <td>width: 100% or 100vw</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- GLOBAL SETTINGS SECTION -->
+    <section class="utility-section">
+      <h2 class="section-title">Global Settings</h2>
+      
+      <div class="utility-card">
+        <h3 class="card-title"><span class="icon">⚙️</span> Root Variables</h3>
+        <p class="card-desc">Core typography settings defined in :root</p>
+        
+        <table class="value-table">
+          <thead>
+            <tr>
+              <th>Variable</th>
+              <th>Default Value</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>--font-family</td>
+              <td>"Segoe UI", Tahoma, Geneva, Verdana, sans-serif</td>
+              <td>System font stack</td>
+            </tr>
+            <tr>
+              <td>--container-size</td>
+              <td>1100px</td>
+              <td>Max content width</td>
+            </tr>
+            <tr>
+              <td>--mbgc</td>
+              <td>#000127</td>
+              <td>Main background color</td>
+            </tr>
+            <tr>
+              <td>All --*c variables</td>
+              <td>#303030</td>
+              <td>Text color defaults</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <div class="example-group">
+          <span class="example-title">Note:</span>
+          <span class="example">Override these variables in your CSS to customize the theme</span>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

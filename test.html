@@ -1,146 +1,495 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flex System Demo</title>
-    <link rel="stylesheet" href="./documents/global.css" />
-    <!-- Your original flex system -->
-
-    <!-- RESPONSIVE ENHANCEMENTS (safe additions) -->
-    <style>
-      /* Demo content styling only */
-      [class*=] > * {
-        border: 1px solid #e2e8f0;
-        border-radius: 8px;
-        padding: 1rem;
-        background: white;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Margin & Padding Documentation</title>
+  <link rel="stylesheet" href="./documents/global.css">
+  <style>
+    /* THEME */
+    :root {
+      --bg-dark: #121212;
+      --gold: #FFD700;
+      --gold-light: #FFECB3;
+      --orange: #FFA500;
+      --text-light: #F5F5F5;
+      --card-bg: #1E1E1E;
+    }
+    
+    body {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+    }
+    
+    /* NAVBAR */
+    .navbar {
+      background: rgba(18, 18, 18, 0.98);
+      border-bottom: 2px solid var(--gold);
+      padding: 15px 5%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .nav-logo {
+      color: var(--gold);
+      font-weight: bold;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+    
+    .nav-link {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: all 0.3s;
+      font-weight: 500;
+      padding: 5px 0;
+      border-bottom: 2px solid transparent;
+    }
+    
+    .nav-link:hover, .nav-link.active {
+      color: var(--orange);
+      border-bottom-color: var(--orange);
+    }
+    
+    /* MAIN CONTENT */
+    .container {
+      max-width: 1400px;
+      margin: 40px auto;
+      padding: 0 5%;
+    }
+    
+    .hero {
+      text-align: center;
+      margin-bottom: 60px;
+      padding: 40px 0;
+      border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+    }
+    
+    .hero h1 {
+      color: var(--gold);
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: var(--gold-light);
+    }
+    
+    /* UTILITY SECTIONS */
+    .utility-section {
+      margin-bottom: 80px;
+    }
+    
+    .section-title {
+      color: var(--gold);
+      font-size: 2rem;
+      margin-bottom: 30px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100px;
+      height: 3px;
+      background: var(--orange);
+    }
+    
+    /* UTILITY CARDS */
+    .utility-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      gap: 30px;
+    }
+    
+    .utility-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      border-radius: 8px;
+      padding: 30px;
+      transition: all 0.3s;
+    }
+    
+    .utility-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+      transform: translateY(-5px);
+    }
+    
+    .card-title {
+      color: var(--gold-light);
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .card-title .icon {
+      color: var(--orange);
+    }
+    
+    .card-desc {
+      margin-bottom: 25px;
+      color: #ccc;
+    }
+    
+    .pattern {
+      background: rgba(255, 215, 0, 0.08);
+      color: var(--gold-light);
+      padding: 15px;
+      border-radius: 6px;
+      font-family: monospace;
+      margin-bottom: 20px;
+      border-left: 3px solid var(--orange);
+    }
+    
+    .example-group {
+      margin-top: 25px;
+    }
+    
+    .example-title {
+      color: var(--gold-light);
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+    
+    .example {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 12px 15px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      font-family: monospace;
+      display: block;
+    }
+    
+    /* VALUE TABLES */
+    .value-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+    }
+    
+    .value-table th {
+      background: rgba(255, 215, 0, 0.1);
+      color: var(--gold);
+      padding: 12px;
+      text-align: left;
+    }
+    
+    .value-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+    }
+    
+    .value-table tr:hover {
+      background: rgba(255, 215, 0, 0.05);
+    }
+    
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .utility-grid {
+        grid-template-columns: 1fr;
       }
-
-      .demo-img {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-        border-radius: 4px;
-        margin-bottom: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 15px;
       }
-    </style>
-  </head>
-  <body>
-    <!-- HEADER -->
-    <header
-      class="f aic jcsb gap10 responsive-header"
-      style="padding: 1rem; background: #f8fafc"
-    >
-      <div class="f aic gap10">
-        <img
-          src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=100"
-          style="
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-          "
-          alt="Logo"
-        />
-        <h1>FlexSystem</h1>
+      
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+      
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 20px;
+      }
+      
+      .utility-card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Global CSS</a>
+      <div class="nav-links">
+        <a href="#" class="nav-link active">Margin/Padding</a>
+        <a href="flex.html" class="nav-link">Flex System</a>
+        <a href="animation.html" class="nav-link">Animation</a>
+        <a href="typography.html" class="nav-link">Typography</a>
+        <a href="button.html" class="nav-link">Button</a>
       </div>
-      <nav class="f gap10 nowrap">
-        <a href="#features">Features</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+    </div>
+  </nav>
 
-    <!-- FEATURE CARDS -->
-    <section
-      id="features"
-      class="f gap10 jcsb rg15 container"
-      style="padding: 2rem 0"
-    >
-      <div class="f3">
-        <img
-          src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=400"
-          class="demo-img"
-          alt="Responsive Design"
-        />
-        <h2>Responsive Grids</h2>
-        <p>3 columns on desktop → 2 on tablet → 1 on mobile</p>
+  <!-- MAIN CONTENT -->
+  <div class="container">
+    <section class="hero">
+      <h1>Spacing Utilities</h1>
+      <p>Comprehensive margin and padding classes with pixel and rem values, including directional and axis-specific controls</p>
+    </section>
+
+    <!-- MARGIN SECTION -->
+    <section class="utility-section">
+      <h2 class="section-title">Margin Classes</h2>
+      
+      <!-- Basic Margin -->
+      <div class="utility-grid">
+        <div class="utility-card">
+          <h3 class="card-title"><span class="icon">↔</span> Basic Margin</h3>
+          <p class="card-desc">Apply margin to all sides of an element</p>
+          <div class="pattern">m[value][unit]</div>
+          <div class="example-group">
+            <span class="example-title">Examples:</span>
+            <span class="example">m10 = margin: 10px</span>
+            <span class="example">m2r = margin: 2rem</span>
+          </div>
+        </div>
+
+        <!-- Directional Margin -->
+        <div class="utility-card">
+          <h3 class="card-title"><span class="icon">↕</span> Directional Margin</h3>
+          <p class="card-desc">Control margin on specific sides</p>
+          <div class="pattern">m[t|r|b|l][value][unit]</div>
+          <div class="example-group">
+            <span class="example-title">Side Codes:</span>
+            <span class="example">t = top, r = right, b = bottom, l = left</span>
+            <span class="example">mt15 = margin-top: 15px</span>
+            <span class="example">mbr10 = margin-bottom: 10rem</span>
+          </div>
+        </div>
       </div>
-      <div class="f3">
-        <img
-          src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=400"
-          class="demo-img"
-          alt="Flexible Items"
-        />
-        <h2>Flexible Items</h2>
-        <p>Uses your - variables for perfect sizing</p>
-      </div>
-      <div class="f3">
-        <img
-          src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=400"
-          class="demo-img"
-          alt="Scrollable Areas"
-        />
-        <h2>Scrollable Areas</h2>
-        <p>Horizontal scrolling when needed</p>
+
+      <!-- X/Y Axis Margins -->
+      <div class="utility-grid mt40">
+        <div class="utility-card">
+          <h3 class="card-title"><span class="icon">↔</span> X-Axis Margin</h3>
+          <p class="card-desc">Margin on left and right sides simultaneously</p>
+          <div class="pattern">mx[value][unit]</div>
+          <div class="example-group">
+            <span class="example-title">Examples:</span>
+            <span class="example">mx10 = margin-left: 10px; margin-right: 10px</span>
+            <span class="example">mx3r = margin-left: 3rem; margin-right: 3rem</span>
+          </div>
+        </div>
+
+        <div class="utility-card">
+          <h3 class="card-title"><span class="icon">↕</span> Y-Axis Margin</h3>
+          <p class="card-desc">Margin on top and bottom sides simultaneously</p>
+          <div class="pattern">my[value][unit]</div>
+          <div class="example-group">
+            <span class="example-title">Examples:</span>
+            <span class="example">my20 = margin-top: 20px; margin-bottom: 20px</span>
+            <span class="example">my5r = margin-top: 5rem; margin-bottom: 5rem</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- IMAGE GALLERY -->
-    <section
-      id="gallery"
-      class="f gap10 responsive-gallery"
-      style="padding: 2rem 0; background: #f8fafc"
-    >
-      <h2 style="flex: var(-)">Photo Gallery</h2>
-      <img
-        src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=400"
-        class="demo-img"
-        alt="Nature"
-      />
-      <img
-        src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=400"
-        class="demo-img"
-        alt="Architecture"
-      />
-      <img
-        src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=400"
-        class="demo-img"
-        alt="People"
-      />
-      <img
-        src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=400"
-        class="demo-img"
-        alt="Technology"
-      />
-    </section>
+    <!-- PADDING SECTION -->
+    <section class="utility-section">
+      <h2 class="section-title">Padding Classes</h2>
+      
+      <!-- Basic Padding -->
+      <div class="utility-grid">
+        <div class="utility-card">
+          <h3 class="card-title"><span class="icon">↔</span> Basic Padding</h3>
+          <p class="card-desc">Apply padding to all sides of an element</p>
+          <div class="pattern">p[value][unit]</div>
+          <div class="example-group">
+            <span class="example-title">Examples:</span>
+            <span class="example">p20 = padding: 20px</span>
+            <span class="example">p3r = padding: 3rem</span>
+          </div>
+        </div>
 
-    <!-- CONTACT FORM -->
-    <section id="contact" class="f fdc aic gap10" style="padding: 2rem 0">
-      <h2>Contact Us</h2>
-      <div
-        style="
-          width: min(100%, 500px);
-          background: #f1f5f9;
-          padding: 2rem;
-          border-radius: 8px;
-        "
-      >
-        <img
-          src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=400"
-          style="
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 4px;
-            margin-bottom: 1rem;
-          "
-          alt="Contact"
-        />
-        <p>Form would go here</p>
+        <!-- Directional Padding -->
+        <div class="utility-card">
+          <h3 class="card-title"><span class="icon">↕</span> Directional Padding</h3>
+          <p class="card-desc">Control padding on specific sides</p>
+          <div class="pattern">p[t|r|b|l][value][unit]</div>
+          <div class="example-group">
+            <span class="example-title">Side Codes:</span>
+            <span class="example">t = top, r = right, b = bottom, l = left</span>
+            <span class="example">pt5 = padding-top: 5px</span>
+            <span class="example">pl10r = padding-left: 10rem</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- X/Y Axis Paddings -->
+      <div class="utility-grid mt40">
+        <div class="utility-card">
+          <h3 class="card-title"><span class="icon">↔</span> X-Axis Padding</h3>
+          <p class="card-desc">Padding on left and right sides simultaneously</p>
+          <div class="pattern">px[value][unit]</div>
+          <div class="example-group">
+            <span class="example-title">Examples:</span>
+            <span class="example">px15 = padding-left: 15px; padding-right: 15px</span>
+            <span class="example">px4r = padding-left: 4rem; padding-right: 4rem</span>
+          </div>
+        </div>
+
+        <div class="utility-card">
+          <h3 class="card-title"><span class="icon">↕</span> Y-Axis Padding</h3>
+          <p class="card-desc">Padding on top and bottom sides simultaneously</p>
+          <div class="pattern">py[value][unit]</div>
+          <div class="example-group">
+            <span class="example-title">Examples:</span>
+            <span class="example">py10 = padding-top: 10px; padding-bottom: 10px</span>
+            <span class="example">py6r = padding-top: 6rem; padding-bottom: 6rem</span>
+          </div>
+        </div>
       </div>
     </section>
-  </body>
+
+    <!-- VALUES SECTION -->
+    <section class="utility-section">
+      <h2 class="section-title">Allowed Values</h2>
+      
+      <div class="utility-grid">
+        <!-- Pixel Values -->
+        <div class="utility-card">
+          <h3 class="card-title"><span class="icon">🔢</span> Pixel Values</h3>
+          <p class="card-desc">Default unit (no suffix needed)</p>
+          
+          <table class="value-table">
+            <thead>
+              <tr>
+                <th>Value</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>5, 10, 15, 20, 30</td>
+                <td>m10, p15</td>
+              </tr>
+              <tr>
+                <td>Directional: t/r/b/l</td>
+                <td>mt5, pr10</td>
+              </tr>
+              <tr>
+                <td>X/Y Axis: x/y</td>
+                <td>mx20, py15</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- REM Values -->
+        <div class="utility-card">
+          <h3 class="card-title"><span class="icon">📏</span> REM Values</h3>
+          <p class="card-desc">Add "r" suffix for rem units</p>
+          
+          <table class="value-table">
+            <thead>
+              <tr>
+                <th>Value</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1, 2, 3, 5, 10, 30</td>
+                <td>m2r, p5r</td>
+              </tr>
+              <tr>
+                <td>Extended: 4, 6, 15, 20</td>
+                <td>mx4r, py6r</td>
+              </tr>
+              <tr>
+                <td>Spacer classes</td>
+                <td>spacer3, spacer10</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPACER SECTION -->
+    <section class="utility-section">
+      <h2 class="section-title">Spacer Classes</h2>
+      
+      <div class="utility-card">
+        <h3 class="card-title"><span class="icon">↕</span> Vertical Spacers</h3>
+        <p class="card-desc">Predefined padding for consistent vertical rhythm</p>
+        
+        <table class="value-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Value</th>
+              <th>Usage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>spacer1</td>
+              <td>1rem</td>
+              <td>Small gaps</td>
+            </tr>
+            <tr>
+              <td>spacer2</td>
+              <td>2rem</td>
+              <td>Medium gaps</td>
+            </tr>
+            <tr>
+              <td>spacer3</td>
+              <td>3rem</td>
+              <td>Standard section spacing</td>
+            </tr>
+            <tr>
+              <td>spacer5</td>
+              <td>5rem</td>
+              <td>Large separations</td>
+            </tr>
+            <tr>
+              <td>spacer10</td>
+              <td>10rem</td>
+              <td>Hero section spacing</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</body>
 </html>

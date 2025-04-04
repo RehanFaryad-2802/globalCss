@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Documentation</title>
+    <link rel="stylesheet" href="./documents/global.css">
+    <style>
+        /* THEME */
+        :root {
+            --bg-dark: #121212;
+            --gold: #FFD700;
+            --gold-light: #FFECB3;
+            --orange: #FFA500;
+            --text-light: #F5F5F5;
+            --card-bg: #1E1E1E;
+        }
+
+        body {
+            background: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: rgba(18, 18, 18, 0.98);
+            border-bottom: 2px solid var(--gold);
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .nav-logo {
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+            padding: 5px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--orange);
+            border-bottom-color: var(--orange);
+        }
+
+        /* MAIN CONTENT */
+        .container {
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 0 5%;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px 0;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .hero h1 {
+            color: var(--gold);
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--gold-light);
+        }
+
+        /* UTILITY SECTIONS */
+        .utility-section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            color: var(--gold);
+            font-size: 2rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: var(--orange);
+        }
+
+        /* UTILITY CARDS */
+        .utility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        .utility-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 8px;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+
+        .utility-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .card-title {
+            color: var(--gold-light);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-title .icon {
+            color: var(--orange);
+        }
+
+        .card-desc {
+            margin-bottom: 25px;
+            color: #ccc;
+        }
+
+        .pattern {
+            background: rgba(255, 215, 0, 0.08);
+            color: var(--gold-light);
+            padding: 15px;
+            border-radius: 6px;
+            font-family: monospace;
+            margin-bottom: 20px;
+            border-left: 3px solid var(--orange);
+        }
+
+        .example-group {
+            margin-top: 25px;
+        }
+
+        .example-title {
+            color: var(--gold-light);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .example {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 12px 15px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            font-family: monospace;
+            display: block;
+        }
+
+        /* VALUE TABLES */
+        .value-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+
+        .value-table th {
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--gold);
+            padding: 12px;
+            text-align: left;
+        }
+
+        .value-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .value-table tr:hover {
+            background: rgba(255, 215, 0, 0.05);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .utility-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .utility-card {
+                padding: 20px;
+            }
+        }
+
+        /* ANIMATION DEMOS */
+        .demo-box {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px dashed var(--gold);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .demo-item {
+            background: rgba(255, 165, 0, 0.2);
+            border: 1px solid var(--orange);
+            padding: 15px;
+            margin: 10px;
+            border-radius: 3px;
+            display: inline-block;
+        }
+
+        /* Animation classes for demo */
+        .grow>*,
+        .shrink>*,
+        .fadeIn>*,
+        .fadeOut>*,
+        .flip>*,
+        .grow-blur>*,
+        .pulse>*,
+        .skew>*,
+        .hologram>*,
+        .swing>*,
+        .fade-slide>*,
+        .shake>*,
+        .rotate-scale>*,
+        .slide-in>*,
+        .glow>*,
+        .bounce>*,
+        .wobble-zoom>*,
+        .ripple>*,
+        .drop-in>*,
+        .blur>*,
+        .color-change>*,
+        .border-pulse>*,
+        .rotate-skew>*,
+        .blur-darken>*,
+        .slide-up>*,
+        .tilt>*,
+        .scale-rotate>*,
+        .outline>*,
+        .wiggle>*,
+        .spin>*,
+        .liquid>*,
+        .wave>* {
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Keyframes for demo */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            50% {
+                transform: translateX(5px);
+            }
+
+            75% {
+                transform: translateX(-5px);
+            }
+        }
+
+        @keyframes wobble {
+
+            0%,
+            100% {
+                transform: rotate(0deg) scale(1);
+            }
+
+            25% {
+                transform: rotate(5deg);
+            }
+
+            50% {
+                transform: rotate(-5deg) scale(1.08);
+            }
+
+            75% {
+                transform: rotate(5deg);
+            }
+        }
+
+        @keyframes ripple {
+            to {
+                transform: translate(-50%, -50%) scale(50);
+                opacity: 0;
+            }
+        }
+
+        @keyframes dropIn {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes swing {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(15deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Global CSS</a>
+            <div class="nav-links">
+                <a href="test.html" class="nav-link">Margin/Padding</a>
+                <a href="flex.html" class="nav-link">Flex System</a>
+                <a href="#" class="nav-link active">Animation</a>
+                <a href="typography.html" class="nav-link">Typography</a>
+                <a href="button.html" class="nav-link">Button</a>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <section class="hero">
+            <h1>Animation Utilities</h1>
+            <p>A comprehensive collection of hover animations and transitions for interactive elements, applied to
+                parent elements.</p>
+
+        </section>
+
+        <!-- BASIC ANIMATIONS SECTION -->
+        <section class="utility-section">
+            <h2 class="section-title">Basic Animations</h2>
+
+            <div class="utility-grid">
+                <div class="utility-card">
+                    <h3 class="card-title"><span class="icon">↑</span> Grow</h3>
+                    <p class="card-desc">Smooth scale increase on hover</p>
+                    <div class="pattern">.grow </div>
+
+                    <div class="demo-box grow">
+                        <div class="demo-item">Hover to Grow</div>
+                    </div>
+
+                    <table class="value-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Transform</td>
+                                <td>scale(1.03)</td>
+                            </tr>
+                            <tr>
+                                <td>Transition</td>
+                                <td>all 0.3s ease-in-out</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="utility-card">
+                    <h3 class="card-title"><span class="icon">↓</span> Shrink</h3>
+                    <p class="card-desc">Smooth scale decrease on hover</p>
+                    <div class="pattern">.shrink </div>
+
+                    <div class="demo-box shrink">
+                        <div class="demo-item">Hover to Shrink</div>
+                    </div>
+
+                    <table class="value-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Transform</td>
+                                <td>scale(0.97)</td>
+                            </tr>
+                            <tr>
+                                <td>Transition</td>
+                                <td>all 0.3s ease-in-out</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="utility-grid mt40">
+                <div class="utility-card">
+                    <h3 class="card-title"><span class="icon">☀</span> Fade In</h3>
+                    <p class="card-desc">Increase opacity on hover</p>
+                    <div class="pattern">.fadeIn </div>
+
+                    <div class="demo-box fadeIn">
+                        <div class="demo-item">Hover to Fade In</div>
+                    </div>
+
+                    <table class="value-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Initial Opacity</td>
+                                <td>0.3</td>
+                            </tr>
+                            <tr>
+                                <td>Hover Opacity</td>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="utility-card">
+                    <h3 class="card-title"><span class="icon">☁</span> Fade Out</h3>
+                    <p class="card-desc">Decrease opacity on hover</p>
+                    <div class="pattern">.fadeOut </div>
+
+                    <div class="demo-box fadeOut">
+                        <div class="demo-item">Hover to Fade Out</div>
+                    </div>
+
+                    <table class="value-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Initial Opacity</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Hover Opacity</td>
+                                <td>0.4</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRANSFORM ANIMATIONS SECTION -->
+        <section class="utility-section">
+            <h2 class="section-title">Transform Animations</h2>
+
+            <div class="utility-grid">
+                <div class="utility-card">
+                    <h3 class="card-title"><span class="icon">🔄</span> Flip</h3>
+                    <p class="card-desc">3D flip effect on hover</p>
+                    <div class="pattern">.flip </div>
+
+                    <div class="demo-box flip">
+                        <div class="demo-item">Hover to Flip</div>
+                    </div>
+
+                    <table class="value-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Transform</td>
+                                <td>rotateY(180deg)</td>
+                            </tr>
+                            <tr>
+                                <td>Transform Style</td>
+                                <td>preserve-3d</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="utility-card">
+                    <h3 class="card-title"><span class="icon">🌀</span> Spin</h3>
+                    <p class="card-desc">Full 360 degree rotation</p>
+                    <div class="pattern">.spin </div>
+
+                    <div class="demo-box spin">
+                        <div class="demo-item">Hover to Spin</div>
+                    </div>
+
+                    <table class="value-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Transform</td>
+                                <td>rotate(360deg)</td>
+                            </tr>
+                            <tr>
+                                <td>Transition</td>
+                                <td>all 0.5s ease-in-out</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="utility-grid mt40">
+                <div class="utility-card">
+                    <h3 class="card-title"><span class="icon">↘</span> Skew</h3>
+                    <p class="card-desc">Skew effect on hover</p>
+                    <div class="pattern">.skew </div>
+
+                    <div class="demo-box skew">
+                        <div class="demo-item">Hover to Skew</div>
+                    </div>
+
+                    <table class="value-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Transform</td>
+                                <td>skewX(10deg)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="utility-card">
+                    <h3 class="card-title"><span class="icon">🔃</span> Rotate & Scale</h3>
+                    <p class="card-desc">Combined rotation and scaling</p>
+                    <div class="pattern">.rotate-scale </div>
+
+                    <div class="demo-box rotate-scale">
+                        <div class="demo-item">Hover to Rotate & Scale</div>
+                    </div>
+
+                    <table class="value-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Transform</td>
+                                <td>rotate(10deg) scale(1.1)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- MOTION ANIMATIONS SECTION -->
+        <section class="utility-section">
+            <h2 class="section-title">Motion Animations</h2>
+
+            <div class="utility-grid">
+                <div class="utility-card">
+                    <h3 class="card-title"><span class="icon">↔</span> Slide In</h3>
+                    <p class="card-desc">Horizontal slide effect</p>
+                    <div class="pattern">.slide-in </div>
+
+                    <div class="demo-box slide-in">
+                        <div class="demo-item">Hover to Slide</div>
+                    </div>
+
+                    <table class="value-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Transform</td>
+                                <td>translateX(15px)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="utility-card">
+                    <h3 class="card-title"><span class="icon">👋</span> Shake</h3>
+                    <p class="card-desc">Side-to-side shaking motion</p>
+                    <div class="pattern">.shake </div>
+
+                    <div class="demo-box shake">
+                        <div class="demo-item">Hover to Shake</div>
+                    </div>
+
+                    <table class="value-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Animation</td>
+                                <td>shake 0.1s ease-in-out</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="utility-grid mt40">
+                <div class="utility-card">
+                    <h3 class="card-title"><span class="icon">🏀</span> Bounce</h3>
+                    <p class="card-desc">Up and down bouncing motion</p>
+                    <div class="pattern">.bounce </div>
+
+                    <div class="demo-box bounce">
+                        <div class="demo-item">Hover to Bounce</div>
+                    </div>
+
+                    <table class="value-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Animation</td>
+                                <td>bounce 0.5s ease-in-out</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="utility-card">
+                    <h3 class="card-title"><span class="icon">🎢</span> Wobble Zoom</h3>
+                    <p class="card-desc">Combined wobble and zoom effect</p>
+                    <div class="pattern">.wobble-zoom </div>
+
+                    <div class="demo-box wobble-zoom">
+                        <div class="demo-item">Hover to Wobble</div>
+                    </div>
+
+                    <table class="value-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Animation</td>
+                                <td>wobble 0.8s ease</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- SPECIAL EFFECTS SECTION -->
+        <section class="utility-section">
+            <h2 class="section-title">Special Effects</h2>
+
+            <div class="utility-grid">
+                <div class="utility-card">
+                    <h3 class="card-title"><span class="icon">✨</span> Glow</h3>
+                    <p class="card-desc">Orange glow effect on hover</p>
+                    <div class="pattern">.glow </div>
+
+                    <div class="demo-box glow">
+                        <div class="demo-item">Hover to Glow</div>
+                    </div>
+
+                    <table class="value-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Box Shadow</td>
+                                <td>0 0 10px rgba(255, 165, 0, 1)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="utility-card">
+                    <h3 class="card-title"><span class="icon">🌊</span> Ripple</h3>
+                    <p class="card-desc">Water ripple effect from center</p>
+                    <div class="pattern">.ripple </div>
+
+                    <div class="demo-box ripple">
+                        <div class="demo-item">Hover for Ripple</div>
+                    </div>
+
+                    <table class="value-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Animation</td>
+                                <td>ripple 0.6s linear</td>
+                            </tr>
+                            <tr>
+                                <td>Effect</td>
+                                <td>Circular white fade-out</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="utility-grid mt40">
+                <div class="utility-card">
+                    <h3 class="card-title"><span class="icon">💧</span> Liquid</h3>
+                    <p class="card-desc">Liquid fill effect from bottom</p>
+                    <div class="pattern">.liquid </div>
+
+                    <div class="demo-box liquid">
+                        <div class="demo-item">Hover for Liquid</div>
+                    </div>
+
+                    <table class="value-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Effect</td>
+                                <td>Blue fill from bottom</td>
+                            </tr>
+                            <tr>
+                                <td>Transition</td>
+                                <td>top 0.5s ease-in-out</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="utility-card">
+                    <h3 class="card-title"><span class="icon">🌊</span> Wave</h3>
+                    <p class="card-desc">Horizontal wave effect</p>
+                    <div class="pattern">.wave </div>
+
+                    <div class="demo-box wave">
+                        <div class="demo-item">Hover for Wave</div>
+                    </div>
+
+                    <table class="value-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Effect</td>
+                                <td>Horizontal white shine</td>
+                            </tr>
+                            <tr>
+                                <td>Transition</td>
+                                <td>left 0.5s ease-in-out</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPLEX ANIMATIONS SECTION -->
+        <section class="utility-section">
+            <h2 class="section-title">Complex Animations</h2>
+
+            <div class="utility-grid">
+                <div class="utility-card">
+                    <h3 class="card-title"><span class="icon">💓</span> Pulse</h3>
+                    <p class="card-desc">Gentle pulsing scale effect</p>
+                    <div class="pattern">.pulse </div>
+
+                    <div class="demo-box pulse">
+                        <div class="demo-item">Hover to Pulse</div>
+                    </div>
+
+                    <table class="value-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Animation</td>
+                                <td>pulse 0.5s ease-in-out</td>
+                            </tr>
+                            <tr>
+                                <td>Keyframes</td>
+                                <td>Scale 1 → 1.05 → 1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="utility-card">
+                    <h3 class="card-title"><span class="icon">🔄</span> Swing</h3>
+                    <p class="card-desc">Pendulum-like swinging motion</p>
+                    <div class="pattern">.swing </div>
+
+                    <div class="demo-box swing">
+                        <div class="demo-item">Hover to Swing</div>
+                    </div>
+
+                    <table class="value-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Animation</td>
+                                <td>swing 0.5s ease-in-out</td>
+                            </tr>
+                            <tr>
+                                <td>Keyframes</td>
+                                <td>Rotate 0° → 15° → 0°</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="utility-grid mt40">
+                <div class="utility-card">
+                    <h3 class="card-title"><span class="icon">⬇</span> Drop In</h3>
+                    <p class="card-desc">Element drops from above</p>
+                    <div class="pattern">.drop-in </div>
+
+                    <div class="demo-box drop-in">
+                        <div class="demo-item">Hover to Drop</div>
+                    </div>
+
+                    <table class="value-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Animation</td>
+                                <td>dropIn 1s ease-in-out</td>
+                            </tr>
+                            <tr>
+                                <td>Keyframes</td>
+                                <td>translateY(-100%) → translateY(0)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="utility-card">
+                    <h3 class="card-title"><span class="icon">🌀</span> Grow with Blur</h3>
+                    <p class="card-desc">Grow while clearing initial blur</p>
+                    <div class="pattern">.grow-blur </div>
+
+                    <div class="demo-box grow-blur">
+                        <div class="demo-item">Hover to Grow & Clear</div>
+                    </div>
+
+                    <table class="value-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Initial Filter</td>
+                                <td>blur(2px)</td>
+                            </tr>
+                            <tr>
+                                <td>Hover Transform</td>
+                                <td>scale(1.03)</td>
+                            </tr>
+                            <tr>
+                                <td>Hover Filter</td>
+                                <td>blur(0)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="utility-section">
+            <table class="value-table">
+                <thead>
+                    <tr>
+                        <th>Class</th>
+                        <th>Effect</th>
+                        <th>Properties</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>.grow </td>
+                        <td>Scale up slightly</td>
+                        <td>transform: scale(1.03)</td>
+                    </tr>
+                    <tr>
+                        <td>.shrink </td>
+                        <td>Scale down slightly</td>
+                        <td>transform: scale(0.97)</td>
+                    </tr>
+                    <tr>
+                        <td>.fadeIn </td>
+                        <td>Fade in from transparent</td>
+                        <td>opacity: 0.3 → 1</td>
+                    </tr>
+                    <tr>
+                        <td>.fadeOut </td>
+                        <td>Fade out to transparent</td>
+                        <td>opacity: 1 → 0.4</td>
+                    </tr>
+                    <tr>
+                        <td>.flip </td>
+                        <td>3D flip effect</td>
+                        <td>transform: rotateY(180deg)</td>
+                    </tr>
+                    <tr>
+                        <td>.grow-blur </td>
+                        <td>Grow while clearing blur</td>
+                        <td>transform: scale(1.03), filter: blur(2px) → blur(0)</td>
+                    </tr>
+                    <tr>
+                        <td>.pulse </td>
+                        <td>Pulsing scale animation</td>
+                        <td>animation: pulse 0.5s (scale 1 → 1.05 → 1)</td>
+                    </tr>
+                    <tr>
+                        <td>.skew </td>
+                        <td>Skew transform</td>
+                        <td>transform: skewX(10deg)</td>
+                    </tr>
+                    <tr>
+                        <td>.swing </td>
+                        <td>Swing like pendulum</td>
+                        <td>animation: swing 0.5s (rotate 0° → 15° → 0°)</td>
+                    </tr>
+                    <tr>
+                        <td>.shake </td>
+                        <td>Side-to-side shake</td>
+                        <td>animation: shake 0.1s (translateX -5px ↔ 5px)</td>
+                    </tr>
+                    <tr>
+                        <td>.rotate-scale </td>
+                        <td>Rotate and scale</td>
+                        <td>transform: rotate(10deg) scale(1.1)</td>
+                    </tr>
+                    <tr>
+                        <td>.slide-in </td>
+                        <td>Slide horizontally</td>
+                        <td>transform: translateX(15px)</td>
+                    </tr>
+                    <tr>
+                        <td>.glow </td>
+                        <td>Orange glow effect</td>
+                        <td>box-shadow: 0 0 10px rgba(255, 165, 0, 1)</td>
+                    </tr>
+                    <tr>
+                        <td>.bounce </td>
+                        <td>Bounce up and down</td>
+                        <td>animation: bounce 0.5s (translateY 0 ↔ -10px)</td>
+                    </tr>
+                    <tr>
+                        <td>.wobble-zoom </td>
+                        <td>Wobble with zoom</td>
+                        <td>animation: wobble 0.8s (rotate ±5deg, scale 1 → 1.08)</td>
+                    </tr>
+                    <tr>
+                        <td>.ripple </td>
+                        <td>Water ripple effect</td>
+                        <td>animation: ripple 0.6s (circular white fade-out)</td>
+                    </tr>
+                    <tr>
+                        <td>.drop-in </td>
+                        <td>Drop from above</td>
+                        <td>animation: dropIn 1s (translateY -100% → 0)</td>
+                    </tr>
+                    <tr>
+                        <td>.blur </td>
+                        <td>Clear blur effect</td>
+                        <td>filter: blur(2px) → blur(0)</td>
+                    </tr>
+                    <tr>
+                        <td>.spin </td>
+                        <td>360° rotation</td>
+                        <td>transform: rotate(360deg)</td>
+                    </tr>
+                    <tr>
+                        <td>.liquid </td>
+                        <td>Liquid fill from bottom</td>
+                        <td>background fill transition from bottom</td>
+                    </tr>
+                    <tr>
+                        <td>.wave </td>
+                        <td>Horizontal wave effect</td>
+                        <td>horizontal white shine animation</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</body>
+
+</html>
