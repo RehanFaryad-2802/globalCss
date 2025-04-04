@@ -1,269 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./documents/global.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./documents/global.css">
+    <link rel="stylesheet" href="./documents/included.css">
     <title>Global CSS - Utility-First Framework</title>
-    <style>
-      /* === THEME VARIABLES === */
-      :root {
-        --bg-dark: #121212;
-        --gold: #ffd700;
-        --gold-light: #ffecb3;
-        --orange: #ffa500;
-        --text-light: #f5f5f5;
-        --card-bg: #1e1e1e;
-      }
-      .dropdown-menu ol {
-        list-style: none;
-        padding: 8px 0;
-        margin: 0;
-      }
-
-      .dropdown-item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 10px 16px;
-        color: var(--text-light);
-        text-decoration: none;
-        transition: all 0.2s;
-      }
-
-      .dropdown-item:hover {
-        background-color: rgba(255, 215, 0, 0.1);
-        color: var(--orange);
-      }
-
-      .dropdown-item .icon {
-        color: var(--orange);
-        width: 20px;
-        text-align: center;
-      }
-
-      /* === BASE STYLES === */
-      body {
-        background: var(--bg-dark);
-        color: var(--text-light);
-        font-family: "Segoe UI", sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-      }
-
-      .container {
-        max-width: var(--container-size);
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      /* === NAVBAR === */
-      .navbar {
-        background: rgba(18, 18, 18, 0.98);
-        border-bottom: 2px solid var(--gold);
-        padding: 15px 0;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-      }
-
-      .nav-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: var(--container-width);
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      .nav-logo {
-        color: var(--gold);
-        font-weight: bold;
-        font-size: 1.8rem;
-        text-decoration: none;
-      }
-
-      .nav-links {
-        display: flex;
-        gap: 25px;
-      }
-
-      .nav-link {
-        color: var(--text-light);
-        text-decoration: none;
-        transition: all 0.3s;
-        font-weight: 500;
-        padding: 5px 0;
-        border-bottom: 2px solid transparent;
-      }
-
-      .nav-link:hover,
-      .nav-link.active {
-        color: var(--orange);
-        border-bottom-color: var(--orange);
-      }
-
-      /* === HERO SECTION === */
-      .hero {
-        text-align: center;
-        padding: 100px 0;
-        background: linear-gradient(
-          135deg,
-          rgba(30, 30, 30, 0.9) 0%,
-          rgba(18, 18, 18, 1) 100%
-        );
-        border-bottom: 1px solid rgba(255, 215, 0, 0.2);
-      }
-
-      .hero h1 {
-        color: var(--gold);
-        font-size: 3rem;
-        margin-bottom: 20px;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero p {
-        font-size: 1.25rem;
-        max-width: 700px;
-        margin: 0 auto 40px;
-        color: var(--gold-light);
-      }
-
-      .btn {
-        display: inline-block;
-        padding: 12px 24px;
-        border-radius: 6px;
-        font-weight: 500;
-        text-decoration: none;
-        transition: all 0.3s;
-        cursor: pointer;
-      }
-
-      .btn-primary {
-        background: var(--orange);
-        color: white;
-        border: 2px solid var(--orange);
-      }
-
-      .btn-primary:hover {
-        background: transparent;
-        color: var(--orange);
-      }
-
-      .btn-secondary {
-        background: transparent;
-        color: var(--gold);
-        border: 2px solid var(--gold);
-      }
-
-      .btn-secondary:hover {
-        background: var(--gold);
-        color: var(--bg-dark);
-      }
-
-      /* === SECTION STYLES === */
-      .section {
-        padding: 80px 0;
-        border-bottom: 1px solid rgba(255, 215, 0, 0.1);
-      }
-
-      .section-title {
-        color: var(--gold);
-        font-size: 2.5rem;
-        margin-bottom: 50px;
-        text-align: center;
-        position: relative;
-      }
-
-      .section-title:after {
-        content: "";
-        position: absolute;
-        bottom: -15px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100px;
-        height: 3px;
-        background: var(--orange);
-      }
-
-      /* === FEATURE CARDS === */
-      .features-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-        margin-top: 50px;
-      }
-
-      .feature-card {
-        background: var(--card-bg);
-        border: 1px solid rgba(255, 215, 0, 0.2);
-        border-radius: 8px;
-        padding: 30px;
-        transition: all 0.3s;
-      }
-
-      .feature-card:hover {
-        border-color: var(--gold);
-        box-shadow: 0 10px 20px rgba(255, 215, 0, 0.1);
-      }
-
-      .feature-icon {
-        font-size: 2.5rem;
-        color: var(--orange);
-        margin-bottom: 20px;
-      }
-
-      .feature-title {
-        color: var(--gold-light);
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-      }
-
-      /* === COMPONENT SHOWCASE === */
-      .component-showcase {
-        background: rgba(30, 30, 30, 0.7);
-        padding: 30px;
-        border-radius: 8px;
-        margin-top: 30px;
-        border: 1px dashed rgba(255, 215, 0, 0.3);
-      }
-
-      /* === FOOTER === */
-      .footer {
-        background: rgba(18, 18, 18, 0.98);
-        border-top: 2px solid var(--gold);
-        padding: 40px 0;
-        text-align: center;
-      }
-
-      .footer-links {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        margin-bottom: 30px;
-      }
-
-      .footer-link {
-        color: var(--gold-light);
-        text-decoration: none;
-        transition: all 0.3s;
-      }
-
-      .footer-link:hover {
-        color: var(--orange);
-      }
-
-      .copyright {
-        color: var(--gold-light);
-        opacity: 0.7;
-      }
-    </style>
   </head>
   <body>
-    <!-- NAVBAR -->
     <nav class="navbar">
       <div class="container f aic jcsb">
         <a href="index.html" class="nav-logo">Global CSS</a>
@@ -275,7 +19,6 @@
       </div>
     </nav>
 
-    <!-- HERO SECTION -->
     <section class="hero">
       <div class="container">
         <h1>The Utility-First CSS Framework for Modern Web Development</h1>
@@ -284,20 +27,65 @@
           components to streamline your frontend workflow. Build consistent,
           maintainable interfaces without writing custom CSS.
         </p>
-        <div style="display: flex; gap: 20px; justify-content: center">
+        <div class="div_3j7t0x">
           <a href="spacers.html" class="btn btn-primary">Get Started</a>
           <a href="button.html" class="btn btn-secondary">View Components</a>
         </div>
       </div>
     </section>
 
-    <!-- WHY GLOBAL CSS -->
+    <section class="p20">
+      <div class="container">
+        <h2 class="section-title">By The Numbers</h2>
+
+        <div class="features-grid div_rchymm">
+          <div class="feature-card div_x8jzvr">
+            <div class="div_p1eych">
+              <span class="counter" data-target="200">0</span>+
+            </div>
+            <h3 class="feature-title h3_465yjy">
+              Utility Classes
+            </h3>
+          </div>
+
+          <div class="feature-card div_ijl8o4">
+            <div class="div_icerrg">
+              <span class="counter" data-target="98">0</span>%
+            </div>
+            <h3 class="feature-title h3_fy7o8c">
+              Satisfaction
+            </h3>
+          </div>
+
+          <div class="feature-card div_tyjcrb">
+            <div class="div_26zyeq">
+              <span class="counter" data-target="15">0</span>KB
+            </div>
+            <h3 class="feature-title h3_923364">
+              Bundle Size
+            </h3>
+          </div>
+
+          <div class="feature-card div_6kgyj6">
+            <div class="div_xlttc9">
+              <span class="counter" data-target="5000">0</span>+
+            </div>
+            <h3 class="feature-title h3_5qw5h">
+              Projects
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="div_phfxx9"></div>
+
     <section class="section">
       <div class="container">
         <h2 class="section-title">Why Choose Global CSS?</h2>
         <div class="features-grid">
           <div class="feature-card">
-            <div class="feature-icon">⚡</div>
+            <div class="feature-icon">&#x26A1;</div>
             <h3 class="feature-title">Performance Optimized</h3>
             <p>
               Lightweight (~15KB gzipped) with only the utilities you need. No
@@ -305,7 +93,7 @@
             </p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">🎨</div>
+            <div class="feature-icon">&#x1F3A8;</div>
             <h3 class="feature-title">Customizable Theme</h3>
             <p>
               Easily customize colors, spacing, and typography through CSS
@@ -313,7 +101,7 @@
             </p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">📱</div>
+            <div class="feature-icon">&#x1F4F1;</div>
             <h3 class="feature-title">Mobile-First</h3>
             <p>Designed with responsive principles from the ground up.</p>
           </div>
@@ -321,11 +109,11 @@
       </div>
     </section>
 
-    <!-- CORE UTILITIES -->
+
     <section class="section">
       <div class="container">
         <h2 class="section-title">Core Utilities</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto 40px">
+        <p class="p_ifsebl">
           Global CSS includes hundreds of utility classes for all your styling
           needs:
         </p>
@@ -333,7 +121,7 @@
         <div class="features-grid">
           <div class="feature-card">
             <h3 class="feature-title">Layout System</h3>
-            <ul style="padding-left: 20px">
+            <ul class="ul_8g16s">
               <li>Flexbox utilities</li>
               <li>Grid helpers</li>
               <li>Spacing controls</li>
@@ -345,10 +133,10 @@
           </div>
           <div class="feature-card">
             <h3 class="feature-title">Beautiful Components</h3>
-            <ul style="padding-left: 20px">
-              <li>Buttons & button groups</li>
+            <ul class="ul_5wmuy3">
+              <li>Buttons &amp; button groups</li>
               <li>Dropdown menus</li>
-              <li>Cards & containers</li>
+              <li>Cards &amp; containers</li>
               <li>Navigation elements</li>
             </ul>
             <div class="component-showcase">
@@ -357,7 +145,7 @@
           </div>
           <div class="feature-card">
             <h3 class="feature-title">Design Utilities</h3>
-            <ul style="padding-left: 20px">
+            <ul class="ul_ojl49n">
               <li>Border controls</li>
               <li>Shadow effects</li>
               <li>Color system</li>
@@ -371,8 +159,128 @@
       </div>
     </section>
 
-    <!-- COMPONENT SHOWCASE -->
-    <section class="section" style="background: rgba(30, 30, 30, 0.7)">
+    <section class="section section_2mceto">
+      <div class="container">
+        <h2 class="section-title">Built for Every Screen</h2>
+        <p class="p_4usnmm">
+          Mobile-first breakpoints that adapt flawlessly to all devices
+        </p>
+
+        <div class="div_9zjmun">
+          <div class="div_4yzrp1">
+            <div class="div_8t6xx5">
+              <div class="div_lkxokm">
+                <div class="div_pyg950">
+                  <div class="div_y14j60"></div>
+                </div>
+                <div class="div_eve2to">Mobile</div>
+                <div class="div_8x9rxv">
+                  &lt; 768px
+                </div>
+              </div>
+
+              <div class="div_jgz309">
+                <div class="div_gzxgmw">
+                  <div class="div_mf2m7g"></div>
+                </div>
+                <div class="div_p5ydbr">Tablet</div>
+                <div class="div_c5m5dd">
+                  768px - 1024px
+                </div>
+              </div>
+
+              <div class="div_4fprgg">
+                <div class="div_tn07sl">
+                  <div class="div_fw2759"></div>
+                </div>
+                <div class="div_q9te5a">Desktop</div>
+                <div class="div_v6zqxh">
+                  1024px - 1440px
+                </div>
+              </div>
+
+              <div class="div_djtzvw">
+                <div class="div_ogrvnz">
+                  <div class="div_hrhmat"></div>
+                </div>
+                <div class="div_pf0tsn">Wide</div>
+                <div class="div_jlod5q">
+                  &gt; 1440px
+                </div>
+              </div>
+            </div>
+
+            <div class="div_7rqk3v">
+              <h4 class="h4_n31nze">
+                Example Usage:
+              </h4>
+              <pre class="pre_778n2">
+<code class="code_ye0swz">
+
+.element {
+  padding: 10px; 
+  
+  @media (min-width: 768px) {
+    padding: 20px; 
+  }
+  
+  @media (min-width: 1024px) {
+    padding: 30px; 
+  }
+}</code>
+          </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Elegant Color System</h2>
+        <p class="p_syo2jj">
+          Professionally curated colors accessible via intuitive utility classes
+        </p>
+
+        <div class="div_ioeymy">
+          <div class="div_yeqouo">
+            <div class="div_ug9byr"></div>
+            <div class="div_qgef9i">Dark</div>
+            <code class="code_9t5zgj">.bg-dark</code>
+          </div>
+
+          <div class="div_v77c1p">
+            <div class="div_u05e59"></div>
+            <div class="div_pxl1l3">Card</div>
+            <code class="code_3jh788">.bg-card</code>
+          </div>
+
+          <div class="div_1o734i">
+            <div class="div_ove7cm"></div>
+            <div class="div_8i4z5">Gold</div>
+            <code class="code_68cxh3">.gold</code>
+          </div>
+
+          <div class="div_amgtxz">
+            <div class="div_lsoylu"></div>
+            <div class="div_f6m4h">Orange</div>
+            <code class="code_pvk9ep">.orange</code>
+          </div>
+
+          <div class="div_p6suaz">
+            <div class="div_yzqp6v"></div>
+            <div class="div_gckc67">Light Text</div>
+            <code class="code_xg5jme">.text-light</code>
+          </div>
+        </div>
+
+        <div class="div_z9bm2z">
+          <a href="/typography.html" class="btn btn-secondary">Explore All Colors</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section_wk5hr9">
       <div class="container">
         <h2 class="section-title">Featured Components</h2>
 
@@ -383,44 +291,14 @@
               Multiple styles, sizes, and variants for all your interactive
               needs.
             </p>
-            <div
-              class="component-showcase"
-              style="display: flex; gap: 10px; flex-wrap: wrap"
-            >
-              <button
-                class="pointer"
-                style="
-                  padding: 8px 16px;
-                  background: var(--orange);
-                  border: none;
-                  border-radius: 4px;
-                "
-              >
+            <div class="component-showcase div_wd7lf2">
+              <button class="pointer button_thq3il">
                 Primary
               </button>
-              <button
-                class="pointer"
-                style="
-                  padding: 8px 16px;
-                  background: transparent;
-                  border: 1px solid var(--gold);
-                  border-radius: 4px;
-                  color: var(--gold);
-                "
-              >
+              <button class="pointer button_7eyy1h">
                 Secondary
               </button>
-              <button
-                class="pointer"
-                style="
-                  padding: 8px 16px;
-                  background: transparent;
-                  border: none;
-                  border-bottom: 2px solid var(--gold);
-                  border-radius: 0;
-                  color: var(--gold);
-                "
-              >
+              <button class="pointer button_c5r70q">
                 Text
               </button>
             </div>
@@ -431,16 +309,8 @@
             <p>Accessible dropdown menus with flexible positioning.</p>
             <div class="component-showcase">
               <div class="dropdown tas">
-                <button
-                  style="
-                    padding: 8px 16px;
-                    background: var(--orange);
-                    border: none;
-                    border-radius: 4px;
-                    cursor: pointer;
-                  "
-                >
-                  Toggle Dropdown ▾
+                <button class="button_jxjy98">
+                  Toggle Dropdown &#x25BE;
                 </button>
                 <div class="dropdown-menu bbgc">
                   <ol>
@@ -469,16 +339,8 @@
             <h3 class="feature-title">Cards</h3>
             <p>Flexible containers for content with multiple variants.</p>
             <div class="component-showcase">
-              <div
-                style="
-                  background: var(--card-bg);
-                  border: 1px solid var(--gold);
-                  border-radius: 8px;
-                  padding: 20px;
-                  max-width: 250px;
-                "
-              >
-                <h4 style="margin-top: 0">Card Title</h4>
+              <div class="div_rq3crk">
+                <h4 class="h4_jl3km7">Card Title</h4>
                 <p>Card content goes here with proper spacing.</p>
               </div>
             </div>
@@ -487,64 +349,486 @@
       </div>
     </section>
 
-    <!-- GET STARTED -->
-    <section class="section">
+    <section class="section section_loeaw8">
       <div class="container">
-        <h2 class="section-title">Get Started in Seconds</h2>
-        <div style="text-align: center; max-width: 800px; margin: 0 auto">
-          <p>Add Global CSS to your project CDN:</p>
+        <h2 class="section-title">Evolution of Features</h2>
+        <p class="p_5zl5s0">
+          How Global CSS has grown to meet developer needs
+        </p>
 
-          <div
-            style="
-              background: var(--card-bg);
-              padding: 20px;
-              border-radius: 6px;
-              margin: 30px 0;
-              text-align: left;
-              max-width: 600px;
-              margin-left: auto;
-              margin-right: auto;
-            "
-          >
-            <h4 style="margin-top: 0">CDN Link</h4>
-            <code
-              style="
-                display: block;
-                background: rgba(0, 0, 0, 0.3);
-                padding: 10px;
-                border-radius: 4px;
-                overflow-x: auto;
-              "
-            >
-              &lt;link rel="stylesheet"
-              href="https://rfglobalcss.netlify.app/documents/global.css"&gt;
-            </code>
+        <div class="timeline-container div_5gmzjs">
+          <div class="div_ecdvp5"></div>
+
+          <div class="timeline-item div_r9j189">
+            <div class="div_etpwbb"></div>
+            <div class="feature-card div_8n08q3">
+              <h3 class="h3_ej8whh">
+                v1.0 - Core Utilities
+              </h3>
+              <p class="p_drusga">
+                Launched with 150+ essential utility classes for layout,
+                spacing, and typography
+              </p>
+              <div class="div_ntcjcj">
+                <span class="span_f22ga8">Flexbox</span>
+                <span class="span_gs1iac">Spacing</span>
+              </div>
+            </div>
           </div>
 
-          <a href="spacers.html" class="btn btn-primary"
-            >View Full Documentation</a
-          >
+          <div class="timeline-item div_4gj5uw">
+            <div class="div_9clv9f"></div>
+            <div class="feature-card div_wp7vik">
+              <h3 class="h3_lu79up">
+                v2.0 - Component Library
+              </h3>
+              <p class="p_4tt24f">
+                Added pre-built components with dark/light mode support
+              </p>
+              <div class="div_6cifc6">
+                <span class="span_5czoxm">Buttons</span>
+                <span class="span_lipz5a">Cards</span>
+                <span class="span_uejm7i">Navbars</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item div_5szyzc">
+            <div class="div_c2vw0i"></div>
+            <div class="feature-card div_ydax3w">
+              <h3 class="h3_jw79bs">
+                v3.0 - Interactive Elements
+              </h3>
+              <p class="p_9wbk9">
+                Introduced dynamic components with zero-JS options
+              </p>
+              <div class="div_wx0sgl">
+                <span class="span_e7zdw3">Dropdowns</span>
+                <span class="span_uambnr">Modals</span>
+                <span class="span_vn9hk4">Tabs</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Why We Stand Out</h2>
+        <p class="p_wces0j">
+          See how Global CSS compares to other popular frameworks
+        </p>
+
+        <div class="div_yem3ph">
+          <table class="table_4ttkx2">
+            <thead>
+              <tr class="tr_deu5hg">
+                <th class="th_gzwi8o">
+                  Feature
+                </th>
+                <th class="th_2gj01o">
+                  Global CSS
+                </th>
+                <th class="th_bxfydl">
+                  Tailwind
+                </th>
+                <th class="th_gdh4oy">
+                  Bootstrap
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="tr_2o4kcm">
+                <td class="td_tpn6vd">
+                  Bundle Size
+                </td>
+                <td class="td_ixuwy4">
+                  15KB
+                </td>
+                <td class="td_vcuylg">45KB+</td>
+                <td class="td_cwj1m9">25KB+</td>
+              </tr>
+              <tr class="tr_n5ipem">
+                <td class="td_j6hneh">
+                  Customization
+                </td>
+                <td class="td_ltntyv">
+                  <span class="span_i4rioh">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</span>
+                </td>
+                <td class="td_bapxdg">&#x2605;&#x2605;&#x2605;&#x2605;&#x2606;</td>
+                <td class="td_2f1v74">&#x2605;&#x2605;&#x2605;&#x2606;&#x2606;</td>
+              </tr>
+              <tr class="tr_ph2vlg">
+                <td class="td_o1fubp">
+                  Learning Curve
+                </td>
+                <td class="td_nel4z8">
+                  <span class="span_eqd7j4">Low</span>
+                </td>
+                <td class="td_1smo81">Medium</td>
+                <td class="td_fs5s41">Medium</td>
+              </tr>
+              <tr class="tr_fc0gpg">
+                <td class="td_6aptmz">
+                  Dark Mode
+                </td>
+                <td class="td_8p3d5k">
+                  <span class="span_gfh69b">Built-in</span>
+                </td>
+                <td class="td_cw4tga">Plugin</td>
+                <td class="td_hvo9c8">v5+</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="div_rs7rf4">
+          <button id="toggle-rows" class="btn btn-secondary">
+            Show Advanced Comparison
+          </button>
+        </div>
+
+        <div id="advanced-rows" class="div_3kqdp8">
+          <table class="table_ylba54">
+            <tbody>
+              <tr class="tr_ibvv9c">
+                <td class="td_td35i7">
+                  CSS Variables
+                </td>
+                <td class="td_92b2zl">
+                  <span class="span_z3jt1s">&#x2713;</span>
+                </td>
+                <td class="td_gomwbu">&#x2713;</td>
+                <td class="td_om91a7">&#x2713;</td>
+              </tr>
+              <tr class="tr_ety3mh">
+                <td class="td_u55t0v">Zero JS</td>
+                <td class="td_3wfj79">
+                  <span class="span_glxuz2">&#x2713;</span>
+                </td>
+                <td class="td_c7eh4s">&#x2713;</td>
+                <td class="td_26ru6k">&#x2717;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section_ku2v68">
+      <div class="container">
+        <h2 class="section-title">Meet The Team</h2>
+        <p class="p_w1ih0m">
+          The brilliant minds behind Global CSS framework
+        </p>
+
+        <div class="features-grid div_eoie5x">
+          <div class="feature-card div_f2rzkh">
+            <div class="div_dwc68g">
+              <img src="https://res.cloudinary.com/did9ixbwa/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1740824565/youtube/og6muwstoghnhjcl4drj.png" class="img_egudma">
+            </div>
+            <h3 class="feature-title h3_mu8omg">
+              Alex Johnson
+            </h3>
+            <div class="div_tj3byw">
+              Lead Developer
+            </div>
+            <p class="p_og36to">
+              Creator of the core utility system and architecture.
+            </p>
+            <div class="div_obxh4v">
+              <a href="#" class="a_6f34me">Twitter</a>
+              <a href="#" class="a_eyvjoa">GitHub</a>
+            </div>
+          </div>
+
+          <div class="feature-card div_r6z8pg">
+            <div class="div_1v7ts8">
+              <img src="https://res.cloudinary.com/did9ixbwa/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1740825028/youtube/b5dxwdkzomczkmcchopq.jpg" class="img_u15h65">
+            </div>
+            <h3 class="feature-title h3_7urai3">
+              Maria Chen
+            </h3>
+            <div class="div_88zohn">
+              Design Architect
+            </div>
+            <p class="p_ykaf7h">
+              Crafted the visual language and theme system.
+            </p>
+            <div class="div_7fjm9w">
+              <a href="#" class="a_kz039w">Dribbble</a>
+              <a href="#" class="a_tj878o">LinkedIn</a>
+            </div>
+          </div>
+
+          <div class="feature-card div_56fvsz">
+            <div class="div_78v0v3">
+              <img src="https://res-console.cloudinary.com/did9ixbwa/thumbnails/v1/image/upload/v1740823758/eW91dHViZS9vaGlicGZpbXV6eW5jNXk5Ymx3Zw==/drilldown" class="img_bcbhwp">
+            </div>
+            <h3 class="feature-title h3_zoec5y">
+              Sam Wilson
+            </h3>
+            <div class="div_etcsz3">
+              Community Lead
+            </div>
+            <p class="p_qt2rba">
+              Builds documentation and developer resources.
+            </p>
+            <div class="div_g7vm77">
+              <a href="#" class="a_aqpecy">YouTube</a>
+              <a href="#" class="a_e79ezw">Discord</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Try It Live</h2>
+        <p class="p_m3a5ff">
+          Experiment with Global CSS utilities in this interactive playground
+        </p>
+
+        
+
+        <div class="div_ip8g6m">
+          <div class="div_or1psw">
+            <h3 class="h3_ybez6z">Utilities</h3>
+
+            <div class="div_3rpr1x">
+              <label class="label_j9qgc0">Background:</label>
+              <select id="bg-select" class="select_6hnvat">
+                <option value="bg-dark">Dark</option>
+                <option value="bg-card">Card</option>
+                <option value="gold">Gold</option>
+                <option value="orange">Orange</option>
+              </select>
+            </div>
+
+            <div class="div_itpct8">
+              <label class="label_k7hkui">Padding:</label>
+              <select id="padding-select" class="select_4kt6ji">
+                <option value="p10">10px</option>
+                <option value="p20">20px</option>
+                <option value="p30">30px</option>
+              </select>
+            </div>
+
+            <div class="div_q7xas1">
+              <label class="label_tuahl1">Border:</label>
+              <select id="border-select" class="select_4dff08">
+                <option value="br-none">None</option>
+                <option value="br-thin">Thin Gold</option>
+                <option value="br-thick">Thick Orange</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="div_l3dnh9">
+            <div id="playground-preview" class="div_priotv">
+              <h4 class="h4_rat5z9">Preview Element</h4>
+              <p class="p_5uwzkp">
+                Edit properties using the controls
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="div_68uc7r">
+          <a href="#" class="btn btn-secondary">View All Utilities</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Why We Stand Out</h2>
+        <p class="p_4kj8qf">
+          See how Global CSS compares to other popular frameworks
+        </p>
+
+        <div class="div_2sp6tj">
+          <table class="table_buklev">
+            <thead>
+              <tr class="tr_xr3fvt">
+                <th class="th_9j5yzv">
+                  Feature
+                </th>
+                <th class="th_4dqbhu">
+                  Global CSS
+                </th>
+                <th class="th_7rb7d0">
+                  Tailwind
+                </th>
+                <th class="th_64um85">
+                  Bootstrap
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="tr_tet28z">
+                <td class="td_zswl8e">
+                  Bundle Size
+                </td>
+                <td class="td_ggke8q">
+                  15KB
+                </td>
+                <td class="td_zrdvi0">45KB+</td>
+                <td class="td_vr12a5">25KB+</td>
+              </tr>
+              <tr class="tr_k5xyug">
+                <td class="td_yxy23d">
+                  Customization
+                </td>
+                <td class="td_qrf27o">
+                  <span class="span_oyto8b">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</span>
+                </td>
+                <td class="td_vkwtn6">&#x2605;&#x2605;&#x2605;&#x2605;&#x2606;</td>
+                <td class="td_hyyiwy">&#x2605;&#x2605;&#x2605;&#x2606;&#x2606;</td>
+              </tr>
+              <tr class="tr_u59sc">
+                <td class="td_hpqu0m">
+                  Learning Curve
+                </td>
+                <td class="td_2hvxh1">
+                  <span class="span_1ac7ex">Low</span>
+                </td>
+                <td class="td_i2el8h">Medium</td>
+                <td class="td_bn8bx">Medium</td>
+              </tr>
+              <tr class="tr_6w3xt4">
+                <td class="td_dds0pp">
+                  Dark Mode
+                </td>
+                <td class="td_g1hfy4">
+                  <span class="span_6wm6mq">Built-in</span>
+                </td>
+                <td class="td_ikmrbb">Plugin</td>
+                <td class="td_7hy033">v5+</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="div_pw92i8">
+          <button id="toggle-rows" class="btn btn-secondary">
+            Show Advanced Comparison
+          </button>
+        </div>
+
+        <div id="advanced-rows" class="div_zhewbj">
+          <table class="table_eqkp6w">
+            <tbody>
+              <tr class="tr_ikhi5p">
+                <td class="td_k9ml0j">
+                  CSS Variables
+                </td>
+                <td class="td_6xqvw3">
+                  <span class="span_3cjxrc">&#x2713;</span>
+                </td>
+                <td class="td_lzg98e">&#x2713;</td>
+                <td class="td_ec83d7">&#x2713;</td>
+              </tr>
+              <tr class="tr_s91t38">
+                <td class="td_takq01">Zero JS</td>
+                <td class="td_aihobd">
+                  <span class="span_gn6f7z">&#x2713;</span>
+                </td>
+                <td class="td_eou8oq">&#x2713;</td>
+                <td class="td_crdn53">&#x2717;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <section class="section section_3ehzht">
+      <div class="container">
+        <h2 class="section-title">Words of Wisdom</h2>
+        <p class="p_41tef2">
+          Insights from industry leaders that inspire our design philosophy
+        </p>
+
+        <div class="features-grid div_6hrbix">
+          <div class="feature-card div_eux2rz">
+            <div class="div_ufwbfh">
+              &#x275D;
+            </div>
+            <p class="p_lsde68">
+              &quot;Good design is obvious. Great design is transparent.&quot;
+            </p>
+            <div class="div_fwc9ui">
+              <div class="div_6daqnk"></div>
+              <div>
+                <div class="div_3fc9u4">
+                  Joe Sparano
+                </div>
+                <div class="div_8e6yxq">
+                  Design Director
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-card div_9kblzj">
+            <div class="div_pio9es">
+              &#x275D;
+            </div>
+            <p class="p_aori62">
+              &quot;Utility-first CSS is like building with LEGO - endless
+              possibilities from simple blocks.&quot;
+            </p>
+            <div class="div_eho09c">
+              <div class="div_z7av7q"></div>
+              <div>
+                <div class="div_ahjjmt">
+                  Sarah Chen
+                </div>
+                <div class="div_834bg1">CSS Architect</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Get Started in Seconds</h2>
+        <div class="div_yzpq2i">
+          <p>Add Global CSS to your project CDN:</p>
+
+          <div class="div_zluj5t">
+            <h4 class="h4_9migcx">CDN Link</h4>
+            <code class="code_wth2no">
+              &lt;link rel=&quot;stylesheet&quot;
+              href=&quot;https://rfglobalcss.netlify.app/documents/global.css&quot;&gt;
+            </code>
+          </div>
+
+          <a href="spacers.html" class="btn btn-primary">View Full Documentation</a>
+        </div>
+      </div>
+    </section>
+
     <footer class="footer">
       <div class="container">
         <div class="footer-links">
           <a href="spacers.html" class="footer-link">Documentation</a>
           <a href="animation.html" class="footer-link">Animations</a>
-          <a
-            href="https://github.com/yourusername/global-css"
-            class="footer-link"
-            >GitHub</a
-          >
+          <a href="https://github.com/yourusername/global-css" class="footer-link">GitHub</a>
           <a href="#" class="footer-link">License</a>
         </div>
         <p class="copyright">
-          © 2023 Global CSS Framework. Open source MIT licensed.
+          &#xA9; 2023 Global CSS Framework. Open source MIT licensed.
         </p>
       </div>
     </footer>
+    <script src="documents/C-script.js"></script>
   </body>
 </html>
