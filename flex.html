@@ -1,658 +1,1195 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flex System Documentation</title>
-  <link rel="stylesheet" href="../documents/global.css">
-  <style>
-    /* THEME */
-    :root {
-      --bg-dark: #121212;
-      --gold: #FFD700;
-      --gold-light: #FFECB3;
-      --orange: #FFA500;
-      --text-light: #F5F5F5;
-      --card-bg: #1E1E1E;
-    }
-    
-    body {
-      background: var(--bg-dark);
-      color: var(--text-light);
-      font-family: 'Segoe UI', sans-serif;
-      line-height: 1.6;
-    }
-    
-    /* NAVBAR */
-    .navbar {
-      background: rgba(18, 18, 18, 0.98);
-      border-bottom: 2px solid var(--gold);
-      padding: 15px 5%;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-    
-    .nav-logo {
-      color: var(--gold);
-      font-weight: bold;
-      font-size: 1.5rem;
-      text-decoration: none;
-    }
-    
-    .nav-links {
-      display: flex;
-      gap: 25px;
-    }
-    
-    .nav-link {
-      color: var(--text-light);
-      text-decoration: none;
-      transition: all 0.3s;
-      font-weight: 500;
-      padding: 5px 0;
-      border-bottom: 2px solid transparent;
-    }
-    
-    .nav-link:hover, .nav-link.active {
-      color: var(--orange);
-      border-bottom-color: var(--orange);
-    }
-    
-    /* MAIN CONTENT */
-    .container {
-      max-width: 1400px;
-      margin: 40px auto;
-      padding: 0 5%;
-    }
-    
-    .hero {
-      text-align: center;
-      margin-bottom: 60px;
-      padding: 40px 0;
-      border-bottom: 1px solid rgba(255, 215, 0, 0.2);
-    }
-    
-    .hero h1 {
-      color: var(--gold);
-      font-size: 2.8rem;
-      margin-bottom: 20px;
-    }
-    
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin: 0 auto;
-      color: var(--gold-light);
-    }
-    
-    /* UTILITY SECTIONS */
-    .utility-section {
-      margin-bottom: 80px;
-    }
-    
-    .section-title {
-      color: var(--gold);
-      font-size: 2rem;
-      margin-bottom: 30px;
-      position: relative;
-      padding-bottom: 10px;
-    }
-    
-    .section-title:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100px;
-      height: 3px;
-      background: var(--orange);
-    }
-    
-    /* UTILITY CARDS */
-    .utility-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-      gap: 30px;
-    }
-    
-    .utility-card {
-      background: var(--card-bg);
-      border: 1px solid rgba(255, 215, 0, 0.2);
-      border-radius: 8px;
-      padding: 30px;
-      transition: all 0.3s;
-    }
-    
-    .utility-card:hover {
-      border-color: var(--gold);
-      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
-      transform: translateY(-5px);
-    }
-    
-    .card-title {
-      color: var(--gold-light);
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    
-    .card-title .icon {
-      color: var(--orange);
-    }
-    
-    .card-desc {
-      margin-bottom: 25px;
-      color: #ccc;
-    }
-    
-    .pattern {
-      background: rgba(255, 215, 0, 0.08);
-      color: var(--gold-light);
-      padding: 15px;
-      border-radius: 6px;
-      font-family: monospace;
-      margin-bottom: 20px;
-      border-left: 3px solid var(--orange);
-    }
-    
-    .example-group {
-      margin-top: 25px;
-    }
-    
-    .example-title {
-      color: var(--gold-light);
-      margin-bottom: 10px;
-      font-weight: 500;
-    }
-    
-    .example {
-      background: rgba(0, 0, 0, 0.3);
-      padding: 12px 15px;
-      border-radius: 4px;
-      margin-bottom: 8px;
-      font-family: monospace;
-      display: block;
-    }
-    
-    /* VALUE TABLES */
-    .value-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 25px 0;
-    }
-    
-    .value-table th {
-      background: rgba(255, 215, 0, 0.1);
-      color: var(--gold);
-      padding: 12px;
-      text-align: left;
-    }
-    
-    .value-table td {
-      padding: 10px 12px;
-      border-bottom: 1px solid rgba(255, 215, 0, 0.1);
-    }
-    
-    .value-table tr:hover {
-      background: rgba(255, 215, 0, 0.05);
-    }
-    
-    /* RESPONSIVE */
-    @media (max-width: 992px) {
-      .utility-grid {
-        grid-template-columns: 1fr;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex System Documentation</title>
+    <link rel="stylesheet" href="../documents/global.css" />
+    <style>
+      /* THEME */
+      :root {
+        --bg-dark: #121212;
+        --gold: #ffd700;
+        --gold-light: #ffecb3;
+        --orange: #ffa500;
+        --text-light: #f5f5f5;
+        --card-bg: #1e1e1e;
       }
-    }
-    
-    @media (max-width: 768px) {
-      .nav-container {
-        flex-direction: column;
-        gap: 15px;
-      }
-      
-      .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-      }
-      
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .container {
-        padding: 0 20px;
-      }
-      
-      .utility-card {
+      .demo-box {
+        background: rgba(255, 215, 0, 0.1);
+        border: 1px dashed var(--gold);
         padding: 20px;
+        margin: 15px 0;
+        border-radius: 6px;
       }
-    }
-    
-    /* DEMO BOXES */
-    .demo-box {
-      background: rgba(255, 215, 0, 0.1);
-      border: 1px dashed var(--gold);
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 4px;
-    }
-    
-    .demo-item {
-      background: rgba(255, 165, 0, 0.2);
-      border: 1px solid var(--orange);
-      padding: 10px;
-      text-align: center;
-      margin: 5px;
-      border-radius: 3px;
-    }
-  </style>
-</head>
-<body>
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo">Global CSS</a>
-      <div class="nav-links">
-        <a href="test.html" class="nav-link">Margin/Padding</a>
-        <a href="#" class="nav-link active">Flex System</a>
-        <a href="animation.html" class="nav-link">Animation</a>
-        <a href="typography.html" class="nav-link">Typography</a>
-        <a href="button.html" class="nav-link">Button</a>
 
+      .demo-item {
+        background: rgba(255, 165, 0, 0.2);
+        border: 1px solid var(--orange);
+        padding: 10px;
+        margin: 5px;
+        border-radius: 4px;
+      }
+
+      body {
+        background: var(--bg-dark);
+        color: var(--text-light);
+        font-family: "Segoe UI", sans-serif;
+        line-height: 1.6;
+      }
+
+      /* NAVBAR */
+      .navbar {
+        background: rgba(18, 18, 18, 0.98);
+        border-bottom: 2px solid var(--gold);
+        padding: 15px 5%;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .nav-logo {
+        color: var(--gold);
+        font-weight: bold;
+        font-size: 1.5rem;
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 25px;
+      }
+
+      .nav-link {
+        color: var(--text-light);
+        text-decoration: none;
+        transition: all 0.3s;
+        font-weight: 500;
+        padding: 5px 0;
+        border-bottom: 2px solid transparent;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--orange);
+        border-bottom-color: var(--orange);
+      }
+
+      /* MAIN CONTENT */
+      .container {
+        max-width: 1400px;
+        margin: 40px auto;
+        padding: 0 5%;
+      }
+
+      .hero {
+        text-align: center;
+        margin-bottom: 60px;
+        padding: 40px 0;
+        border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+      }
+
+      .hero h1 {
+        color: var(--gold);
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        color: var(--gold-light);
+      }
+
+      /* UTILITY SECTIONS */
+      .utility-section {
+        margin-bottom: 80px;
+      }
+
+      .section-title {
+        color: var(--gold);
+        font-size: 2rem;
+        margin-bottom: 30px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100px;
+        height: 3px;
+        background: var(--orange);
+      }
+
+      /* UTILITY CARDS */
+      .utility-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: 30px;
+      }
+
+      .utility-card {
+        background: var(--card-bg);
+        border: 1px solid rgba(255, 215, 0, 0.2);
+        border-radius: 8px;
+        padding: 30px;
+        transition: all 0.3s;
+      }
+
+      .utility-card:hover {
+        border-color: var(--gold);
+        box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+        transform: translateY(-5px);
+      }
+
+      .card-title {
+        color: var(--gold-light);
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .card-title .icon {
+        color: var(--orange);
+      }
+
+      .card-desc {
+        margin-bottom: 25px;
+        color: #ccc;
+      }
+
+      .pattern {
+        background: rgba(255, 215, 0, 0.08);
+        color: var(--gold-light);
+        padding: 15px;
+        border-radius: 6px;
+        font-family: monospace;
+        margin-bottom: 20px;
+        border-left: 3px solid var(--orange);
+      }
+
+      .example-group {
+        margin-top: 25px;
+      }
+
+      .example-title {
+        color: var(--gold-light);
+        margin-bottom: 10px;
+        font-weight: 500;
+      }
+
+      .example {
+        background: rgba(0, 0, 0, 0.3);
+        padding: 12px 15px;
+        border-radius: 4px;
+        margin-bottom: 8px;
+        font-family: monospace;
+        display: block;
+      }
+
+      /* VALUE TABLES */
+      .value-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 25px 0;
+      }
+
+      .value-table th {
+        background: rgba(255, 215, 0, 0.1);
+        color: var(--gold);
+        padding: 12px;
+        text-align: left;
+      }
+
+      .value-table td {
+        padding: 10px 12px;
+        border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+      }
+
+      .value-table tr:hover {
+        background: rgba(255, 215, 0, 0.05);
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 992px) {
+        .utility-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-container {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .nav-links {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 15px;
+        }
+
+        .hero h1 {
+          font-size: 2.2rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          padding: 0 20px;
+        }
+
+        .utility-card {
+          padding: 20px;
+        }
+      }
+
+      /* DEMO BOXES */
+      .demo-box {
+        background: rgba(255, 215, 0, 0.1);
+        border: 1px dashed var(--gold);
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 4px;
+      }
+
+      .demo-item {
+        background: rgba(255, 165, 0, 0.2);
+        border: 1px solid var(--orange);
+        padding: 10px;
+        text-align: center;
+        margin: 5px;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">Global CSS</a>
+        <div class="nav-links">
+          <a href="test.html" class="nav-link">Margin/Padding</a>
+          <a href="#" class="nav-link active">Flex System</a>
+          <a href="animation.html" class="nav-link">Animation</a>
+          <a href="typography.html" class="nav-link">Typography</a>
+          <a href="button.html" class="nav-link">Button</a>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- MAIN CONTENT -->
-  <div class="container">
-    <section class="hero">
-      <h1>Flexbox Utilities</h1>
-      <p>Comprehensive flexbox system with responsive columns, flexible sizing, and alignment controls</p>
-    </section>
+    <!-- MAIN CONTENT -->
+    <div class="container">
+      <section class="hero">
+        <h1>Flexbox Utilities</h1>
+        <p>
+          Comprehensive flexbox system with responsive columns, flexible sizing,
+          and alignment controls
+        </p>
+      </section>
 
-    <!-- BASIC FLEX SECTION -->
-    <section class="utility-section">
-      <h2 class="section-title">Basic Flex Setup</h2>
-      
-      <div class="utility-grid">
-        <div class="utility-card">
-          <h3 class="card-title"><span class="icon">⎘</span> Flex Container</h3>
-          <p class="card-desc">Initialize a flex container with wrapping enabled by default</p>
-          <div class="pattern">.f</div>
-          <div class="example-group">
-            <span class="example-title">Example:</span>
-            <span class="example">&lt;div class="f"&gt;...&lt;/div&gt;</span>
+      <!-- BASIC FLEX SECTION -->
+      <section class="utility-section">
+        <h2 class="section-title">Basic Flex Setup</h2>
+
+        <div class="utility-grid">
+          <div class="utility-card">
+            <h3 class="card-title">
+              <span class="icon">⎘</span> Flex Container
+            </h3>
+            <p class="card-desc">
+              Initialize a flex container with wrapping enabled by default
+            </p>
+            <div class="pattern">.f</div>
+            <div class="example-group">
+              <span class="example-title">Example:</span>
+              <span class="example">&lt;div class="f"&gt;...&lt;/div&gt;</span>
+            </div>
+
+            <div class="demo-box f">
+              <div class="demo-item">Item 1</div>
+              <div class="demo-item">Item 2</div>
+              <div class="demo-item">Item 3</div>
+            </div>
           </div>
-          
-          <div class="demo-box f">
-            <div class="demo-item">Item 1</div>
-            <div class="demo-item">Item 2</div>
-            <div class="demo-item">Item 3</div>
+
+          <div class="utility-card">
+            <h3 class="card-title"><span class="icon">⏎</span> No Wrap</h3>
+            <p class="card-desc">Prevent flex items from wrapping</p>
+            <div class="pattern">.nowrap</div>
+            <div class="example-group">
+              <span class="example-title">Example:</span>
+              <span class="example"
+                >&lt;div class="f nowrap"&gt;...&lt;/div&gt;</span
+              >
+            </div>
+
+            <div class="demo-box f nowrap">
+              <div class="demo-item">Item 1</div>
+              <div class="demo-item">Item 2</div>
+              <div class="demo-item">Item 3</div>
+              <div class="demo-item">Item 4</div>
+              <div class="demo-item">Item 5</div>
+            </div>
           </div>
         </div>
+      </section>
+
+      <!-- FLEX DIRECTION SECTION -->
+      <section class="utility-section">
+        <h2 class="section-title">Flex Direction</h2>
+
+        <div class="utility-grid">
+          <div class="utility-card">
+            <h3 class="card-title">
+              <span class="icon">↓</span> Column Direction
+            </h3>
+            <p class="card-desc">Stack flex items vertically</p>
+            <div class="pattern">.fdc</div>
+            <div class="example-group">
+              <span class="example-title">Example:</span>
+              <span class="example"
+                >&lt;div class="f fdc"&gt;...&lt;/div&gt;</span
+              >
+            </div>
+
+            <div class="demo-box f fdc">
+              <div class="demo-item">Item 1</div>
+              <div class="demo-item">Item 2</div>
+              <div class="demo-item">Item 3</div>
+            </div>
+          </div>
+
+          <div class="utility-card">
+            <h3 class="card-title">
+              <span class="icon">⇄</span> Row Direction (Default)
+            </h3>
+            <p class="card-desc">
+              Arrange flex items horizontally (default behavior)
+            </p>
+            <div class="pattern">.f (implicit)</div>
+            <div class="example-group">
+              <span class="example-title">Example:</span>
+              <span class="example">&lt;div class="f"&gt;...&lt;/div&gt;</span>
+            </div>
+
+            <div class="demo-box f">
+              <div class="demo-item">Item 1</div>
+              <div class="demo-item">Item 2</div>
+              <div class="demo-item">Item 3</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ALIGNMENT SECTION -->
+      <section class="utility-section">
+        <h2 class="section-title">Alignment Utilities</h2>
+
+        <div class="utility-grid">
+          <div class="utility-card">
+            <h3 class="card-title"><span class="icon">↕</span> Align Items</h3>
+            <p class="card-desc">Control vertical alignment of flex items</p>
+            <div class="pattern">.aic / .aifs / .aife / .ais / .aib</div>
+            <div class="example-group">
+              <span class="example-title">Options:</span>
+              <span class="example">aic = align-items: center</span>
+              <span class="example">aifs = align-items: flex-start</span>
+              <span class="example">aife = align-items: flex-end</span>
+              <span class="example">ais = align-items: stretch</span>
+              <span class="example">aib = align-items: baseline</span>
+            </div>
+
+            <div class="demo-box f aic" style="height: 100px">
+              <div class="demo-item">Center</div>
+              <div class="demo-item" style="height: 60px">Tall</div>
+            </div>
+          </div>
+
+          <div class="utility-card">
+            <h3 class="card-title">
+              <span class="icon">⇄</span> Justify Content
+            </h3>
+            <p class="card-desc">Control horizontal alignment of flex items</p>
+            <div class="pattern">.jcc / .jcsb / .jcsa / .jcse / .jce</div>
+            <div class="example-group">
+              <span class="example-title">Options:</span>
+              <span class="example">jcc = justify-content: center</span>
+              <span class="example">jcsb = justify-content: space-between</span>
+              <span class="example">jcsa = justify-content: space-around</span>
+              <span class="example">jcse = justify-content: space-evenly</span>
+              <span class="example">jce = justify-content: end</span>
+            </div>
+
+            <div class="demo-box f jcsb">
+              <div class="demo-item">Item 1</div>
+              <div class="demo-item">Item 2</div>
+              <div class="demo-item">Item 3</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FLEX GROW SECTION -->
+      <section class="utility-section">
+        <h2 class="section-title">Flex Grow System</h2>
 
         <div class="utility-card">
-          <h3 class="card-title"><span class="icon">⏎</span> No Wrap</h3>
-          <p class="card-desc">Prevent flex items from wrapping</p>
-          <div class="pattern">.nowrap</div>
+          <h3 class="card-title">
+            <span class="icon">⇆</span> Flexible Sizing
+          </h3>
+          <p class="card-desc">
+            Control how flex items grow with numeric scale from 0 to 10
+          </p>
+          <div class="pattern">.f0 to .f10</div>
+
+          <table class="value-table">
+            <thead>
+              <tr>
+                <th>Class</th>
+                <th>Value</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>.f0</td>
+                <td>flex: 1 1 0</td>
+                <td>Equal distribution</td>
+              </tr>
+              <tr>
+                <td>.f1 to .f10</td>
+                <td>flex: [n] [n] 0%</td>
+                <td>Proportional growth (1-10 scale)</td>
+              </tr>
+              <tr>
+                <td>.f0-5 to .f9-5</td>
+                <td>flex: [n.5] [n.5] 0%</td>
+                <td>Half-step increments</td>
+              </tr>
+            </tbody>
+          </table>
+
           <div class="example-group">
             <span class="example-title">Example:</span>
-            <span class="example">&lt;div class="f nowrap"&gt;...&lt;/div&gt;</span>
+            <span class="example">&lt;div class="f"&gt;</span>
+            <span class="example"
+              >&nbsp;&nbsp;&lt;div class="f1"&gt;Item 1&lt;/div&gt;</span
+            >
+            <span class="example"
+              >&nbsp;&nbsp;&lt;div class="f3"&gt;Item 2&lt;/div&gt;</span
+            >
+            <span class="example">&lt;/div&gt;</span>
           </div>
-          
-          <div class="demo-box f nowrap">
+
+          <div class="demo-box f">
+            <div class="demo-item f1">f1</div>
+            <div class="demo-item f3">f3</div>
+            <div class="demo-item f1">f1</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COLUMN SYSTEM SECTION -->
+      <section class="utility-section">
+        <h2 class="section-title">Column System</h2>
+
+        <div class="utility-card">
+          <h3 class="card-title">
+            <span class="icon">⇶</span> Responsive Columns
+          </h3>
+          <p class="card-desc">
+            Create responsive grid layouts with automatic column wrapping
+          </p>
+          <div class="pattern">.col-[1-10]</div>
+
+          <table class="value-table">
+            <thead>
+              <tr>
+                <th>Class</th>
+                <th>Columns</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>.col-1</td>
+                <td>1</td>
+                <td>Full width items</td>
+              </tr>
+              <tr>
+                <td>.col-2</td>
+                <td>2</td>
+                <td>50% width items</td>
+              </tr>
+              <tr>
+                <td>.col-3</td>
+                <td>3</td>
+                <td>33.33% width items</td>
+              </tr>
+              <tr>
+                <td>.col-4</td>
+                <td>4</td>
+                <td>25% width items</td>
+              </tr>
+              <tr>
+                <td>.col-5</td>
+                <td>5</td>
+                <td>20% width items</td>
+              </tr>
+              <tr>
+                <td>.col-6 to .col-10</td>
+                <td>6-10</td>
+                <td>16.66% to 10% width items</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="example-group">
+            <span class="example-title">Example:</span>
+            <span class="example">&lt;div class="f col-3"&gt;</span>
+            <span class="example"
+              >&nbsp;&nbsp;&lt;div&gt;Item 1&lt;/div&gt;</span
+            >
+            <span class="example"
+              >&nbsp;&nbsp;&lt;div&gt;Item 2&lt;/div&gt;</span
+            >
+            <span class="example"
+              >&nbsp;&nbsp;&lt;div&gt;Item 3&lt;/div&gt;</span
+            >
+            <span class="example">&lt;/div&gt;</span>
+          </div>
+
+          <div class="demo-box f col-3">
             <div class="demo-item">Item 1</div>
             <div class="demo-item">Item 2</div>
             <div class="demo-item">Item 3</div>
             <div class="demo-item">Item 4</div>
             <div class="demo-item">Item 5</div>
+            <div class="demo-item">Item 6</div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- FLEX DIRECTION SECTION -->
-    <section class="utility-section">
-      <h2 class="section-title">Flex Direction</h2>
-      
-      <div class="utility-grid">
-        <div class="utility-card">
-          <h3 class="card-title"><span class="icon">↓</span> Column Direction</h3>
-          <p class="card-desc">Stack flex items vertically</p>
-          <div class="pattern">.fdc</div>
-          <div class="example-group">
-            <span class="example-title">Example:</span>
-            <span class="example">&lt;div class="f fdc"&gt;...&lt;/div&gt;</span>
-          </div>
-          
-          <div class="demo-box f fdc">
-            <div class="demo-item">Item 1</div>
-            <div class="demo-item">Item 2</div>
-            <div class="demo-item">Item 3</div>
-          </div>
-        </div>
+      <!-- GAP SYSTEM SECTION -->
+      <section class="utility-section">
+        <h2 class="section-title">Gap Utilities</h2>
 
-        <div class="utility-card">
-          <h3 class="card-title"><span class="icon">⇄</span> Row Direction (Default)</h3>
-          <p class="card-desc">Arrange flex items horizontally (default behavior)</p>
-          <div class="pattern">.f (implicit)</div>
-          <div class="example-group">
-            <span class="example-title">Example:</span>
-            <span class="example">&lt;div class="f"&gt;...&lt;/div&gt;</span>
-          </div>
-          
-          <div class="demo-box f">
-            <div class="demo-item">Item 1</div>
-            <div class="demo-item">Item 2</div>
-            <div class="demo-item">Item 3</div>
-          </div>
-        </div>
-      </div>
-    </section>
+        <div class="utility-grid">
+          <div class="utility-card">
+            <h3 class="card-title"><span class="icon">↔</span> Column Gap</h3>
+            <p class="card-desc">Control horizontal spacing between columns</p>
+            <div class="pattern">.cg5 / .cg10 / .cg15 / .cg20 / .cg30</div>
+            <div class="example-group">
+              <span class="example-title">Options:</span>
+              <span class="example">cg5 = column-gap: 5px</span>
+              <span class="example">cg10 = column-gap: 10px</span>
+              <span class="example">cg15 = column-gap: 15px</span>
+              <span class="example">cg20 = column-gap: 20px</span>
+              <span class="example">cg30 = column-gap: 30px</span>
+            </div>
 
-    <!-- ALIGNMENT SECTION -->
-    <section class="utility-section">
-      <h2 class="section-title">Alignment Utilities</h2>
-      
-      <div class="utility-grid">
-        <div class="utility-card">
-          <h3 class="card-title"><span class="icon">↕</span> Align Items</h3>
-          <p class="card-desc">Control vertical alignment of flex items</p>
-          <div class="pattern">.aic / .aifs / .aife / .ais / .aib</div>
-          <div class="example-group">
-            <span class="example-title">Options:</span>
-            <span class="example">aic = align-items: center</span>
-            <span class="example">aifs = align-items: flex-start</span>
-            <span class="example">aife = align-items: flex-end</span>
-            <span class="example">ais = align-items: stretch</span>
-            <span class="example">aib = align-items: baseline</span>
+            <div class="demo-box f col-3 cg15">
+              <div class="demo-item">Item 1</div>
+              <div class="demo-item">Item 2</div>
+              <div class="demo-item">Item 3</div>
+            </div>
           </div>
-          
-          <div class="demo-box f aic" style="height: 100px;">
-            <div class="demo-item">Center</div>
-            <div class="demo-item" style="height: 60px;">Tall</div>
+
+          <div class="utility-card">
+            <h3 class="card-title"><span class="icon">↕</span> Row Gap</h3>
+            <p class="card-desc">Control vertical spacing between rows</p>
+            <div class="pattern">.rg5 / .rg10 / .rg15 / .rg20 / .rg30</div>
+            <div class="example-group">
+              <span class="example-title">Options:</span>
+              <span class="example">rg5 = row-gap: 5px</span>
+              <span class="example">rg10 = row-gap: 10px</span>
+              <span class="example">rg15 = row-gap: 15px</span>
+              <span class="example">rg20 = row-gap: 20px</span>
+              <span class="example">rg30 = row-gap: 30px</span>
+            </div>
+
+            <div class="demo-box f col-2 rg20">
+              <div class="demo-item">Item 1</div>
+              <div class="demo-item">Item 2</div>
+              <div class="demo-item">Item 3</div>
+              <div class="demo-item">Item 4</div>
+            </div>
           </div>
         </div>
 
-        <div class="utility-card">
-          <h3 class="card-title"><span class="icon">⇄</span> Justify Content</h3>
-          <p class="card-desc">Control horizontal alignment of flex items</p>
-          <div class="pattern">.jcc / .jcsb / .jcsa / .jcse / .jce</div>
+        <div class="utility-card mt40">
+          <h3 class="card-title"><span class="icon">⤡</span> Combined Gap</h3>
+          <p class="card-desc">
+            Control both row and column gaps simultaneously
+          </p>
+          <div class="pattern">.gap5 / .gap10 / .gap15 / .gap20 / .gap30</div>
           <div class="example-group">
             <span class="example-title">Options:</span>
-            <span class="example">jcc = justify-content: center</span>
-            <span class="example">jcsb = justify-content: space-between</span>
-            <span class="example">jcsa = justify-content: space-around</span>
-            <span class="example">jcse = justify-content: space-evenly</span>
-            <span class="example">jce = justify-content: end</span>
+            <span class="example">gap5 = gap: 5px</span>
+            <span class="example">gap10 = gap: 10px</span>
+            <span class="example">gap15 = gap: 15px</span>
+            <span class="example">gap20 = gap: 20px</span>
+            <span class="example">gap30 = gap: 30px</span>
           </div>
-          
-          <div class="demo-box f jcsb">
-            <div class="demo-item">Item 1</div>
-            <div class="demo-item">Item 2</div>
-            <div class="demo-item">Item 3</div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- FLEX GROW SECTION -->
-    <section class="utility-section">
-      <h2 class="section-title">Flex Grow System</h2>
-      
-      <div class="utility-card">
-        <h3 class="card-title"><span class="icon">⇆</span> Flexible Sizing</h3>
-        <p class="card-desc">Control how flex items grow with numeric scale from 0 to 10</p>
-        <div class="pattern">.f0 to .f10</div>
-        
-        <table class="value-table">
-          <thead>
-            <tr>
-              <th>Class</th>
-              <th>Value</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>.f0</td>
-              <td>flex: 1 1 0</td>
-              <td>Equal distribution</td>
-            </tr>
-            <tr>
-              <td>.f1 to .f10</td>
-              <td>flex: [n] [n] 0%</td>
-              <td>Proportional growth (1-10 scale)</td>
-            </tr>
-            <tr>
-              <td>.f0-5 to .f9-5</td>
-              <td>flex: [n.5] [n.5] 0%</td>
-              <td>Half-step increments</td>
-            </tr>
-          </tbody>
-        </table>
-        
-        <div class="example-group">
-          <span class="example-title">Example:</span>
-          <span class="example">&lt;div class="f"&gt;</span>
-          <span class="example">&nbsp;&nbsp;&lt;div class="f1"&gt;Item 1&lt;/div&gt;</span>
-          <span class="example">&nbsp;&nbsp;&lt;div class="f3"&gt;Item 2&lt;/div&gt;</span>
-          <span class="example">&lt;/div&gt;</span>
-        </div>
-        
-        <div class="demo-box f">
-          <div class="demo-item f1">f1</div>
-          <div class="demo-item f3">f3</div>
-          <div class="demo-item f1">f1</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- COLUMN SYSTEM SECTION -->
-    <section class="utility-section">
-      <h2 class="section-title">Column System</h2>
-      
-      <div class="utility-card">
-        <h3 class="card-title"><span class="icon">⇶</span> Responsive Columns</h3>
-        <p class="card-desc">Create responsive grid layouts with automatic column wrapping</p>
-        <div class="pattern">.col-[1-10]</div>
-        
-        <table class="value-table">
-          <thead>
-            <tr>
-              <th>Class</th>
-              <th>Columns</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>.col-1</td>
-              <td>1</td>
-              <td>Full width items</td>
-            </tr>
-            <tr>
-              <td>.col-2</td>
-              <td>2</td>
-              <td>50% width items</td>
-            </tr>
-            <tr>
-              <td>.col-3</td>
-              <td>3</td>
-              <td>33.33% width items</td>
-            </tr>
-            <tr>
-              <td>.col-4</td>
-              <td>4</td>
-              <td>25% width items</td>
-            </tr>
-            <tr>
-              <td>.col-5</td>
-              <td>5</td>
-              <td>20% width items</td>
-            </tr>
-            <tr>
-              <td>.col-6 to .col-10</td>
-              <td>6-10</td>
-              <td>16.66% to 10% width items</td>
-            </tr>
-          </tbody>
-        </table>
-        
-        <div class="example-group">
-          <span class="example-title">Example:</span>
-          <span class="example">&lt;div class="f col-3"&gt;</span>
-          <span class="example">&nbsp;&nbsp;&lt;div&gt;Item 1&lt;/div&gt;</span>
-          <span class="example">&nbsp;&nbsp;&lt;div&gt;Item 2&lt;/div&gt;</span>
-          <span class="example">&nbsp;&nbsp;&lt;div&gt;Item 3&lt;/div&gt;</span>
-          <span class="example">&lt;/div&gt;</span>
-        </div>
-        
-        <div class="demo-box f col-3">
-          <div class="demo-item">Item 1</div>
-          <div class="demo-item">Item 2</div>
-          <div class="demo-item">Item 3</div>
-          <div class="demo-item">Item 4</div>
-          <div class="demo-item">Item 5</div>
-          <div class="demo-item">Item 6</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- GAP SYSTEM SECTION -->
-    <section class="utility-section">
-      <h2 class="section-title">Gap Utilities</h2>
-      
-      <div class="utility-grid">
-        <div class="utility-card">
-          <h3 class="card-title"><span class="icon">↔</span> Column Gap</h3>
-          <p class="card-desc">Control horizontal spacing between columns</p>
-          <div class="pattern">.cg5 / .cg10 / .cg15 / .cg20 / .cg30</div>
-          <div class="example-group">
-            <span class="example-title">Options:</span>
-            <span class="example">cg5 = column-gap: 5px</span>
-            <span class="example">cg10 = column-gap: 10px</span>
-            <span class="example">cg15 = column-gap: 15px</span>
-            <span class="example">cg20 = column-gap: 20px</span>
-            <span class="example">cg30 = column-gap: 30px</span>
-          </div>
-          
-          <div class="demo-box f col-3 cg15">
-            <div class="demo-item">Item 1</div>
-            <div class="demo-item">Item 2</div>
-            <div class="demo-item">Item 3</div>
-          </div>
-        </div>
-
-        <div class="utility-card">
-          <h3 class="card-title"><span class="icon">↕</span> Row Gap</h3>
-          <p class="card-desc">Control vertical spacing between rows</p>
-          <div class="pattern">.rg5 / .rg10 / .rg15 / .rg20 / .rg30</div>
-          <div class="example-group">
-            <span class="example-title">Options:</span>
-            <span class="example">rg5 = row-gap: 5px</span>
-            <span class="example">rg10 = row-gap: 10px</span>
-            <span class="example">rg15 = row-gap: 15px</span>
-            <span class="example">rg20 = row-gap: 20px</span>
-            <span class="example">rg30 = row-gap: 30px</span>
-          </div>
-          
-          <div class="demo-box f col-2 rg20">
+          <div class="demo-box f col-3 gap15">
             <div class="demo-item">Item 1</div>
             <div class="demo-item">Item 2</div>
             <div class="demo-item">Item 3</div>
             <div class="demo-item">Item 4</div>
+            <div class="demo-item">Item 5</div>
+            <div class="demo-item">Item 6</div>
           </div>
         </div>
-      </div>
-      
-      <div class="utility-card mt40">
-        <h3 class="card-title"><span class="icon">⤡</span> Combined Gap</h3>
-        <p class="card-desc">Control both row and column gaps simultaneously</p>
-        <div class="pattern">.gap5 / .gap10 / .gap15 / .gap20 / .gap30</div>
-        <div class="example-group">
-          <span class="example-title">Options:</span>
-          <span class="example">gap5 = gap: 5px</span>
-          <span class="example">gap10 = gap: 10px</span>
-          <span class="example">gap15 = gap: 15px</span>
-          <span class="example">gap20 = gap: 20px</span>
-          <span class="example">gap30 = gap: 30px</span>
-        </div>
-        
-        <div class="demo-box f col-3 gap15">
-          <div class="demo-item">Item 1</div>
-          <div class="demo-item">Item 2</div>
-          <div class="demo-item">Item 3</div>
-          <div class="demo-item">Item 4</div>
-          <div class="demo-item">Item 5</div>
-          <div class="demo-item">Item 6</div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- RESPONSIVE BEHAVIOR SECTION -->
-    <section class="utility-section">
-      <h2 class="section-title">Responsive Behavior</h2>
-      
-      <div class="utility-card">
-        <h3 class="card-title"><span class="icon">🔄</span> Automatic Adjustments</h3>
-        <p class="card-desc">The system automatically adjusts columns for different screen sizes:</p>
-        
-        <table class="value-table">
-          <thead>
-            <tr>
-              <th>Breakpoint</th>
-              <th>Behavior</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>&gt; 1000px</td>
-              <td>All column classes display as specified</td>
-            </tr>
-            <tr>
-              <td>800-1000px</td>
-              <td>col-9 and col-1 switch to horizontal scroll</td>
-            </tr>
-            <tr>
-              <td>600-900px</td>
-              <td>col-7 and col-8 switch to horizontal scroll</td>
-            </tr>
-            <tr>
-              <td>450-800px</td>
-              <td>col-3 becomes 2 columns, col-4 becomes 3 columns</td>
-            </tr>
-            <tr>
-              <td>&lt; 600px</td>
-              <td>col-2 becomes 1 column, col-3/4 become 2 columns</td>
-            </tr>
-            <tr>
-              <td>&lt; 450px</td>
-              <td>All columns become 1 column (full width)</td>
-            </tr>
-          </tbody>
-        </table>
-        
-        <div class="example-group">
-          <span class="example-title">Note:</span>
-          <span class="example">Add .nowrap to any column container to prevent responsive adjustments</span>
+      <!-- RESPONSIVE BEHAVIOR SECTION -->
+      <section class="utility-section">
+        <h2 class="section-title">Responsive Behavior</h2>
+
+        <div class="utility-card">
+          <h3 class="card-title">
+            <span class="icon">🔄</span> Automatic Adjustments
+          </h3>
+          <p class="card-desc">
+            The system automatically adjusts columns for different screen sizes:
+          </p>
+
+          <table class="value-table">
+            <thead>
+              <tr>
+                <th>Breakpoint</th>
+                <th>Behavior</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>&gt; 1000px</td>
+                <td>All column classes display as specified</td>
+              </tr>
+              <tr>
+                <td>800-1000px</td>
+                <td>col-9 and col-1 switch to horizontal scroll</td>
+              </tr>
+              <tr>
+                <td>600-900px</td>
+                <td>col-7 and col-8 switch to horizontal scroll</td>
+              </tr>
+              <tr>
+                <td>450-800px</td>
+                <td>col-3 becomes 2 columns, col-4 becomes 3 columns</td>
+              </tr>
+              <tr>
+                <td>&lt; 600px</td>
+                <td>col-2 becomes 1 column, col-3/4 become 2 columns</td>
+              </tr>
+              <tr>
+                <td>&lt; 450px</td>
+                <td>All columns become 1 column (full width)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="example-group">
+            <span class="example-title">Note:</span>
+            <span class="example"
+              >Add .nowrap to any column container to prevent responsive
+              adjustments</span
+            >
+          </div>
         </div>
-      </div>
-    </section>
-  </div>
-</body>
+      </section>
+      <!-- DIMENSIONS SYSTEM SECTION -->
+      <section class="utility-section">
+        <h2 class="section-title">Dimensions Utilities</h2>
+
+        <!-- WIDTH SYSTEM -->
+        <div class="utility-card">
+          <h3 class="card-title"><span class="icon">↔</span> Width System</h3>
+          <p class="card-desc">
+            Complete width utilities including fixed, fluid, and responsive
+            options
+          </p>
+
+          <div class="pattern">.w-[size] / .w-[percentage] / .w-[special]</div>
+
+          <div class="utility-grid mt20">
+            <div class="utility-card">
+              <h4 class="card-title">
+                <span class="icon">📏</span> Fixed Widths
+              </h4>
+              <table class="value-table">
+                <thead>
+                  <tr>
+                    <th>Class</th>
+                    <th>Size</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>.w-xs</td>
+                    <td>320px</td>
+                  </tr>
+                  <tr>
+                    <td>.w-sm</td>
+                    <td>480px</td>
+                  </tr>
+                  <tr>
+                    <td>.w-md</td>
+                    <td>768px</td>
+                  </tr>
+                  <tr>
+                    <td>.w-lg</td>
+                    <td>1024px</td>
+                  </tr>
+                  <tr>
+                    <td>.w-xl</td>
+                    <td>1280px</td>
+                  </tr>
+                  <tr>
+                    <td>.w-2xl</td>
+                    <td>1536px</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="utility-card">
+              <h4 class="card-title">
+                <span class="icon">🌊</span> Fluid Widths
+              </h4>
+              <table class="value-table">
+                <thead>
+                  <tr>
+                    <th>Class</th>
+                    <th>Percentage</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>.wq</td>
+                    <td>25%</td>
+                  </tr>
+                  <tr>
+                    <td>.wt</td>
+                    <td>33.333%</td>
+                  </tr>
+                  <tr>
+                    <td>.wh</td>
+                    <td>50%</td>
+                  </tr>
+                  <tr>
+                    <td>.wtt</td>
+                    <td>66.666%</td>
+                  </tr>
+                  <tr>
+                    <td>.wtq</td>
+                    <td>75%</td>
+                  </tr>
+                  <tr>
+                    <td>.full</td>
+                    <td>100%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="utility-grid mt20">
+            <div class="utility-card">
+              <h4 class="card-title">
+                <span class="icon">🎯</span> Precise Widths
+              </h4>
+              <table class="value-table">
+                <thead>
+                  <tr>
+                    <th>Class</th>
+                    <th>Size</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>.w-50</td>
+                    <td>50px</td>
+                  </tr>
+                  <tr>
+                    <td>.w-100</td>
+                    <td>100px</td>
+                  </tr>
+                  <tr>
+                    <td>.w-200</td>
+                    <td>200px</td>
+                  </tr>
+                  <tr>
+                    <td>.w-400</td>
+                    <td>400px</td>
+                  </tr>
+                  <tr>
+                    <td>.w-800</td>
+                    <td>800px</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="utility-card">
+              <h4 class="card-title">
+                <span class="icon">✨</span> Special Widths
+              </h4>
+              <table class="value-table">
+                <thead>
+                  <tr>
+                    <th>Class</th>
+                    <th>Behavior</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>.wa</td>
+                    <td>auto</td>
+                  </tr>
+                  <tr>
+                    <td>.w-screen</td>
+                    <td>100vw</td>
+                  </tr>
+                  <tr>
+                    <td>.w-min</td>
+                    <td>min-content</td>
+                  </tr>
+                  <tr>
+                    <td>.w-max</td>
+                    <td>max-content</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- HEIGHT SYSTEM -->
+        <div class="utility-card mt40">
+          <h3 class="card-title"><span class="icon">↕</span> Height System</h3>
+          <p class="card-desc">
+            Complete height utilities including fixed, fluid, and responsive
+            options
+          </p>
+
+          <div class="pattern">.h-[size] / .h-[percentage] / .h-[special]</div>
+
+          <div class="utility-grid mt20">
+            <div class="utility-card">
+              <h4 class="card-title">
+                <span class="icon">📏</span> Fixed Heights
+              </h4>
+              <table class="value-table">
+                <thead>
+                  <tr>
+                    <th>Class</th>
+                    <th>Size</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>.h-xs</td>
+                    <td>160px</td>
+                  </tr>
+                  <tr>
+                    <td>.h-sm</td>
+                    <td>240px</td>
+                  </tr>
+                  <tr>
+                    <td>.h-md</td>
+                    <td>360px</td>
+                  </tr>
+                  <tr>
+                    <td>.h-lg</td>
+                    <td>480px</td>
+                  </tr>
+                  <tr>
+                    <td>.h-xl</td>
+                    <td>640px</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="utility-card">
+              <h4 class="card-title">
+                <span class="icon">🌊</span> Fluid Heights
+              </h4>
+              <table class="value-table">
+                <thead>
+                  <tr>
+                    <th>Class</th>
+                    <th>Percentage</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>.hq</td>
+                    <td>25%</td>
+                  </tr>
+                  <tr>
+                    <td>.hh</td>
+                    <td>50%</td>
+                  </tr>
+                  <tr>
+                    <td>.htq</td>
+                    <td>75%</td>
+                  </tr>
+                  <tr>
+                    <td>.h-full</td>
+                    <td>100%</td>
+                  </tr>
+                  <tr>
+                    <td>.h-screen</td>
+                    <td>100vh</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="utility-grid mt20">
+            <div class="utility-card">
+              <h4 class="card-title">
+                <span class="icon">🎯</span> Precise Heights
+              </h4>
+              <table class="value-table">
+                <thead>
+                  <tr>
+                    <th>Class</th>
+                    <th>Size</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>.h-50</td>
+                    <td>50px</td>
+                  </tr>
+                  <tr>
+                    <td>.h-100</td>
+                    <td>100px</td>
+                  </tr>
+                  <tr>
+                    <td>.h-200</td>
+                    <td>200px</td>
+                  </tr>
+                  <tr>
+                    <td>.h-400</td>
+                    <td>400px</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="utility-card">
+              <h4 class="card-title">
+                <span class="icon">✨</span> Special Heights
+              </h4>
+              <table class="value-table">
+                <thead>
+                  <tr>
+                    <th>Class</th>
+                    <th>Behavior</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>.h-auto</td>
+                    <td>auto</td>
+                  </tr>
+                  <tr>
+                    <td>.h-min</td>
+                    <td>min-content</td>
+                  </tr>
+                  <tr>
+                    <td>.h-max</td>
+                    <td>max-content</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONSTRAINTS & ASPECT RATIOS -->
+        <div class="utility-grid mt40">
+          <div class="utility-card">
+            <h3 class="card-title">
+              <span class="icon">🔒</span> Size Constraints
+            </h3>
+            <table class="value-table">
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Class</th>
+                  <th>Behavior</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="3">Min-Width</td>
+                  <td>.min-w-0</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>.min-w-full</td>
+                  <td>100%</td>
+                </tr>
+                <tr>
+                  <td>.md-w-full</td>
+                  <td>100% (mobile)</td>
+                </tr>
+                <tr>
+                  <td rowspan="2">Max-Width</td>
+                  <td>.max-w-xs</td>
+                  <td>320px</td>
+                </tr>
+                <tr>
+                  <td>.max-w-full</td>
+                  <td>100%</td>
+                </tr>
+                <tr>
+                  <td rowspan="3">Min-Height</td>
+                  <td>.min-h-0</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>.min-h-full</td>
+                  <td>100%</td>
+                </tr>
+                <tr>
+                  <td>.min-h-screen</td>
+                  <td>100vh</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="utility-card">
+            <h3 class="card-title">
+              <span class="icon">⤬</span> Aspect Ratios
+            </h3>
+            <table class="value-table">
+              <thead>
+                <tr>
+                  <th>Class</th>
+                  <th>Ratio</th>
+                  <th>Use Case</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>.ar1By1</td>
+                  <td>1:1</td>
+                  <td>Squares</td>
+                </tr>
+                <tr>
+                  <td>.ar3By4</td>
+                  <td>3:4</td>
+                  <td>Portraits</td>
+                </tr>
+                <tr>
+                  <td>.ar16By9</td>
+                  <td>16:9</td>
+                  <td>Widescreen</td>
+                </tr>
+                <tr>
+                  <td>.ar21By9</td>
+                  <td>21:9</td>
+                  <td>Cinematic</td>
+                </tr>
+                <tr>
+                  <td>.arsqr</td>
+                  <td>1:1</td>
+                  <td>Squares</td>
+                </tr>
+                <tr>
+                  <td>.arland</td>
+                  <td>16:9</td>
+                  <td>Landscape</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- SPECIAL CASES -->
+        <div class="utility-card mt40">
+          <h3 class="card-title"><span class="icon">⭐</span> Special Cases</h3>
+          <div class="utility-grid">
+            <div class="utility-card">
+              <h4 class="card-title"><span class="icon">⬜</span> Squares</h4>
+              <table class="value-table">
+                <thead>
+                  <tr>
+                    <th>Class</th>
+                    <th>Size</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>.sq-50</td>
+                    <td>50×50px</td>
+                  </tr>
+                  <tr>
+                    <td>.sq-100</td>
+                    <td>100×100px</td>
+                  </tr>
+                  <tr>
+                    <td>.sq-200</td>
+                    <td>200×200px</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="utility-card">
+              <h4 class="card-title">
+                <span class="icon">🖼️</span> Object Fit
+              </h4>
+              <table class="value-table">
+                <thead>
+                  <tr>
+                    <th>Class</th>
+                    <th>Behavior</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>.of-cover</td>
+                    <td>Cover container</td>
+                  </tr>
+                  <tr>
+                    <td>.of-contain</td>
+                    <td>Contain within</td>
+                  </tr>
+                  <tr>
+                    <td>.of-fill</td>
+                    <td>Stretch to fill</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
 </html>
