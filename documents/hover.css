@@ -115,7 +115,7 @@
 
 /* Glow Animation */
 .glow>*:hover {
-  box-shadow: 0 0 10px rgba(255, 165, 0, 1);
+  box-shadow: 0 0 10px var(--glow-color);
   /* Orange glow */
 }
 
@@ -173,18 +173,6 @@
 /* Drop In Animation */
 .drop-in>*:hover {
   animation: dropIn 1s ease-in-out;
-}
-
-@keyframes dropIn {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
 }
 
 /* Blur Animation */

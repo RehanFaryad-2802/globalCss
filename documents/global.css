@@ -20,6 +20,7 @@
   --mhc: #f0f0f0;
   --hc: #e4dbdb;
   --shc: #eee6e6;
+  --glow-color: rgba(255, 165, 0, 1);
 }
 
 :root {

@@ -1,793 +1,511 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Button Documentation</title>
-    <link rel="stylesheet" href="../documents/global.css">
-    <style>
-        /* THEME */
-        :root {
-            --bg-dark: #121212;
-            --gold: #FFD700;
-            --gold-light: #FFECB3;
-            --orange: #FFA500;
-            --text-light: #F5F5F5;
-            --card-bg: #1E1E1E;
-            --c1: #e74c3c;
-            --c2: #2ecc71;
-            --c3: #f1c40f;
-            --c4: #e67e22;
-            --c5: #1abc9c;
-        }
+    <link rel="stylesheet" href="./documents/global.css" />
+    <link rel="stylesheet" href="./documents/included.css" />
+  </head>
 
-        body {
-            background: var(--bg-dark);
-            color: var(--text-light);
-            font-family: 'Segoe UI', sans-serif;
-            line-height: 1.6;
-        }
-
-        /* NAVBAR */
-        .navbar {
-            background: rgba(18, 18, 18, 0.98);
-            border-bottom: 2px solid var(--gold);
-            padding: 15px 5%;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .nav-logo {
-            color: var(--gold);
-            font-weight: bold;
-            font-size: 1.5rem;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-        }
-
-        .nav-link {
-            color: var(--text-light);
-            text-decoration: none;
-            transition: all 0.3s;
-            font-weight: 500;
-            padding: 5px 0;
-            border-bottom: 2px solid transparent;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--orange);
-            border-bottom-color: var(--orange);
-        }
-
-        /* MAIN CONTENT */
-        .container {
-            max-width: 1400px;
-            margin: 40px auto;
-            padding: 0 5%;
-        }
-
-        .hero {
-            text-align: center;
-            margin-bottom: 60px;
-            padding: 40px 0;
-            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
-        }
-
-        .hero h1 {
-            color: var(--gold);
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            color: var(--gold-light);
-        }
-
-        /* UTILITY SECTIONS */
-        .utility-section {
-            margin-bottom: 80px;
-        }
-
-        .section-title {
-            color: var(--gold);
-            font-size: 2rem;
-            margin-bottom: 30px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100px;
-            height: 3px;
-            background: var(--orange);
-        }
-
-        /* UTILITY CARDS */
-        .utility-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-            gap: 30px;
-        }
-
-        .utility-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            border-radius: 8px;
-            padding: 30px;
-            transition: all 0.3s;
-        }
-
-        .utility-card:hover {
-            border-color: var(--gold);
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
-            transform: translateY(-5px);
-        }
-
-        .card-title {
-            color: var(--gold-light);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .card-title .icon {
-            color: var(--orange);
-        }
-
-        .card-desc {
-            margin-bottom: 25px;
-            color: #ccc;
-        }
-
-        .pattern {
-            background: rgba(255, 215, 0, 0.08);
-            color: var(--gold-light);
-            padding: 15px;
-            border-radius: 6px;
-            font-family: monospace;
-            margin-bottom: 20px;
-            border-left: 3px solid var(--orange);
-        }
-
-        .example-group {
-            margin-top: 25px;
-        }
-
-        .example-title {
-            color: var(--gold-light);
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
-
-        .example {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 12px 15px;
-            border-radius: 4px;
-            margin-bottom: 8px;
-            font-family: monospace;
-            display: block;
-        }
-
-        /* VALUE TABLES */
-        .value-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 25px 0;
-        }
-
-        .value-table th {
-            background: rgba(255, 215, 0, 0.1);
-            color: var(--gold);
-            padding: 12px;
-            text-align: left;
-        }
-
-        .value-table td {
-            padding: 10px 12px;
-            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
-        }
-
-        .value-table tr:hover {
-            background: rgba(255, 215, 0, 0.05);
-        }
-
-        /* BUTTON DEMOS */
-        .btn-demo {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 20px 0;
-        }
-
-        .dropdown-menu ol {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .dropdown-item {
-            display: block;
-            padding: 8px 16px;
-            color: var(--text-light);
-            /* Your light text color */
-            text-decoration: none;
-            transition: all 0.2s ease;
-            font-size: 0.95rem;
-        }
-
-        .dropdown-item:hover {
-            background-color: rgba(255, 215, 0, 0.1);
-            /* Gold tint on hover */
-            color: var(--orange);
-            /* Orange text on hover */
-        }
-
-        /* Chevron indicator */
-        .dropdown-toggle::after {
-            content: "▾";
-            margin-left: 6px;
-            font-size: 0.9em;
-        }
-
-        .btn {
-            font-weight: 500;
-            cursor: pointer;
-            color: #ffffff;
-            border-radius: 6px;
-            border-width: 2px;
-            border-style: solid;
-            border-color: black;
-            background-color: black;
-            padding: 8px 16px;
-            transition: all 0.2s;
-        }
-
-        .btn:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
-
-        /* Button color classes */
-        .btn.color1 {
-            border-color: var(--c1);
-            background-color: var(--c1);
-        }
-
-        .btn.color2 {
-            border-color: var(--c2);
-            background-color: var(--c2);
-        }
-
-        .btn.color3 {
-            border-color: var(--c3);
-            background-color: var(--c3);
-            color: #000;
-        }
-
-        .btn.color4 {
-            border-color: var(--c4);
-            background-color: var(--c4);
-        }
-
-        .btn.color5 {
-            border-color: var(--c5);
-            background-color: var(--c5);
-        }
-
-        /* Button style variants */
-        .btn.outline {
-            background-color: transparent !important;
-            color: inherit;
-        }
-
-        .btn.underline {
-            background-color: transparent !important;
-            border: none;
-            border-radius: 0;
-            padding-left: 0;
-            padding-right: 0;
-            border-bottom-style: solid;
-            border-bottom-width: 2px;
-        }
-
-        /* Outline colors */
-        .btn.color1.outline {
-            color: var(--c1);
-        }
-
-        .btn.color2.outline {
-            color: var(--c2);
-        }
-
-        .btn.color3.outline {
-            color: var(--c3);
-        }
-
-        .btn.color4.outline {
-            color: var(--c4);
-        }
-
-        .btn.color5.outline {
-            color: var(--c5);
-        }
-
-        /* Underline colors */
-        .btn.color1.underline {
-            color: var(--c1);
-            border-bottom-color: var(--c1);
-        }
-
-        .btn.color2.underline {
-            color: var(--c2);
-            border-bottom-color: var(--c2);
-        }
-
-        .btn.color3.underline {
-            color: var(--c3);
-            border-bottom-color: var(--c3);
-        }
-
-        .btn.color4.underline {
-            color: var(--c4);
-            border-bottom-color: var(--c4);
-        }
-
-        .btn.color5.underline {
-            color: var(--c5);
-            border-bottom-color: var(--c5);
-        }
-
-        .btn.block {
-            display: block;
-            width: 100%;
-        }
-    </style>
-</head>
-
-<body>
+  <body>
     <!-- NAVBAR -->
     <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">Global CSS</a>
-            <div class="nav-links">
-                <a href="test.html" class="nav-link">Margin/Padding</a>
-                <a href="flex.html" class="nav-link">Flex System</a>
-                <a href="typography.html" class="nav-link">Typography</a>
-                <a href="animation.html" class="nav-link">Animations</a>
-                <a href="#" class="nav-link active">Button</a>
-            </div>
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">Global CSS</a>
+        <div class="nav-links">
+          <a href="spacers.html" class="nav-link">Margin/Padding</a>
+          <a href="flex.html" class="nav-link">Flex System</a>
+          <a href="animation.html" class="nav-link">Animation</a>
+          <a href="typography.html" class="nav-link">Typography</a>
+          <a href="button.html" class="nav-link active">Button</a>
         </div>
+      </div>
     </nav>
 
     <!-- MAIN CONTENT -->
     <div class="container">
-        <section class="hero">
-            <h1>Button System</h1>
-            <p>Comprehensive collection of button styles with multiple color options and variants</p>
-        </section>
+      <section class="hero">
+        <h1>Button System</h1>
+        <p>
+          Comprehensive collection of button styles with multiple color options
+          and variants
+        </p>
+      </section>
 
-        <!-- BASE BUTTON SECTION -->
-        <section class="utility-section">
-            <h2 class="section-title">Base Button</h2>
+      <!-- BASE BUTTON SECTION -->
+      <section class="utility-section">
+        <h2 class="section-title">Base Button</h2>
 
-            <div class="utility-card">
-                <h3 class="card-title"><span class="icon">🖱️</span> Default Button</h3>
-                <p class="card-desc">The foundational button style with default black color scheme</p>
+        <div class="utility-card">
+          <h3 class="card-title">
+            <span class="icon">🖱️</span> Default Button
+          </h3>
+          <p class="card-desc">
+            The foundational button style with default black color scheme
+          </p>
 
-                <div class="pattern">.btn</div>
+          <div class="pattern">.btn</div>
 
-                <div class="btn-demo">
-                    <button class="btn">Default Button</button>
-                </div>
+          <div class="btn-demo">
+            <button class="btn">Default Button</button>
+          </div>
 
-                <table class="value-table">
-                    <thead>
-                        <tr>
-                            <th>Property</th>
-                            <th>Value</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Font Weight</td>
-                            <td>500</td>
-                        </tr>
-                        <tr>
-                            <td>Padding</td>
-                            <td>8px 16px</td>
-                        </tr>
-                        <tr>
-                            <td>Border Radius</td>
-                            <td>6px</td>
-                        </tr>
-                        <tr>
-                            <td>Border</td>
-                            <td>2px solid black</td>
-                        </tr>
-                        <tr>
-                            <td>Background</td>
-                            <td>black</td>
-                        </tr>
-                        <tr>
-                            <td>Text Color</td>
-                            <td>white (#ffffff)</td>
-                        </tr>
-                    </tbody>
-                </table>
+          <table class="value-table">
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Font Weight</td>
+                <td>500</td>
+              </tr>
+              <tr>
+                <td>Padding</td>
+                <td>8px 16px</td>
+              </tr>
+              <tr>
+                <td>Border Radius</td>
+                <td>6px</td>
+              </tr>
+              <tr>
+                <td>Border</td>
+                <td>2px solid black</td>
+              </tr>
+              <tr>
+                <td>Background</td>
+                <td>black</td>
+              </tr>
+              <tr>
+                <td>Text Color</td>
+                <td>white (#ffffff)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- COLOR VARIANTS SECTION -->
+      <section class="utility-section">
+        <h2 class="section-title">Color Variants</h2>
+
+        <div class="utility-card">
+          <h3 class="card-title"><span class="icon">🎨</span> Color Options</h3>
+          <p class="card-desc">
+            Five predefined color schemes using CSS variables
+          </p>
+
+          <div class="pattern">.btn.color1 to .btn.color5</div>
+
+          <div class="btn-demo">
+            <button class="btn color1">Color 1</button>
+            <button class="btn color2">Color 2</button>
+            <button class="btn color3">Color 3</button>
+            <button class="btn color4">Color 4</button>
+            <button class="btn color5">Color 5</button>
+          </div>
+
+          <table class="value-table">
+            <thead>
+              <tr>
+                <th>Class</th>
+                <th>Color</th>
+                <th>Hex Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>.color1</td>
+                <td style="color: var(--c1)">Red</td>
+                <td>#e74c3c</td>
+              </tr>
+              <tr>
+                <td>.color2</td>
+                <td style="color: var(--c2)">Green</td>
+                <td>#2ecc71</td>
+              </tr>
+              <tr>
+                <td>.color3</td>
+                <td style="color: var(--c3)">Yellow</td>
+                <td>#f1c40f</td>
+              </tr>
+              <tr>
+                <td>.color4</td>
+                <td style="color: var(--c4)">Orange</td>
+                <td>#e67e22</td>
+              </tr>
+              <tr>
+                <td>.color5</td>
+                <td style="color: var(--c5)">Teal</td>
+                <td>#1abc9c</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- STYLE VARIANTS SECTION -->
+      <section class="utility-section">
+        <h2 class="section-title">Style Variants</h2>
+
+        <div class="utility-grid">
+          <div class="utility-card">
+            <h3 class="card-title">
+              <span class="icon">🖍️</span> Outline Buttons
+            </h3>
+            <p class="card-desc">Transparent background with colored border</p>
+            <div class="pattern">.btn.outline</div>
+
+            <div class="btn-demo">
+              <button class="btn color1 outline">Outline 1</button>
+              <button class="btn color2 outline">Outline 2</button>
+              <button class="btn color3 outline">Outline 3</button>
+              <button class="btn color4 outline">Outline 4</button>
+              <button class="btn color5 outline">Outline 5</button>
             </div>
-        </section>
 
-        <!-- COLOR VARIANTS SECTION -->
-        <section class="utility-section">
-            <h2 class="section-title">Color Variants</h2>
-
-            <div class="utility-card">
-                <h3 class="card-title"><span class="icon">🎨</span> Color Options</h3>
-                <p class="card-desc">Five predefined color schemes using CSS variables</p>
-
-                <div class="pattern">.btn.color1 to .btn.color5</div>
-
-                <div class="btn-demo">
-                    <button class="btn color1">Color 1</button>
-                    <button class="btn color2">Color 2</button>
-                    <button class="btn color3">Color 3</button>
-                    <button class="btn color4">Color 4</button>
-                    <button class="btn color5">Color 5</button>
-                </div>
-
-                <table class="value-table">
-                    <thead>
-                        <tr>
-                            <th>Class</th>
-                            <th>Color</th>
-                            <th>Hex Value</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>.color1</td>
-                            <td style="color: var(--c1)">Red</td>
-                            <td>#e74c3c</td>
-                        </tr>
-                        <tr>
-                            <td>.color2</td>
-                            <td style="color: var(--c2)">Green</td>
-                            <td>#2ecc71</td>
-                        </tr>
-                        <tr>
-                            <td>.color3</td>
-                            <td style="color: var(--c3)">Yellow</td>
-                            <td>#f1c40f</td>
-                        </tr>
-                        <tr>
-                            <td>.color4</td>
-                            <td style="color: var(--c4)">Orange</td>
-                            <td>#e67e22</td>
-                        </tr>
-                        <tr>
-                            <td>.color5</td>
-                            <td style="color: var(--c5)">Teal</td>
-                            <td>#1abc9c</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="example-group">
+              <span class="example-title">Implementation:</span>
+              <span class="example">background-color: transparent</span>
+              <span class="example">color: [color variable]</span>
+              <span class="example">border: 2px solid [color variable]</span>
             </div>
-        </section>
+          </div>
 
-        <!-- STYLE VARIANTS SECTION -->
-        <section class="utility-section">
-            <h2 class="section-title">Style Variants</h2>
+          <div class="utility-card">
+            <h3 class="card-title">
+              <span class="icon">🔘</span> Underline Buttons
+            </h3>
+            <p class="card-desc">
+              Text with underline accent, no border or background
+            </p>
+            <div class="pattern">.btn.underline</div>
 
-            <div class="utility-grid">
-                <div class="utility-card">
-                    <h3 class="card-title"><span class="icon">🖍️</span> Outline Buttons</h3>
-                    <p class="card-desc">Transparent background with colored border</p>
-                    <div class="pattern">.btn.outline</div>
-
-                    <div class="btn-demo">
-                        <button class="btn color1 outline">Outline 1</button>
-                        <button class="btn color2 outline">Outline 2</button>
-                        <button class="btn color3 outline">Outline 3</button>
-                        <button class="btn color4 outline">Outline 4</button>
-                        <button class="btn color5 outline">Outline 5</button>
-                    </div>
-
-                    <div class="example-group">
-                        <span class="example-title">Implementation:</span>
-                        <span class="example">background-color: transparent</span>
-                        <span class="example">color: [color variable]</span>
-                        <span class="example">border: 2px solid [color variable]</span>
-                    </div>
-                </div>
-
-                <div class="utility-card">
-                    <h3 class="card-title"><span class="icon">🔘</span> Underline Buttons</h3>
-                    <p class="card-desc">Text with underline accent, no border or background</p>
-                    <div class="pattern">.btn.underline</div>
-
-                    <div class="btn-demo">
-                        <button class="btn color1 underline">Underline 1</button>
-                        <button class="btn color2 underline">Underline 2</button>
-                        <button class="btn color3 underline">Underline 3</button>
-                        <button class="btn color4 underline">Underline 4</button>
-                        <button class="btn color5 underline">Underline 5</button>
-                    </div>
-
-                    <div class="example-group">
-                        <span class="example-title">Implementation:</span>
-                        <span class="example">background-color: transparent</span>
-                        <span class="example">border: none</span>
-                        <span class="example">border-bottom: 2px solid [color variable]</span>
-                        <span class="example">border-radius: 0</span>
-                    </div>
-                </div>
+            <div class="btn-demo">
+              <button class="btn color1 underline">Underline 1</button>
+              <button class="btn color2 underline">Underline 2</button>
+              <button class="btn color3 underline">Underline 3</button>
+              <button class="btn color4 underline">Underline 4</button>
+              <button class="btn color5 underline">Underline 5</button>
             </div>
-        </section>
 
-        <!-- BLOCK BUTTON SECTION -->
-        <section class="utility-section">
-            <h2 class="section-title">Layout Options</h2>
-
-            <div class="utility-card">
-                <h3 class="card-title"><span class="icon">📏</span> Block Button</h3>
-                <p class="card-desc">Full-width button that spans its container</p>
-                <div class="pattern">.btn.block</div>
-
-                <div style="margin: 20px 0;">
-                    <button class="btn color1 block">Block Button</button>
-                </div>
-
-                <table class="value-table">
-                    <thead>
-                        <tr>
-                            <th>Property</th>
-                            <th>Value</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Display</td>
-                            <td>block</td>
-                        </tr>
-                        <tr>
-                            <td>Width</td>
-                            <td>100%</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="example-group">
+              <span class="example-title">Implementation:</span>
+              <span class="example">background-color: transparent</span>
+              <span class="example">border: none</span>
+              <span class="example"
+                >border-bottom: 2px solid [color variable]</span
+              >
+              <span class="example">border-radius: 0</span>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- COMBINATION EXAMPLES -->
-        <section class="utility-section">
-            <h2 class="section-title">Combination Examples</h2>
+      <!-- BLOCK BUTTON SECTION -->
+      <section class="utility-section">
+        <h2 class="section-title">Layout Options</h2>
 
-            <div class="utility-card">
-                <h3 class="card-title"><span class="icon">🧩</span> Mixed Styles</h3>
-                <p class="card-desc">Combine color and style variants for different effects</p>
+        <div class="utility-card">
+          <h3 class="card-title"><span class="icon">📏</span> Block Button</h3>
+          <p class="card-desc">Full-width button that spans its container</p>
+          <div class="pattern">.btn.block</div>
 
-                <div class="btn-demo">
-                    <button class="btn color1 outline block">Outline Block</button>
-                    <button class="btn color3 underline">Yellow Underline</button>
-                    <button class="btn color5 outline">Teal Outline</button>
-                    <button class="btn color2 block">Green Block</button>
+          <div style="margin: 20px 0">
+            <button class="btn color1 block">Block Button</button>
+          </div>
+
+          <table class="value-table">
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Display</td>
+                <td>block</td>
+              </tr>
+              <tr>
+                <td>Width</td>
+                <td>100%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- COMBINATION EXAMPLES -->
+      <section class="utility-section">
+        <h2 class="section-title">Combination Examples</h2>
+
+        <div class="utility-card">
+          <h3 class="card-title"><span class="icon">🧩</span> Mixed Styles</h3>
+          <p class="card-desc">
+            Combine color and style variants for different effects
+          </p>
+
+          <div class="btn-demo">
+            <button class="btn color1 outline block">Outline Block</button>
+            <button class="btn color3 underline">Yellow Underline</button>
+            <button class="btn color5 outline">Teal Outline</button>
+            <button class="btn color2 block">Green Block</button>
+          </div>
+
+          <div class="example-group">
+            <span class="example-title">Usage Examples:</span>
+            <span class="example"
+              >&lt;button class="btn color1 outline"&gt;Red
+              Outline&lt;/button&gt;</span
+            >
+            <span class="example"
+              >&lt;button class="btn color3 underline block"&gt;Yellow Underline
+              Block&lt;/button&gt;</span
+            >
+            <span class="example"
+              >&lt;button class="btn color5"&gt;Teal Solid&lt;/button&gt;</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- COLOR VARIABLES SECTION -->
+      <section class="utility-section">
+        <h2 class="section-title">Color Variables</h2>
+
+        <div class="utility-card">
+          <h3 class="card-title">
+            <span class="icon">🎨</span> Root Color Variables
+          </h3>
+          <p class="card-desc">
+            Predefined color variables available for button customization
+          </p>
+
+          <div class="pattern">
+            :root { --c1: #e74c3c; /* Red */ --c2: #2ecc71; /* Green */ --c3:
+            #f1c40f; /* Yellow */ --c4: #e67e22; /* Orange */ --c5: #1abc9c; /*
+            Teal */ }
+          </div>
+
+          <table class="value-table">
+            <thead>
+              <tr>
+                <th>Variable</th>
+                <th>Color</th>
+                <th>Hex Value</th>
+                <th>Usage Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>--c1</td>
+                <td>
+                  <span class="color-swatch" style="background: #e74c3c"></span>
+                  Red
+                </td>
+                <td>#e74c3c</td>
+                <td><code>.btn.color1</code></td>
+              </tr>
+              <tr>
+                <td>--c2</td>
+                <td>
+                  <span class="color-swatch" style="background: #2ecc71"></span>
+                  Green
+                </td>
+                <td>#2ecc71</td>
+                <td><code>.btn.color2</code></td>
+              </tr>
+              <tr>
+                <td>--c3</td>
+                <td>
+                  <span class="color-swatch" style="background: #f1c40f"></span>
+                  Yellow
+                </td>
+                <td>#f1c40f</td>
+                <td><code>.btn.color3</code></td>
+              </tr>
+              <tr>
+                <td>--c4</td>
+                <td>
+                  <span class="color-swatch" style="background: #e67e22"></span>
+                  Orange
+                </td>
+                <td>#e67e22</td>
+                <td><code>.btn.color4</code></td>
+              </tr>
+              <tr>
+                <td>--c5</td>
+                <td>
+                  <span class="color-swatch" style="background: #1abc9c"></span>
+                  Teal
+                </td>
+                <td>#1abc9c</td>
+                <td><code>.btn.color5</code></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="example-group">
+            <span class="example-title">How to customize:</span>
+            <span class="example"
+              >:root { --c1: #your-color; } /* Override default */</span
+            >
+            <span class="example"
+              >.btn.custom { background-color: var(--your-var); } /* Create new
+              */</span
+            >
+          </div>
+        </div>
+      </section>
+      <!-- DROPDOWN SECTION -->
+      <section class="utility-section">
+        <h2 class="section-title">Dropdown System</h2>
+
+        <div class="utility-card">
+          <h3 class="card-title">
+            <span class="icon">▾</span> Dropdown Component
+          </h3>
+          <p class="card-desc">
+            A flexible dropdown menu system with positioning options
+          </p>
+
+          <div class="pattern">.dropdown</div>
+
+          <div class="example-group">
+            <span class="example-title">Basic Example:</span>
+            <div class="demo-box" style="position: relative; height: 120px">
+              <div class="dropdown tas">
+                <button class="btn dropdown-toggle">Toggle Dropdown</button>
+                <div class="dropdown-menu bbgc">
+                  <ol>
+                    <li>
+                      <a href="./animation.html" class="dropdown-item"
+                        >Animations</a
+                      >
+                    </li>
+                    <li>
+                      <a href="./flex.html" class="dropdown-item"
+                        >Flex System</a
+                      >
+                    </li>
+                    <li>
+                      <a href="typography.html" class="dropdown-item"
+                        >Typography</a
+                      >
+                    </li>
+                  </ol>
                 </div>
-
-                <div class="example-group">
-                    <span class="example-title">Usage Examples:</span>
-                    <span class="example">&lt;button class="btn color1 outline"&gt;Red Outline&lt;/button&gt;</span>
-                    <span class="example">&lt;button class="btn color3 underline block"&gt;Yellow Underline
-                        Block&lt;/button&gt;</span>
-                    <span class="example">&lt;button class="btn color5"&gt;Teal Solid&lt;/button&gt;</span>
-                </div>
+              </div>
             </div>
-        </section>
+          </div>
 
-        <!-- COLOR VARIABLES SECTION -->
-        <section class="utility-section">
-            <h2 class="section-title">Color Variables</h2>
+          <table class="value-table">
+            <thead>
+              <tr>
+                <th>Class</th>
+                <th>Description</th>
+                <th>Properties</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>.dropdown</td>
+                <td>Container element</td>
+                <td>position: relative</td>
+              </tr>
+              <tr>
+                <td>.dropdown-menu</td>
+                <td>Menu content</td>
+                <td>
+                  position: absolute<br />
+                  bottom: 0; left: 0<br />
+                  transform: translateY(100%)<br />
+                  background: white<br />
+                  min-width: 150px<br />
+                  z-index: 1000
+                </td>
+              </tr>
+              <tr>
+                <td>.dropdown-menu.left</td>
+                <td>Right-aligned menu</td>
+                <td>
+                  left: auto<br />
+                  right: 0 !important
+                </td>
+              </tr>
+              <tr>
+                <td>:focus-within</td>
+                <td>Show menu on focus</td>
+                <td>display: block</td>
+              </tr>
+            </tbody>
+          </table>
 
-            <div class="utility-card">
-                <h3 class="card-title"><span class="icon">🎨</span> Root Color Variables</h3>
-                <p class="card-desc">Predefined color variables available for button customization</p>
+          <div class="example-group">
+            <span class="example-title">Usage Example:</span>
+            <span class="example">&lt;div class="dropdown"&gt;</span>
+            <span class="example"
+              >&nbsp;&nbsp;&lt;button&gt;Menu&lt;/button&gt;</span
+            >
+            <span class="example"
+              >&nbsp;&nbsp;&lt;div class="dropdown-menu"&gt;</span
+            >
+            <span class="example"
+              >&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"
+              class="dropdown-item"&gt;Option 1&lt;/a&gt;</span
+            >
+            <span class="example"
+              >&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#"
+              class="dropdown-item"&gt;Option 2&lt;/a&gt;</span
+            >
+            <span class="example">&nbsp;&nbsp;&lt;/div&gt;</span>
+            <span class="example">&lt;/div&gt;</span>
+          </div>
 
-                <div class="pattern">:root {
-                    --c1: #e74c3c; /* Red */
-                    --c2: #2ecc71; /* Green */
-                    --c3: #f1c40f; /* Yellow */
-                    --c4: #e67e22; /* Orange */
-                    --c5: #1abc9c; /* Teal */
-                    }</div>
-
-                <table class="value-table">
-                    <thead>
-                        <tr>
-                            <th>Variable</th>
-                            <th>Color</th>
-                            <th>Hex Value</th>
-                            <th>Usage Example</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>--c1</td>
-                            <td><span class="color-swatch" style="background: #e74c3c"></span> Red</td>
-                            <td>#e74c3c</td>
-                            <td><code>.btn.color1</code></td>
-                        </tr>
-                        <tr>
-                            <td>--c2</td>
-                            <td><span class="color-swatch" style="background: #2ecc71"></span> Green</td>
-                            <td>#2ecc71</td>
-                            <td><code>.btn.color2</code></td>
-                        </tr>
-                        <tr>
-                            <td>--c3</td>
-                            <td><span class="color-swatch" style="background: #f1c40f"></span> Yellow</td>
-                            <td>#f1c40f</td>
-                            <td><code>.btn.color3</code></td>
-                        </tr>
-                        <tr>
-                            <td>--c4</td>
-                            <td><span class="color-swatch" style="background: #e67e22"></span> Orange</td>
-                            <td>#e67e22</td>
-                            <td><code>.btn.color4</code></td>
-                        </tr>
-                        <tr>
-                            <td>--c5</td>
-                            <td><span class="color-swatch" style="background: #1abc9c"></span> Teal</td>
-                            <td>#1abc9c</td>
-                            <td><code>.btn.color5</code></td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="example-group">
-                    <span class="example-title">How to customize:</span>
-                    <span class="example">:root { --c1: #your-color; } /* Override default */</span>
-                    <span class="example">.btn.custom { background-color: var(--your-var); } /* Create new */</span>
+          <div class="example-group">
+            <span class="example-title">Right-aligned Variant:</span>
+            <div
+              class="demo-box"
+              style="position: relative; height: 120px; text-align: right"
+            >
+              <div class="dropdown">
+                <button class="btn dropdown-toggle">Toggle Dropdown</button>
+                <div class="dropdown-menu left bbgc tas">
+                  <ol>
+                    <li>
+                      <a href="./animation.html" class="dropdown-item"
+                        >Animations</a
+                      >
+                    </li>
+                    <li>
+                      <a href="./flex.html" class="dropdown-item"
+                        >Flex System</a
+                      >
+                    </li>
+                    <li>
+                      <a href="typography.html" class="dropdown-item"
+                        >Typography</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="dropdown-item"
+                        >This is long text for text</a
+                      >
+                    </li>
+                  </ol>
                 </div>
+              </div>
             </div>
-        </section>
-        <!-- DROPDOWN SECTION -->
-        <section class="utility-section">
-            <h2 class="section-title">Dropdown System</h2>
-
-            <div class="utility-card">
-                <h3 class="card-title"><span class="icon">▾</span> Dropdown Component</h3>
-                <p class="card-desc">A flexible dropdown menu system with positioning options</p>
-
-                <div class="pattern">.dropdown</div>
-
-                <div class="example-group">
-                    <span class="example-title">Basic Example:</span>
-                    <div class="demo-box" style="position: relative; height: 120px;">
-                        <div class="dropdown">
-                            <button class="btn dropdown-toggle">Toggle Dropdown</button>
-                            <div class="dropdown-menu bbgc">
-                                <ol>
-                                    <li>
-                                        <a href="./animation.html" class="dropdown-item">Animations</a>
-                                    </li>
-                                    <li>
-                                        <a href="./flex.html" class="dropdown-item">Flex System</a>
-                                    </li>
-                                    <li>
-                                        <a href="typography.html" class="dropdown-item">Typography</a>
-                                    </li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <table class="value-table">
-                    <thead>
-                        <tr>
-                            <th>Class</th>
-                            <th>Description</th>
-                            <th>Properties</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>.dropdown</td>
-                            <td>Container element</td>
-                            <td>position: relative</td>
-                        </tr>
-                        <tr>
-                            <td>.dropdown-menu</td>
-                            <td>Menu content</td>
-                            <td>
-                                position: absolute<br>
-                                bottom: 0; left: 0<br>
-                                transform: translateY(100%)<br>
-                                background: white<br>
-                                min-width: 150px<br>
-                                z-index: 1000
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>.dropdown-menu.left</td>
-                            <td>Right-aligned menu</td>
-                            <td>
-                                left: auto<br>
-                                right: 0 !important
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>:focus-within</td>
-                            <td>Show menu on focus</td>
-                            <td>display: block</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="example-group">
-                    <span class="example-title">Usage Example:</span>
-                    <span class="example">&lt;div class="dropdown"&gt;</span>
-                    <span class="example">&nbsp;&nbsp;&lt;button&gt;Menu&lt;/button&gt;</span>
-                    <span class="example">&nbsp;&nbsp;&lt;div class="dropdown-menu"&gt;</span>
-                    <span class="example">&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#" class="dropdown-item"&gt;Option
-                        1&lt;/a&gt;</span>
-                    <span class="example">&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#" class="dropdown-item"&gt;Option
-                        2&lt;/a&gt;</span>
-                    <span class="example">&nbsp;&nbsp;&lt;/div&gt;</span>
-                    <span class="example">&lt;/div&gt;</span>
-                </div>
-
-                <div class="example-group">
-                    <span class="example-title">Right-aligned Variant:</span>
-                    <div class="demo-box" style="position: relative; height: 120px; text-align: right;">
-                        <div class="dropdown">
-                            <button class="btn dropdown-toggle">Toggle Dropdown</button>
-                            <div class="dropdown-menu left bbgc tas">
-                                <ol>
-                                    <li>
-                                        <a href="./animation.html" class="dropdown-item">Animations</a>
-                                    </li>
-                                    <li>
-                                        <a href="./flex.html" class="dropdown-item">Flex System</a>
-                                    </li>
-                                    <li>
-                                        <a href="typography.html" class="dropdown-item">Typography</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="dropdown-item">This is long text for text</a>
-                                    </li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                    <span class="example">&lt;div class="dropdown-menu left"&gt;...&lt;/div&gt;</span>
-                </div>
-            </div>
-        </section>
+            <span class="example"
+              >&lt;div class="dropdown-menu left"&gt;...&lt;/div&gt;</span
+            >
+          </div>
+        </div>
+      </section>
     </div>
-</body>
-
+  </body>
 </html>
